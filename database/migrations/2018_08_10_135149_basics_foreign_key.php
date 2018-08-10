@@ -14,8 +14,9 @@ class BasicsForeignKey extends Migration
     {
         Schema::table('basics', function (Blueprint $table) {
 
-            $table->foreign('languageOfTeaching_id')->references('id')->on('language_list');
-            $table->foreign('CountryOfDestination_id')->references('id')->on('country');
+//            $table->foreign('languageOfTeaching_id')->references('id')->on('language_list');
+//            $table->foreign('CountryOfDestination_id')->references('id')->on('country');
+//            $table->foreign('retreatFor')->references('id')->on('retreat_for');
         });
     }
 

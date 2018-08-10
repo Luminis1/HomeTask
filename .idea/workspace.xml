@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97dd6fa7-38b2-46f8-b0ad-2d8e71669163" name="Default Changelist" comment="" />
+    <list default="true" id="97dd6fa7-38b2-46f8-b0ad-2d8e71669163" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_08_10_104444_create_basics_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_08_10_104444_create_basics_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_08_10_135149_basics_foreign_key.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_08_10_135149_basics_foreign_key.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,14 +27,14 @@
         <counts>
           <entry key="dummy" value="10" />
           <entry key="env" value="10" />
-          <entry key="php" value="1084" />
+          <entry key="php" value="1178" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="10" />
           <entry key="Blade" value="477" />
-          <entry key="PHP" value="607" />
+          <entry key="PHP" value="701" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
@@ -39,14 +42,14 @@
         <counts>
           <entry key="css" value="1" />
           <entry key="gitkeep" value="1" />
-          <entry key="php" value="33" />
+          <entry key="php" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Blade" value="2" />
           <entry key="CSS" value="1" />
-          <entry key="PHP" value="31" />
+          <entry key="PHP" value="35" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -63,14 +66,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_104444_create_basics_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="225">
+              <caret line="23" column="38" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="38" />
               <folding>
-                <marker date="1533908711076" expanded="true" signature="808:1066" ph="..." />
+                <marker date="1533911586680" expanded="true" signature="820:1078" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_142905_create_retreat_for.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_135149_basics_foreign_key.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="18" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -78,20 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_133214_create_country_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_120637_create_language_list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="38" />
-              <folding>
-                <element signature="e#7#48#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="442">
+              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -104,6 +113,9 @@
         <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -119,8 +131,10 @@
         <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_08_10_120637_create_language_list.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_08_10_133214_create_country_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2018_08_10_104444_create_basics_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_08_10_130531_basics_foreign_key.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2018_08_10_104444_create_basics_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2018_08_10_142905_create_retreat_for.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2018_08_10_135149_basics_foreign_key.php" />
       </list>
     </option>
   </component>
@@ -203,6 +217,7 @@
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -263,17 +278,18 @@
       <option name="presentableId" value="Default" />
       <updated>1533885703133</updated>
       <workItem from="1533885704379" duration="1319000" />
-      <workItem from="1533891765212" duration="14400000" />
+      <workItem from="1533891765212" duration="16062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15719000" />
+    <option name="totallyTimeSpent" value="17381000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36913767" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34493193" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -285,7 +301,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -452,23 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_120637_create_language_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="38" />
-          <folding>
-            <element signature="e#7#48#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_133214_create_country_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_130531_basics_foreign_key.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -476,13 +475,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_120637_create_language_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="17" column="11" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="e#7#48#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_104444_create_basics_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="225">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="38" />
           <folding>
-            <marker date="1533908711076" expanded="true" signature="808:1066" ph="..." />
+            <marker date="1533911586680" expanded="true" signature="820:1078" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_133214_create_country_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_142905_create_retreat_for.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_08_10_135149_basics_foreign_key.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="18" selection-end-column="81" />
         </state>
       </provider>
     </entry>

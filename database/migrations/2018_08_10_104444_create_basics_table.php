@@ -21,7 +21,7 @@ class CreateBasicsTable extends Migration
             $table->integer('duration');
             $table->string('shortSummary');
             $table->string('videoLink');
-            $table->string('retreatFor')->nullable();
+            $table->string('retreatFor')->nullable()->unsigned();
         });
 //        DB::statement('ALTER TABLE basics CHANGE languageOfTeaching_id languageOfTeaching_id INT(2) UNSIGNED ZEROFILL NOT NULL');
 //        DB::statement('ALTER TABLE basics CHANGE CountryOfDestination_id CountryOfDestination_id INT(2) UNSIGNED ZEROFILL NOT NULL');
