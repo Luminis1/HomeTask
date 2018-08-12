@@ -8,5 +8,8 @@ use App\Http\Requests;
 
 class IndexController extends Controller
 {
-    //
+   public function addTreat()
+   {
+       return view('treats.addTreat');
+   }
 }
