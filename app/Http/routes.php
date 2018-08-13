@@ -17,12 +17,23 @@ Route::get('/', function () {
 
 Route::auth();
 
+//user routes
+
 Route::get('/', 'HomeController@index');
-Route::get('/basics', 'AdminAttributesController@basics');
 Route::get('/addTreat', 'IndexController@addTreat');
+
+//admin routes
+
+Route::get('/tableAdd', 'AdminAddTablesController@index');
+Route::get('/basics', 'AdminAttributesController@basics');
+Route::get('/admin', 'AdminNavController@index');
 
 //route group to add/remove attributes
 
-Route::post('/admin/setAttribute', 'AttributeController@setAttribute');
-Route::post('/admin/removeAttribute', 'AttributeController@removeAttribute');
+Route::post('/admin/setAttribute', 'AdminAttributesController@setAttribute');
+Route::post('/admin/removeAttribute', 'AdminAttributesController@removeAttribute');
+Route::post('/admin/addTable', 'AdminAddTablesController@addTable');
+Route::post('/admin/removeTable', 'AdminAddTablesController@removeTable');
+Route::post('/admin/addReferenceTypes', 'AdminAddTablesController@addReferenceTypes');
+Route::post('/admin/removeReferenceTypes', 'AdminAddTablesController@removeReferenceTypes');
 

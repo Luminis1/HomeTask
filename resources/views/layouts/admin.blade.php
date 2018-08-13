@@ -24,60 +24,27 @@
         </li>
     </ul>
 </nav>
-
 <div class="container-fluid">
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/basics?table=basics">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/tableAdd">
                             <span data-feather="home"></span>
-                            Basics <span class="sr-only">(current)</span>
+                            Table add <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/yogastyle">
-                            <span data-feather="file"></span>
-                            Yoga style
-                        </a>
-                    </li>
+                    @foreach($menu as $k => $v)
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="shopping-cart"></span>
-                            Activities
+                        <a class="nav-link active" href="/basics?table={{$v->name}}">
+                            <span data-feather="home"></span>
+                            {{$v->name}} <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="users"></span>
-                            Program
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="bar-chart-2"></span>
-                            Accomodation
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="layers"></span>
-                            Food and Drinks
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="layers"></span>
-                            Teachers
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="layers"></span>
-                            Travel Help
-                        </a>
-                    </li>
+                @endforeach
                 </ul>
             </div>
         </nav>
@@ -88,6 +55,8 @@
     <div class=" justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 
         @yield('AdminContent')
+        @yield('AdminContentTables')
+
     </div>
 </main>
 <!-- Bootstrap core JavaScript
