@@ -18,17 +18,11 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/', 'HomeController@index');
-Route::get('/admin', 'AdminBasicsController@index');
+Route::get('/admin', 'AdminBasicsController@basics');
 Route::get('/addTreat', 'IndexController@addTreat');
 
 //route group to basics table
 
-Route::post('/admin/setLanguage', 'AdminBasicsController@setLanguage');
-Route::post('/admin/removeLanguage', 'AdminBasicsController@removeLanguage');
-Route::post('/admin/setLanguage', 'AdminBasicsController@setLanguage');
-Route::post('/admin/removeLanguage', 'AdminBasicsController@removeLanguage');
-Route::post('/admin/setCountry', 'AdminBasicsController@setCountry');
-Route::post('/admin/removeCountry', 'AdminBasicsController@removeCountry');
-Route::post('/admin/setTreat', 'AdminBasicsController@setTreat');
-Route::post('/admin/removeTreat', 'AdminBasicsController@removeTreat');
+Route::post('/admin/setAttribute', 'AttributeController@setAttribute');
+Route::post('/admin/removeAttribute', 'AttributeController@removeAttribute');
 

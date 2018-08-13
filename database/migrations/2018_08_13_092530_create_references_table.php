@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLanguageList extends Migration
+class CreateReferencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,12 @@ class CreateLanguageList extends Migration
      */
     public function up()
     {
-        Schema::create('language_list', function (Blueprint $table) {
-            $table->increments('id')->unique();
+        Schema::create('references', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('name');
+            $table->integer('type_id');
+            $table->integer('table_id');
         });
-
     }
 
     /**
@@ -26,6 +27,6 @@ class CreateLanguageList extends Migration
      */
     public function down()
     {
-        Schema::drop('language_list');
+        Schema::drop('references');
     }
 }
