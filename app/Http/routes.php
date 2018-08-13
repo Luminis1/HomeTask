@@ -18,10 +18,10 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/', 'HomeController@index');
-Route::get('/admin', 'AdminBasicsController@basics');
+Route::get('/basics', 'AdminAttributesController@basics');
 Route::get('/addTreat', 'IndexController@addTreat');
 
-//route group to basics table
+//route group to add/remove attributes
 
 Route::post('/admin/setAttribute', 'AttributeController@setAttribute');
 Route::post('/admin/removeAttribute', 'AttributeController@removeAttribute');
