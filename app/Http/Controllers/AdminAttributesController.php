@@ -6,6 +6,7 @@ use App\Model\Reference;
 use App\Model\ReferenceTypes;
 use App\Model\TypeOfTable;
 use App\Http\Requests;
+
 class AdminAttributesController extends Controller
 {
     use NavGeneratorTrait;

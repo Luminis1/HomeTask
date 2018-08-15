@@ -36,4 +36,5 @@ Route::post('/admin/addTable', 'AdminAddTablesController@addTable');
 Route::post('/admin/removeTable', 'AdminAddTablesController@removeTable');
 Route::post('/admin/addReferenceTypes', 'AdminAddTablesController@addReferenceTypes');
 Route::post('/admin/removeReferenceTypes', 'AdminAddTablesController@removeReferenceTypes');
+Route::post('/object', 'IndexController@object');
 

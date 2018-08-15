@@ -8,7 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('bootstrap/dashboard/dashboard.css') }}" rel="stylesheet">
@@ -27,7 +29,7 @@
 <div class="container-fluid">
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-            <div class="sidebar-sticky">
+            <div class="sidebar-sticky rectangle">
                 <ul class="nav flex-column">
                     <li class="nav-item">
                     <li class="nav-item">
@@ -65,6 +67,8 @@
 <script src="{{ asset('jquery/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.min') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
 </html>

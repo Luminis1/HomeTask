@@ -29,6 +29,13 @@
                 <option data-id="{{$v->id}}">{{$v->name}}</option>
                 @endforeach
         </select>
+        <select class="type-of-element">
+            <option data-etype="select">select</option>
+            <option data-etype="checkbox">checkbox</option>
+            <option data-etype="radio">radio</option>
+            <option data-etype="input">input</option>
+            <option data-etype="textarea">textarea</option>
+        </select>
         <input type="text" name="name" class="attribute-add-name">
         <input type="submit" value="Add table" class="add-attribute">
     </div>

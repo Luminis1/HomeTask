@@ -1,4 +1,4 @@
-
+//ajax to controll attributes
 jQuery(document).ready(function () {
     jQuery('.submit').click(function(){
 
@@ -91,12 +91,14 @@ jQuery(document).ready(function () {
 
         var table_id = jQuery('.tables-add-attr-list option:selected').data('id');
         var attr_name =jQuery('.attribute-add-name').val();
+        var etype =jQuery('.type-of-element option:selected').data('etype');
 
         jQuery.ajax({
             url: '/admin/addReferenceTypes',
             data: {
                 'table_id' : table_id,
                 'attr_name' : attr_name,
+                'etype' : etype
             },
             type: 'POST',
             headers: {
@@ -113,3 +115,40 @@ jQuery(document).ready(function () {
         })
     });
 });
+var arr = [];
+// jQuery(document).ready(function () {
+//     jQuery('.tbutton').click(function(){
+//         jQuery('div.basics>div').each(function () {
+//
+//             var cls = jQuery(this).find('input').attr('class');
+//             var val = jQuery(this).find('input').val();
+//             if(cls != "" && val != "" && cls != 'undefined' && val != 'undefined') {
+//                 arr[cls] = val;
+//             }
+//             cls = jQuery(this).find('select').attr('class');
+//             val = jQuery(this).find('select option:selected').data('val');
+//
+//             if(cls != "" && val != "" && cls != 'undefined' && val != 'undefined') {
+//                 arr[cls] = val;
+//             }
+//
+//             cls = jQuery(this).find('input[type=checkbox]').attr('class');
+//             // val = jQuery(this).find('input[type=checkbox]:checked').val();
+//             val = $('input:checkbox:checked').map(function() {return this.value;}).get();
+//             console.log(cls);
+//             console.log(val);
+//
+//             if(cls != "" && val != "" && cls != 'undefined' && val != 'undefined') {
+//                 arr[cls] = val;
+//             }
+//
+//
+//         });
+//         console.log(arr);
+//         // console.log(test);
+//     });
+// });
+jQuery(document).ready(function () {
+    jQuery('.table-1').addClass('show');
+});
+

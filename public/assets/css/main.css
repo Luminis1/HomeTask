@@ -1,0 +1,105 @@
+/**
+
+1. MAIN STYLES
+2. BASIC PAGE
+
+**/
+
+/********** 1. MAIN STYLES **********/
+body{
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#header{
+    background: #1c2260;
+    width: 100%;
+    height: 60px;
+}
+.Polaris-Page{
+    display: flex;
+    max-width: 1400px;
+    flex-wrap: nowrap;
+    min-height: calc(100% - 60px); 
+}
+#nav{
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding: 2rem 5rem 0 0;
+    border-right: 1px solid #d8d8d8;
+}
+#nav .nav-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#nav .nav-list > .nav-item{
+    padding: 9px 0;
+}
+#nav .nav-list > .nav-item > .Polaris-Link{
+    font-size: 1.5rem;
+    margin-right: 5px;
+    white-space: nowrap;
+}
+#nav .nav-list > .nav-item > .Polaris-Link > i{
+    font-size: 1.9rem;
+    color: #637381;
+    margin-right: 6px;
+}
+#nav .nav-list > .nav-item > .Polaris-Link:hover > i{
+    color: #5c6ac4;
+}
+#nav .nav-list > .nav-item > .Polaris-Link.active > i{
+    color: #5c6ac4;
+}
+#nav .nav-list > .nav-item > .Polaris-Link > span{
+    color: #212b36;
+}
+#nav .nav-list > .nav-item > .Polaris-Link:hover > span{
+    color: #5c6ac4;
+}
+#nav .nav-list > .nav-item > .Polaris-Link.active > span{
+    color: #5c6ac4;
+}
+#content{
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 6rem 0 2rem 5rem;
+}
+#content .content-inner{
+    display: none;
+}
+#content .content-inner.show{
+    display: block;
+}
+#content .page_title{
+    margin-bottom: 20px;
+}
+
+/********** 2. BASIC PAGE **********/
+.form-with-help{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.form-with-help .form-content{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.form-with-help .help-block{
+    align-self: flex-start;
+    width: 0;
+    flex-grow: 0;
+    flex-shrink: 1;
+    background-color: #f9f9f9;
+    margin: 0;
+    overflow: hidden;
+}
+.form-with-help .help-block .help-content{
+    display: none;
+}
+.form-with-help .help-block .help-title{
+    display: none;
+}
+
