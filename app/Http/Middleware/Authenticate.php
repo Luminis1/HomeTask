@@ -17,14 +17,15 @@ class Authenticate
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->guest()) {
-            if ($request->ajax() || $request->wantsJson()) {
-                return response('Unauthorized.', 401);
-            } else {
-                return redirect()->guest('login');
+        if (Auth::guard($guard)->check()) {
+            if((Auth::user()->role) && Auth::user()->role == 'admin'){
+                return redirect('/tableAdd');
+            }elseif ((Auth::user()->role) && Auth::user()->role == 'user'){
+                return redirect('/addTreat');
             }
+        }else{
+            return redirect('/login');
         }
-
-        return $next($request);
     }
 }
+

@@ -5,7 +5,16 @@
      {{--Рисуем таблицы--}}
      <form method="post" action="/object">
          @foreach($tables as $k => $v)
-         <div class="content-inner table-{{$v->id}}" data-tab-content="{{$v->name}}">
+             @if($v->name == 'Accommodation')
+                 @include('admin.accomodation')
+                 @else
+                 @if($v->name == 'Price / Availability')
+                     @include('admin.price')
+                     @else
+                     @if($v->name == 'Program')
+                         @include('admin.program')
+                         @else
+         <div class="content-inner show table-{{$v->id}}" data-tab-content="{{$v->name}}">
              <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
                  {{$v->name}}
              </h2>
@@ -15,6 +24,7 @@
                          <div class="Polaris-Card__Section">
                              <div class="Polaris-FormLayout">
                                  <div class="Polaris-FormLayout__Item">
+                                     {{--Рисуем блоки--}}
                                  @foreach($refTypes as $a => $b)
                                          @if($b->table_type == $v->id)
                                              <div class="Polaris-Labelled__LabelWrapper">
@@ -122,67 +132,20 @@
                  </div>
              </div>
          </div>
+                         @endif
+                 @endif
+             @endif
              @endforeach
      </form>
-     {{--<input type="button" class="tbutton">--}}
- </div>
-
+     <div class="Polaris-FormLayout__Item">
+         <button type="button" class="Polaris-Button Polaris-Button--primary">
+             <span class="Polaris-Button__Content">
+                 <span>Submit</span>
+             </span>
+         </button>
+     </div>
 @endsection
-{{--Рисуем таблицы--}}
-{{--<form method="post" action="/object">--}}
-    {{--@foreach($tables as $k => $v)--}}
-        {{--<div class="{{$v->name}}" class="Polaris-Label">--}}
-            {{--Рисуем блоки таблиц--}}
-            {{--@foreach($refTypes as $a => $b)--}}
-                {{--@if($b->table_type == $v->id)--}}
-                    {{--<div class="{{$b->type}}">--}}
-                        {{--<label>{{$b->type}}</label>--}}
-                        {{--<br>--}}
-                        {{--<br>--}}
-                        {{--Рисуем элементы блоков--}}
-                        {{--@if($b->element_type == "select")--}}
-                            {{--<select class="{{$b->type}}" name="{{$b->type}}">--}}
-                                {{--@foreach($attributes as $m => $n)--}}
-                                    {{--@if($n->type == $b->type)--}}
-                                        {{--<option data-val="{{$n->name}}" >{{$n->name}}</option>--}}
-                                    {{--@endif--}}
-                                {{--@endforeach--}}
-                            {{--</select>--}}
-                        {{--@endif--}}
-                        {{--@if($b->element_type == "input")--}}
-                            {{--<input type="text" name="{{$b->type}}" class="{{$b->type}}">--}}
-                        {{--@endif--}}
-                        {{--@if($b->element_type == "texarea")--}}
-                            {{--<texarea name="{{$b->type}}" class="{{$b->type}}" name="{{$b->type}}"></texarea>--}}
-                        {{--@endif--}}
-                        {{--@if($b->element_type == "checkbox")--}}
-                            {{--@foreach($attributes as $m => $n)--}}
-                                {{--@if( $n->type == $b->type)--}}
-                                    {{--<input type="checkbox" value="{{$n->name}}" class="{{$b->type}}" name="{{$b->type}}[]">--}}
-                                    {{--<label>{{$n->name}}</label>--}}
-                                {{--@endif--}}
-                            {{--@endforeach--}}
-                        {{--@endif--}}
-                        {{--@if($b->element_type == "radio")--}}
-                            {{--@foreach($attributes as $m => $n)--}}
-                                {{--@if( $n->type == $b->type)--}}
-                                    {{--<input type="radio" name="{{$n->name}}">--}}
-                                    {{--<label>{{$n->name}}</label>--}}
-                                {{--@endif--}}
-                            {{--@endforeach--}}
-                        {{--@endif--}}
-                        {{--<br>--}}
-                        {{--<br>--}}
-                    {{--</div>--}}
-                {{--@endif--}}
-            {{--@endforeach--}}
-        {{--</div>--}}
-    {{--@endforeach--}}
-    {{--{{csrf_field()}}--}}
-    {{--<input type="submit">--}}
-{{--</form>--}}
-{{--<input type="button" class="tbutton">--}}
-{{--</div>--}}
+
 
 
 
