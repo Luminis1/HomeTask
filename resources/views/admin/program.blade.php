@@ -130,7 +130,7 @@
                             </div>
                         </div>
                         <div class="Polaris-TextField">
-                            <input name="{{$b->type}}" id="unique_listing_title_input"
+                            <input name="focus[]" id="unique_listing_title_input"
                                    class="Polaris-TextField__Input"
                                    placeholder="ex: Hatha Yoga and Ayrveda Retreat"
                                    data-help-support="true"
@@ -166,7 +166,7 @@
                             </div>
                         </div>
                         <div class="Polaris-TextField">
-                            <input name="{{$b->type}}" id="unique_listing_title_input"
+                            <input name="focus[]" id="unique_listing_title_input"
                                    class="Polaris-TextField__Input"
                                    placeholder="ex: Hatha Yoga and Ayrveda Retreat"
                                    data-help-support="true"
@@ -188,7 +188,7 @@
         </div>
     </div>
 </div>
-<div class="form-with-help" style="display: none">
+<div class="form-with-help focus-help" style="display: none">
     <div class="form-content">
         <div class="Polaris-Card">
             <div class="Polaris-Card__Section">
@@ -202,7 +202,7 @@
                             </div>
                         </div>
                         <div class="Polaris-TextField">
-                            <input name="{{$b->type}}" id="unique_listing_title_input"
+                            <input name="focus[]" id="unique_listing_title_input"
                                    class="Polaris-TextField__Input"
                                    placeholder="ex: Hatha Yoga and Ayrveda Retreat"
                                    data-help-support="true"
@@ -224,7 +224,7 @@
         </div>
     </div>
 </div>
-<div class="form-with-help" style="display: none">
+<div class="form-with-help focus-help" style="display: none">
     <div class="form-content">
         <div class="Polaris-Card">
             <div class="Polaris-Card__Section">
@@ -238,7 +238,7 @@
                             </div>
                         </div>
                         <div class="Polaris-TextField">
-                            <input name="{{$b->type}}" id="unique_listing_title_input"
+                            <input name="focus[]" id="unique_listing_title_input"
                                    class="Polaris-TextField__Input"
                                    placeholder="ex: Hatha Yoga and Ayrveda Retreat"
                                    data-help-support="true"
@@ -261,4 +261,4 @@
     </div>
 </div>
 
-<input type="button" value="add focus point">
+<input type="button" class="add-focus" value="add focus point">

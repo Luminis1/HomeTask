@@ -31,8 +31,6 @@ class IndexController extends Controller
 
    public function object()
    {
-
        dd($_POST);
-
    }
 }

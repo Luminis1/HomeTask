@@ -149,6 +149,9 @@ var arr = [];
 //     });
 // });
 jQuery(document).ready(function () {
-    jQuery('.table-1').addClass('show');
+    jQuery('.add-focus').click(function () {
+        jQuery('.focus-help').first().show();
+        jQuery('.focus-help').first().removeClass('focus-help');
+    });
 });
 

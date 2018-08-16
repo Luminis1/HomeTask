@@ -179,7 +179,8 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField Polaris-TextField--multiline">
-                                <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
+                                <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="Hotel-short-description">
+                                </textarea>
                                 <div class="Polaris-TextField__Backdrop"></div>
                                 <div aria-hidden="true" class="Polaris-TextField__Resizer">
                                     <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
@@ -187,7 +188,7 @@
                                 </div>
                             </div>
                             <div>
-                                <input type="file" name="hotel-foto">
+                                <input type="file" name="hotel">
                             </div>
                         </div>
                     </div>

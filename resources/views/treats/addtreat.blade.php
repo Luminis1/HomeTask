@@ -3,7 +3,7 @@
 @section('treatContent')
 
      {{--Рисуем таблицы--}}
-     <form method="post" action="/object">
+     <form method="post" action="/object" enctype='multipart/form-data'>
          @foreach($tables as $k => $v)
              @if($v->name == 'Accommodation')
                  @include('admin.accomodation')
@@ -136,6 +136,8 @@
                  @endif
              @endif
              @endforeach
+         {{csrf_field()}}
+            <input type="submit" value="вперед братва">
      </form>
      <div class="Polaris-FormLayout__Item">
          <button type="button" class="Polaris-Button Polaris-Button--primary">
