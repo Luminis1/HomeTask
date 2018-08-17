@@ -78,6 +78,9 @@ body{
 }
 
 /********** 2. BASIC PAGE **********/
+#general_form .content-inner{
+    margin-bottom: 20px;
+}
 .form-with-help{
     width: 100%;
     display: flex;
@@ -102,4 +105,21 @@ body{
 .form-with-help .help-block .help-title{
     display: none;
 }
-
+.tables-nav-block{
+    padding: 20px 0 0 0;
+}
+.tables-nav-block:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.tables-nav-block .left{
+    float: left;
+    text-align: left;
+    width: 50%;
+}
+.tables-nav-block .right{
+    float: right;
+    text-align: right;
+    width: 50%;
+}

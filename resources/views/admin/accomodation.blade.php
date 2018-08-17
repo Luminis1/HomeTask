@@ -1,4 +1,4 @@
-<div class="content-inner show table-{{$v->id}}" data-tab-content="{{$v->name}}">
+<div class="content-inner table-{{$v->id}}" data-tab-content="{{$v->name}}">
     <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
         {{$v->name}}
     </h2>
@@ -115,60 +115,55 @@
             </div>
         </div>
     </div>
-</div>
-
-<br>
-<br>
-
-<div class="form-with-help">
+    <div class="form-with-help">
         <div class="form-content">
             <div class="Polaris-Card">
                 <div class="Polaris-Card__Section">
                     <div class="Polaris-FormLayout">
                         <div class="Polaris-FormLayout__Item">
-                                <div class="Polaris-Labelled__LabelWrapper">
-                                    <div class="Polaris-Label">
-                                        <label for="unique_listing_title_input" class="Polaris-Label__Text">
-                                            Accomodation Type
-                                        </label>
-                                    </div>
+                            <div class="Polaris-Labelled__LabelWrapper">
+                                <div class="Polaris-Label">
+                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                        Accomodation Type
+                                    </label>
                                 </div>
+                            </div>
                             <div class="Polaris-Select">
                                 <select name="{{$b->type}}" id="type_of_retreat_select"
                                         class="Polaris-Select__Input"
                                         data-help-support="true"
                                         data-help-title="Help"
                                         data-help-text="Select type of retreat">
-                                            <option data-val="Hotel" >Hotel</option>
-                                            <option data-val="Hotel" >Hotel</option>
-                                            <option data-val="Hotel" >Hotel</option>
-                                            <option data-val="Hotel" >Hotel</option>
+                                    <option data-val="Hotel" >Hotel</option>
+                                    <option data-val="Hotel" >Hotel</option>
+                                    <option data-val="Hotel" >Hotel</option>
+                                    <option data-val="Hotel" >Hotel</option>
                                 </select>
                                 <div class="Polaris-Select__Icon">
-                                                    <span class="Polaris-Icon">
-                                                        <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg>
-                                                    </span>
+                                    <span class="Polaris-Icon">
+                                        <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg>
+                                    </span>
                                 </div>
                                 <div class="Polaris-Select__Backdrop"></div>
-                                </div>
+                            </div>
                         </div>
                         <div class="Polaris-FormLayout__Item">
-                                <div class="Polaris-Labelled__LabelWrapper">
-                                    <div class="Polaris-Label">
-                                        <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                            <div class="Polaris-Labelled__LabelWrapper">
+                                <div class="Polaris-Label">
+                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
                                         Hotel name
                                     </label>
-                                    </div>
                                 </div>
-                                <div class="Polaris-TextField">
-                                    <input name="" id="unique_listing_title_input"
-                                           class="Polaris-TextField__Input"
-                                           placeholder="ex: Hatha Yoga and Ayrveda Retreat"
-                                           data-help-support="true"
-                                           data-help-title="Help"
-                                           data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
-                                    <div class="Polaris-TextField__Backdrop"></div>
-                                </div>
+                            </div>
+                            <div class="Polaris-TextField">
+                                <input name="" id="unique_listing_title_input"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="ex: Hatha Yoga and Ayrveda Retreat"
+                                       data-help-support="true"
+                                       data-help-title="Help"
+                                       data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
+                                <div class="Polaris-TextField__Backdrop"></div>
+                            </div>
                         </div>
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
@@ -196,43 +191,45 @@
             </div>
         </div>
     </div>
-<div class="form-with-help">
-    <div class="form-content">
-        <div class="Polaris-Card">
-            <div class="Polaris-Card__Section">
-                <div class="Polaris-FormLayout">
-                    <div class="Polaris-FormLayout__Item">
-                    <div class="Polaris-Labelled__LabelWrapper">
-                        <div class="Polaris-Label">
-                            <label for="unique_listing_title_input" class="Polaris-Label__Text">
-                                Amenities
-                            </label>
+    <div class="form-with-help">
+        <div class="form-content">
+            <div class="Polaris-Card">
+                <div class="Polaris-Card__Section">
+                    <div class="Polaris-FormLayout">
+                        <div class="Polaris-FormLayout__Item">
+                        <div class="Polaris-Labelled__LabelWrapper">
+                            <div class="Polaris-Label">
+                                <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    Amenities
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <input type="button" value="add amenities">
+                        <input type="button" value="add amenities">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="form-with-help">
-    <div class="form-content">
-        <div class="Polaris-Card">
-            <div class="Polaris-Card__Section">
-                <div class="Polaris-FormLayout">
-                    <div class="Polaris-FormLayout__Item">
-                    <div class="Polaris-Labelled__LabelWrapper">
-                        <div class="Polaris-Label">
-                            <label for="unique_listing_title_input" class="Polaris-Label__Text">
-                                Rooms
-                            </label>
+    <div class="form-with-help">
+        <div class="form-content">
+            <div class="Polaris-Card">
+                <div class="Polaris-Card__Section">
+                    <div class="Polaris-FormLayout">
+                        <div class="Polaris-FormLayout__Item">
+                        <div class="Polaris-Labelled__LabelWrapper">
+                            <div class="Polaris-Label">
+                                <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    Rooms
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <input type="button" value="add rooms">
+                        <input type="button" value="add rooms">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @include('admin.partials._nav_buttons', ['table' => $v])
 </div>

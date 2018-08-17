@@ -1,4 +1,4 @@
-<div class="content-inner show table-{{$v->id}}" data-tab-content="{{$v->name}}">
+<div class="content-inner table-{{$v->id}}" data-tab-content="{{$v->name}}">
     <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
         {{$v->name}}
     </h2>
@@ -115,71 +115,71 @@
             </div>
         </div>
     </div>
-</div>
-<div class="form-with-help">
-    <div class="form-content">
-        <div class="Polaris-Card">
-            <div class="Polaris-Card__Section">
-                <div class="Polaris-FormLayout">
-                    <div class="Polaris-FormLayout__Item">
-                        <div class="Polaris-Labelled__LabelWrapper">
-                            <div class="Polaris-Label">
+    <div class="form-with-help">
+        <div class="form-content">
+            <div class="Polaris-Card">
+                <div class="Polaris-Card__Section">
+                    <div class="Polaris-FormLayout">
+                        <div class="Polaris-FormLayout__Item">
+                            <div class="Polaris-Labelled__LabelWrapper">
+                                <div class="Polaris-Label">
+                                        <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                            Mans focus points
+                                        </label>
+                                </div>
+                            </div>
+                            <div class="Polaris-TextField">
+                                <input name="focus[]" id="unique_listing_title_input"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="ex: Hatha Yoga and Ayrveda Retreat"
+                                       data-help-support="true"
+                                       data-help-title="Help"
+                                       data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
+                                <div class="Polaris-TextField__Backdrop"></div>
+                            </div>
+                            <div class="Polaris-TextField Polaris-TextField--multiline">
+                                <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
+                                <div class="Polaris-TextField__Backdrop"></div>
+                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
+                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
+                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-with-help">
+        <div class="form-content">
+            <div class="Polaris-Card">
+                <div class="Polaris-Card__Section">
+                    <div class="Polaris-FormLayout">
+                        <div class="Polaris-FormLayout__Item">
+                            <div class="Polaris-Labelled__LabelWrapper">
+                                <div class="Polaris-Label">
                                     <label for="unique_listing_title_input" class="Polaris-Label__Text">
                                         Mans focus points
                                     </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="Polaris-TextField">
-                            <input name="focus[]" id="unique_listing_title_input"
-                                   class="Polaris-TextField__Input"
-                                   placeholder="ex: Hatha Yoga and Ayrveda Retreat"
-                                   data-help-support="true"
-                                   data-help-title="Help"
-                                   data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
-                            <div class="Polaris-TextField__Backdrop"></div>
-                        </div>
-                        <div class="Polaris-TextField Polaris-TextField--multiline">
-                            <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
-                            <div class="Polaris-TextField__Backdrop"></div>
-                            <div aria-hidden="true" class="Polaris-TextField__Resizer">
-                                <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
-                                <div class="Polaris-TextField__DummyInput"><br></div>
+                            <div class="Polaris-TextField">
+                                <input name="focus[]" id="unique_listing_title_input"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="ex: Hatha Yoga and Ayrveda Retreat"
+                                       data-help-support="true"
+                                       data-help-title="Help"
+                                       data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
+                                <div class="Polaris-TextField__Backdrop"></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="form-with-help">
-    <div class="form-content">
-        <div class="Polaris-Card">
-            <div class="Polaris-Card__Section">
-                <div class="Polaris-FormLayout">
-                    <div class="Polaris-FormLayout__Item">
-                        <div class="Polaris-Labelled__LabelWrapper">
-                            <div class="Polaris-Label">
-                                <label for="unique_listing_title_input" class="Polaris-Label__Text">
-                                    Mans focus points
-                                </label>
-                            </div>
-                        </div>
-                        <div class="Polaris-TextField">
-                            <input name="focus[]" id="unique_listing_title_input"
-                                   class="Polaris-TextField__Input"
-                                   placeholder="ex: Hatha Yoga and Ayrveda Retreat"
-                                   data-help-support="true"
-                                   data-help-title="Help"
-                                   data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
-                            <div class="Polaris-TextField__Backdrop"></div>
-                        </div>
-                        <div class="Polaris-TextField Polaris-TextField--multiline">
-                            <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
-                            <div class="Polaris-TextField__Backdrop"></div>
-                            <div aria-hidden="true" class="Polaris-TextField__Resizer">
-                                <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
-                                <div class="Polaris-TextField__DummyInput"><br></div>
+                            <div class="Polaris-TextField Polaris-TextField--multiline">
+                                <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
+                                <div class="Polaris-TextField__Backdrop"></div>
+                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
+                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
+                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -187,71 +187,35 @@
             </div>
         </div>
     </div>
-</div>
-<div class="form-with-help focus-help" style="display: none">
-    <div class="form-content">
-        <div class="Polaris-Card">
-            <div class="Polaris-Card__Section">
-                <div class="Polaris-FormLayout">
-                    <div class="Polaris-FormLayout__Item">
-                        <div class="Polaris-Labelled__LabelWrapper">
-                            <div class="Polaris-Label">
-                                <label for="unique_listing_title_input" class="Polaris-Label__Text">
-                                    Mans focus points
-                                </label>
+    <div class="form-with-help focus-help" style="display: none">
+        <div class="form-content">
+            <div class="Polaris-Card">
+                <div class="Polaris-Card__Section">
+                    <div class="Polaris-FormLayout">
+                        <div class="Polaris-FormLayout__Item">
+                            <div class="Polaris-Labelled__LabelWrapper">
+                                <div class="Polaris-Label">
+                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                        Mans focus points
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="Polaris-TextField">
-                            <input name="focus[]" id="unique_listing_title_input"
-                                   class="Polaris-TextField__Input"
-                                   placeholder="ex: Hatha Yoga and Ayrveda Retreat"
-                                   data-help-support="true"
-                                   data-help-title="Help"
-                                   data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
-                            <div class="Polaris-TextField__Backdrop"></div>
-                        </div>
-                        <div class="Polaris-TextField Polaris-TextField--multiline">
-                            <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
-                            <div class="Polaris-TextField__Backdrop"></div>
-                            <div aria-hidden="true" class="Polaris-TextField__Resizer">
-                                <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
-                                <div class="Polaris-TextField__DummyInput"><br></div>
+                            <div class="Polaris-TextField">
+                                <input name="focus[]" id="unique_listing_title_input"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="ex: Hatha Yoga and Ayrveda Retreat"
+                                       data-help-support="true"
+                                       data-help-title="Help"
+                                       data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
+                                <div class="Polaris-TextField__Backdrop"></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="form-with-help focus-help" style="display: none">
-    <div class="form-content">
-        <div class="Polaris-Card">
-            <div class="Polaris-Card__Section">
-                <div class="Polaris-FormLayout">
-                    <div class="Polaris-FormLayout__Item">
-                        <div class="Polaris-Labelled__LabelWrapper">
-                            <div class="Polaris-Label">
-                                <label for="unique_listing_title_input" class="Polaris-Label__Text">
-                                    Mans focus points
-                                </label>
-                            </div>
-                        </div>
-                        <div class="Polaris-TextField">
-                            <input name="focus[]" id="unique_listing_title_input"
-                                   class="Polaris-TextField__Input"
-                                   placeholder="ex: Hatha Yoga and Ayrveda Retreat"
-                                   data-help-support="true"
-                                   data-help-title="Help"
-                                   data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
-                            <div class="Polaris-TextField__Backdrop"></div>
-                        </div>
-                        <div class="Polaris-TextField Polaris-TextField--multiline">
-                            <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
-                            <div class="Polaris-TextField__Backdrop"></div>
-                            <div aria-hidden="true" class="Polaris-TextField__Resizer">
-                                <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
-                                <div class="Polaris-TextField__DummyInput"><br></div>
+                            <div class="Polaris-TextField Polaris-TextField--multiline">
+                                <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
+                                <div class="Polaris-TextField__Backdrop"></div>
+                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
+                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
+                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -259,6 +223,42 @@
             </div>
         </div>
     </div>
+    <div class="form-with-help focus-help" style="display: none">
+        <div class="form-content">
+            <div class="Polaris-Card">
+                <div class="Polaris-Card__Section">
+                    <div class="Polaris-FormLayout">
+                        <div class="Polaris-FormLayout__Item">
+                            <div class="Polaris-Labelled__LabelWrapper">
+                                <div class="Polaris-Label">
+                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                        Mans focus points
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="Polaris-TextField">
+                                <input name="focus[]" id="unique_listing_title_input"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="ex: Hatha Yoga and Ayrveda Retreat"
+                                       data-help-support="true"
+                                       data-help-title="Help"
+                                       data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
+                                <div class="Polaris-TextField__Backdrop"></div>
+                            </div>
+                            <div class="Polaris-TextField Polaris-TextField--multiline">
+                                <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
+                                <div class="Polaris-TextField__Backdrop"></div>
+                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
+                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
+                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="button" class="add-focus" value="add focus point">
+    @include('admin.partials._nav_buttons', ['table' => $v])
 </div>
-
-<input type="button" class="add-focus" value="add focus point">
