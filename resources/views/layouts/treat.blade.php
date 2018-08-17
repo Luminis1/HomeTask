@@ -28,7 +28,6 @@
     </ul>
 </div>
 <div id="content">
-    <?php dd(432432432432); ?>
     @yield('treatContent')
 </div>
 </div>
