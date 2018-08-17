@@ -1,8 +1,6 @@
 @extends('layouts.treat')
-
 @section('treatContent')
-
-     {{--Рисуем таблицы--}}
+    {{--Рисуем таблицы--}}
      <form method="post" action="/object" enctype='multipart/form-data'>
          @foreach($tables as $k => $v)
              @if($v->name == 'Accommodation')
