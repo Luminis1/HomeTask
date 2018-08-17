@@ -34,4 +34,13 @@ class IndexController extends Controller
    {
        dd($_POST);
    }
+   public function treatList()
+   {
+       $menu = null;
+        return view('treats.treatList',
+            [
+                'menu' => $menu
+            ]);
+   }
+
 }

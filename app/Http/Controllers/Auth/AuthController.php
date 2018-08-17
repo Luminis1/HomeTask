@@ -52,6 +52,16 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'legal_name_of_business' => 'required',
+            'phone' => 'required',
+            'country' => 'required',
+            'city' => 'required',
+            'website' => 'required',
+            'instagram_username' => 'required',
+            'facebook_page_link' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'cell_phone' => 'required',
         ]);
     }
 
@@ -63,10 +73,23 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'phone' => $data['phone'],
+            'legal_name_of_business' => $data['legal_name_of_business'],
+            'country' => $data['country'],
+            'city' => $data['city'],
+            'website' => $data['website'],
+            'instagram_username' => $data['instagram_username'],
+            'facebook_page_link' => $data['facebook_page_link'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'cell_phone' => $data['last_name'],
+            'role' => $data['role'],
+
         ]);
     }
 }
