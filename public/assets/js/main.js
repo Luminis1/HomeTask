@@ -54,7 +54,52 @@ function initInputsHelp(){
     });
 }
 
+function initTablesCore(){
+    var form = $('#general_form').get()[0];
+    var tables = $(form).find('> .content-inner').get();
+    
+    if(tables.length <= 0){
+        return;
+    }
+    $(tables[0]).addClass('show');
+    $(tables).each(function(){
+        var table = this;
+        var previous_btn = $(table).find('.go-prev-btn').get()[0];
+        var next_btn = $(table).find('.go-next-btn').get()[0];
+        var next_table = $(table).next('.content-inner').get()[0];
+        var prev_table = $(table).prev('.content-inner').get()[0];
+        
+        if(next_btn !== undefined && next_btn !== undefined){
+            $(next_btn).on('click', function(){
+                if(validateTable(table)){
+                    goTo(next_table);
+                }
+            });
+        }
+        if(previous_btn !== undefined && prev_table !== undefined){
+            $(previous_btn).on('click', function(){
+                if(validateTable(table)){
+                    goTo(prev_table);
+                }
+            });
+        }
+    });
+    
+    function validateTable(table){
+        // TODO: Make real validation
+        return true;
+    }
+    
+    function goTo(table){
+        $(tables).hide().removeClass('show');
+        $(table).fadeIn(300, function(){
+            $(table).addClass('show');
+        });
+    }
+}
+
 $(document).ready(function(){
     initNavMenu();
     initInputsHelp();
+    initTablesCore();
 });
