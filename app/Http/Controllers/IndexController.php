@@ -20,7 +20,8 @@ class IndexController extends Controller
        $menu = NavGeneratorTrait::navGenerate();
        $tables = TypeOfTable::all();
 
-       return view('treats.addTreat',
+
+       return view('treats.addtreat',
        [
            'menu' => $menu,
            'attributes' => $attributes,
