@@ -35,7 +35,7 @@
 </div>
 </div>
 <script src="{{ asset('jquery/jquery-3.3.1.min.js') }}"></script>
-<script src="{{ asset('bootstrap/js/bootstrap.min') }}"></script>
+<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
