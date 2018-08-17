@@ -16,11 +16,15 @@ class IndexController extends Controller
    public function addTreat()
    {
 
-       dd(111111);
+       echo 1111;
        $attributes = Reference::getAllRetreatInfo();
+       echo 2222;
        $refTypes = ReferenceTypes::all();
+       echo 3333;
        $menu = NavGeneratorTrait::navGenerate();
+       echo 44444;
        $tables = TypeOfTable::all();
+       echo 555555;
 
 
        return view('treats.addTreat',
