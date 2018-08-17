@@ -15,15 +15,18 @@ class IndexController extends Controller
     use NavGeneratorTrait;
    public function addTreat()
    {
+
+       dd(111111);
        $attributes = Reference::getAllRetreatInfo();
        $refTypes = ReferenceTypes::all();
        $menu = NavGeneratorTrait::navGenerate();
        $tables = TypeOfTable::all();
 
+
        return view('treats.addTreat',
        [
            'menu' => $menu,
-           'attributes' => $attributes  ,
+           'attributes' => $attributes,
            'tables' => $tables,
            'refTypes' => $refTypes
        ]);
