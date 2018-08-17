@@ -38,6 +38,7 @@ Route::group(['middleware' => 'admin'], function () {
 Route::group(['middleware' => 'user'], function () {
     Route::get('/addTreat', 'IndexController@addTreat');
     Route::post('/object', 'IndexController@object');
+    Route::get('/treatList', 'IndexController@treatList');
 });
 
 Route::get('/', 'HomeController@index');

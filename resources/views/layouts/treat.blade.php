@@ -15,6 +15,7 @@
 <body>
 <header id="header"></header>
 <div class="Polaris-Page">
+    @if(!empty($menu))
 <div id="nav">
     <ul class="nav-list">
         @foreach($menu as $k => $v)
@@ -27,8 +28,10 @@
             @endforeach
     </ul>
 </div>
+    @endif
 <div id="content">
     @yield('treatContent')
+    @yield('treatList')
 </div>
 </div>
 <script src="{{ asset('jquery/jquery-3.3.1.min.js') }}"></script>

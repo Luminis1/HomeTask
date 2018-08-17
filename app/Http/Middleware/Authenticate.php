@@ -21,7 +21,7 @@ class Authenticate
             if((Auth::user()->role) && Auth::user()->role == 'admin'){
                 return redirect('/tableAdd');
             }elseif ((Auth::user()->role) && Auth::user()->role == 'user'){
-                return redirect('/addTreat');
+                return redirect('/treatList');
             }
         }else{
             return redirect('/login');
