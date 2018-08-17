@@ -36,7 +36,14 @@
             <option data-etype="input">input</option>
             <option data-etype="textarea">textarea</option>
         </select>
-        <input type="text" name="name" class="attribute-add-name">
+        <br>
+        <br>
+        <label>Name</label><br>
+        <input type="text" name="name" class="attribute-add-name"><br>
+        <label>Help</label><br>
+        <input type="text" name="name" class="attribute-add-help"><br>
+        <label>Slug</label><br>
+        <input type="text" name="name" class="attribute-add-slug"><br>
         <input type="submit" value="Add table" class="add-attribute">
     </div>
     @endsection

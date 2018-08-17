@@ -91,14 +91,19 @@ jQuery(document).ready(function () {
 
         var table_id = jQuery('.tables-add-attr-list option:selected').data('id');
         var attr_name =jQuery('.attribute-add-name').val();
+        var attr_help =jQuery('.attribute-add-help').val();
+        var attr_slug =jQuery('.attribute-add-slug').val();
         var etype =jQuery('.type-of-element option:selected').data('etype');
+
 
         jQuery.ajax({
             url: '/admin/addReferenceTypes',
             data: {
                 'table_id' : table_id,
                 'attr_name' : attr_name,
-                'etype' : etype
+                'etype' : etype,
+                'attr_help' : attr_help,
+                'attr_slug' : attr_slug,
             },
             type: 'POST',
             headers: {

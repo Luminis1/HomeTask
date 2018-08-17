@@ -34,7 +34,13 @@ class AdminAddTablesController extends Controller
     }
     public function addReferenceTypes()
     {
-        ReferenceTypes::insert(['type' => $_POST['attr_name'], 'table_type' => $_POST['table_id'],'element_type' => $_POST['etype'],]);
+        ReferenceTypes::insert(
+            ['type' => $_POST['attr_name'],
+                'table_type' => $_POST['table_id'],
+                'element_type' => $_POST['etype'],
+                'help' => $_POST['attr_help'],
+                'slug' => $_POST['attr_slug']
+            ]);
     }
     public function removeAttrType()
     {
