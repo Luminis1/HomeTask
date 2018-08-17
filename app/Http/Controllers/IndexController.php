@@ -16,14 +16,9 @@ class IndexController extends Controller
    public function addTreat()
    {
        $attributes = Reference::getAllRetreatInfo();
-       var_dump($attributes);
        $refTypes = ReferenceTypes::all();
-       var_dump($refTypes);
        $menu = NavGeneratorTrait::navGenerate();
-       var_dump($menu);
        $tables = TypeOfTable::all();
-       var_dump($tables);
-
 
        return view('treats.addTreat',
        [
