@@ -24,7 +24,9 @@
                                  <div class="Polaris-FormLayout__Item">
                                      {{--Рисуем блоки--}}
                                  @foreach($refTypes as $a => $b)
+                                         <div class="form-block__container">
                                          @if($b->table_type == $v->id)
+
                                              <div class="Polaris-Labelled__LabelWrapper">
                                                  <div class="Polaris-Label">
                                                      <label for="unique_listing_title_input" class="Polaris-Label__Text">
@@ -40,7 +42,7 @@
                                                              data-help-title="Help"
                                                              data-help-text="Select type of retreat">
                                                          @foreach($attributes as $m => $n)
-                                                             @if($n->type == $b->type)
+                                                             Polaris-Select               @if($n->type == $b->type)
                                                                  <option data-val="{{$n->name}}" >{{$n->name}}</option>
                                                              @endif
                                                          @endforeach
@@ -52,6 +54,7 @@
                                                      </div>
                                                      <div class="Polaris-Select__Backdrop"></div>
                                                  </div>
+
                                              @endif
                                              @if($b->element_type == "input")
                                                  <div class="Polaris-TextField">
@@ -75,6 +78,7 @@
                                                  </div>
                                              @endif
                                              @if($b->element_type == "checkbox")
+                                                 <div class="check">
                                                  @foreach($attributes as $m => $n)
                                                      @if( $n->type == $b->type)
                                                          <div class="Polaris-FormLayout__Item">
@@ -111,17 +115,31 @@
                                                              </fieldset>
                                                          </div>
                                                      @endif
+
                                                  @endforeach
+                                                 </div>
+
                                              @endif
                                              @if($b->element_type == "radio")
                                                  @foreach($attributes as $m => $n)
                                                      @if( $n->type == $b->type)
-                                                         <input type="radio" name="{{$n->name}}">
-                                                         <label>{{$n->name}}</label>
-                                                     @endif
+                                                             <div class="Polaris-Stack__Item">
+
+                                                             <div><label class="Polaris-Choice">
+<span class="Polaris-Choice__Control">
+                                                                         <span class="Polaris-RadioButton">
+                                                                             <input id="" name="{{$b->type}}" class="Polaris-RadioButton__Input" aria-describedby="" value="{{$n->name}}" type="radio"><span class="Polaris-RadioButton__Backdrop"></span>
+                                                                             <span class="Polaris-RadioButton__Icon"></span></span></span><span class="Polaris-Choice__Label">{{$n->name}}</span></label>
+
+                                                             </div>
+                                                             </div>
+
+
+                                                         @endif
                                                  @endforeach
                                              @endif
                                      @endif
+                                         </div>
                              @endforeach
                                  </div>
                              </div>

@@ -5702,3 +5702,17 @@ body{
     width:1px !important;
     padding:0 !important;
     border:0 !important; }
+
+.check > div {
+    width: 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin: 0;
+}
+.check {
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-block__container {
+    margin-bottom: 30px;
+}
