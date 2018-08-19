@@ -2,6 +2,7 @@
 
 1. MAIN STYLES
 2. BASIC PAGE
+3. POLARIS CUSTOMIZE
 
 **/
 
@@ -122,4 +123,9 @@ body{
     float: right;
     text-align: right;
     width: 50%;
+}
+
+/********** 3. POLARIS CUSTOMIZE **********/
+.Polaris-Label__Text{
+    color: #5c6ac4;
 }

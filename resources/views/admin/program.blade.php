@@ -13,18 +13,16 @@
                                 @if($b->table_type == $v->id)
                                     <div class="Polaris-Labelled__LabelWrapper">
                                         <div class="Polaris-Label">
-                                            <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                            <label for="form_item_{{$b->id}}" class="Polaris-Label__Text">
                                                 {{$b->type}}
                                             </label>
                                         </div>
                                     </div>
                                     @if($b->element_type == "select")
                                         <div class="Polaris-Select">
-                                            <select name="{{$b->type}}" id="type_of_retreat_select"
-                                                    class="Polaris-Select__Input"
-                                                    data-help-support="true"
-                                                    data-help-title="Help"
-                                                    data-help-text="Select type of retreat">
+                                            <select name="{{$b->type}}"
+                                                    id="form_item_{{$b->id}}"
+                                                    class="Polaris-Select__Input">
                                                 @foreach($attributes as $m => $n)
                                                     @if($n->type == $b->type)
                                                         <option data-val="{{$n->name}}" >{{$n->name}}</option>
@@ -32,16 +30,17 @@
                                                 @endforeach
                                             </select>
                                             <div class="Polaris-Select__Icon">
-                                                    <span class="Polaris-Icon">
-                                                        <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg>
-                                                    </span>
+                                                <span class="Polaris-Icon">
+                                                    <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg>
+                                                </span>
                                             </div>
                                             <div class="Polaris-Select__Backdrop"></div>
                                         </div>
                                     @endif
                                     @if($b->element_type == "input")
                                         <div class="Polaris-TextField">
-                                            <input name="{{$b->type}}" id="unique_listing_title_input"
+                                            <input name="{{$b->type}}"
+                                                   id="form_item_{{$b->id}}"
                                                    class="Polaris-TextField__Input"
                                                    placeholder="ex: Hatha Yoga and Ayrveda Retreat"
                                                    data-help-support="true"
@@ -52,7 +51,10 @@
                                     @endif
                                     @if($b->element_type == "textarea")
                                         <div class="Polaris-TextField Polaris-TextField--multiline">
-                                            <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
+                                            <textarea name="{{$b->type}}"
+                                                      id="form_item_{{$b->id}}"
+                                                      placeholder=""
+                                                      class="Polaris-TextField__Input"></textarea>
                                             <div class="Polaris-TextField__Backdrop"></div>
                                             <div aria-hidden="true" class="Polaris-TextField__Resizer">
                                                 <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
@@ -67,10 +69,11 @@
                                                     <fieldset class="Polaris-ChoiceList">
                                                         <ul class="Polaris-ChoiceList__Choices">
                                                             <li>
-                                                                <label class="Polaris-Choice" for="{{$n->name}}">
+                                                                <label class="Polaris-Choice" for="form_item_{{$n->id}}_{{$m}}">
                                                                     <div class="Polaris-Choice__Control">
                                                                         <div class="Polaris-Checkbox">
-                                                                            <input  type="checkbox" id="{{$n->name}}"
+                                                                            <input  type="checkbox"
+                                                                                    id="form_item_{{$n->id}}_{{$m}}"
                                                                                     class="Polaris-Checkbox__Input"
                                                                                     aria-invalid="false" value="{{$n->name}}"
                                                                                     name="{{$b->type}}[]"
@@ -102,8 +105,25 @@
                                     @if($b->element_type == "radio")
                                         @foreach($attributes as $m => $n)
                                             @if( $n->type == $b->type)
-                                                <input type="radio" name="{{$n->name}}">
-                                                <label>{{$n->name}}</label>
+                                                <div class="Polaris-Stack__Item">
+                                                    <div>
+                                                        <label class="Polaris-Choice" for="form_item_{{$n->id}}_{{$m}}">
+                                                            <span class="Polaris-Choice__Control">
+                                                                <span class="Polaris-RadioButton">
+                                                                    <input name="{{$b->type}}"
+                                                                        id="form_item_{{$n->id}}_{{$m}}"
+                                                                        class="Polaris-RadioButton__Input"
+                                                                        aria-describedby=""
+                                                                        value="{{$n->name}}"
+                                                                        type="radio">
+                                                                    <span class="Polaris-RadioButton__Backdrop"></span>
+                                                                    <span class="Polaris-RadioButton__Icon"></span>
+                                                                </span>
+                                                            </span>
+                                                            <span class="Polaris-Choice__Label">{{$n->name}}</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
                                             @endif
                                         @endforeach
                                     @endif
@@ -123,7 +143,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                        <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                        <label class="Polaris-Label__Text">
                                             Mans focus points
                                         </label>
                                 </div>
@@ -159,7 +179,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Mans focus points
                                     </label>
                                 </div>
@@ -195,7 +215,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Mans focus points
                                     </label>
                                 </div>
@@ -231,7 +251,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Mans focus points
                                     </label>
                                 </div>

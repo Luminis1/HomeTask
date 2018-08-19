@@ -10,7 +10,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Event Frequency
                                     </label>
                                 </div>
@@ -38,7 +38,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Dates
                                     </label>
                                 </div>
@@ -50,7 +50,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Open slots
                                     </label>
                                 </div>
@@ -69,7 +69,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Max. people in the group
                                     </label>
                                 </div>
@@ -98,7 +98,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Dates
                                     </label>
                                 </div>
@@ -110,7 +110,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Open slots
                                     </label>
                                 </div>
@@ -129,7 +129,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Max. people in the group
                                     </label>
                                 </div>
@@ -157,7 +157,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         ADD ANOTHER ARRIVAL DATE
                                     </label>
                                 </div>
@@ -180,7 +180,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Dates
                                     </label>
                                 </div>
@@ -192,7 +192,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Dates
                                     </label>
                                 </div>
@@ -204,7 +204,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Open slots
                                     </label>
                                 </div>
@@ -222,7 +222,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Max. people in the group
                                     </label>
                                 </div>
@@ -241,7 +241,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Max. people in the group
                                     </label>
                                 </div>
@@ -260,7 +260,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         Max. people in the group
                                     </label>
                                 </div>
@@ -288,7 +288,7 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                    <label class="Polaris-Label__Text">
                                         ADD ANOTHER ARRIVAL DATE
                                     </label>
                                 </div>
