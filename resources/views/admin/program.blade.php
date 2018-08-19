@@ -134,153 +134,171 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="form-with-help">
-        <div class="form-content">
-            <div class="Polaris-Card">
-                <div class="Polaris-Card__Section">
-                    <div class="Polaris-FormLayout">
-                        <div class="Polaris-FormLayout__Item">
-                            <div class="Polaris-Labelled__LabelWrapper">
-                                <div class="Polaris-Label">
-                                        <label class="Polaris-Label__Text">
-                                            Mans focus points
-                                        </label>
-                                </div>
-                            </div>
-                            <div class="Polaris-TextField">
-                                <input name="focus[]" id="unique_listing_title_input"
-                                       class="Polaris-TextField__Input"
-                                       placeholder="ex: Hatha Yoga and Ayrveda Retreat"
-                                       data-help-support="true"
-                                       data-help-title="Help"
-                                       data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
-                                <div class="Polaris-TextField__Backdrop"></div>
-                            </div>
-                            <div class="Polaris-TextField Polaris-TextField--multiline">
-                                <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
-                                <div class="Polaris-TextField__Backdrop"></div>
-                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
-                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
-                                    <div class="Polaris-TextField__DummyInput"><br></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="form-with-help">
-        <div class="form-content">
-            <div class="Polaris-Card">
-                <div class="Polaris-Card__Section">
-                    <div class="Polaris-FormLayout">
-                        <div class="Polaris-FormLayout__Item">
-                            <div class="Polaris-Labelled__LabelWrapper">
-                                <div class="Polaris-Label">
-                                    <label class="Polaris-Label__Text">
-                                        Mans focus points
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Polaris-TextField">
-                                <input name="focus[]" id="unique_listing_title_input"
-                                       class="Polaris-TextField__Input"
-                                       placeholder="ex: Hatha Yoga and Ayrveda Retreat"
-                                       data-help-support="true"
-                                       data-help-title="Help"
-                                       data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
-                                <div class="Polaris-TextField__Backdrop"></div>
-                            </div>
-                            <div class="Polaris-TextField Polaris-TextField--multiline">
-                                <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
-                                <div class="Polaris-TextField__Backdrop"></div>
-                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
-                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
-                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                <div id="main_focus_points_block" class="Polaris-Card__Section">
+                    <h3 class="Polaris-Heading">
+                        MAIN FOCUS POINTS
+                    </h3>
+                    <span class="block-desc Polaris-TextStyle--variationSubdued">
+                        Please describe 2-4 main focus points of this retreat. What will you work on the most and why this is important.
+                    </span>
+                    <div class="form-with-help">
+                        <div class="form-content">
+                            <div class="Polaris-FormLayout">
+                                <div class="Polaris-FormLayout__Item">
+                                    <div class="Polaris-Labelled__LabelWrapper">
+                                        <div class="Polaris-Label">
+                                            <label class="Polaris-Label__Text">
+                                                1st Focus Point
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="inputs-block">
+                                        <div class="left">
+                                            <div class="Polaris-TextField">
+                                                <input name="focus[]"
+                                                    class="Polaris-TextField__Input"
+                                                    placeholder="ex: Anatomy">
+                                                <div class="Polaris-TextField__Backdrop"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="Polaris-TextField Polaris-TextField--multiline">
+                                                <textarea name="{{$b->type}}"
+                                                          placeholder="Placeholder"
+                                                          class="Polaris-TextField__Input"></textarea>
+                                                <div class="Polaris-TextField__Backdrop"></div>
+                                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
+                                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
+                                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="form-with-help focus-help" style="display: none">
-        <div class="form-content">
-            <div class="Polaris-Card">
-                <div class="Polaris-Card__Section">
-                    <div class="Polaris-FormLayout">
-                        <div class="Polaris-FormLayout__Item">
-                            <div class="Polaris-Labelled__LabelWrapper">
-                                <div class="Polaris-Label">
-                                    <label class="Polaris-Label__Text">
-                                        Mans focus points
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Polaris-TextField">
-                                <input name="focus[]" id="unique_listing_title_input"
-                                       class="Polaris-TextField__Input"
-                                       placeholder="ex: Hatha Yoga and Ayrveda Retreat"
-                                       data-help-support="true"
-                                       data-help-title="Help"
-                                       data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
-                                <div class="Polaris-TextField__Backdrop"></div>
-                            </div>
-                            <div class="Polaris-TextField Polaris-TextField--multiline">
-                                <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
-                                <div class="Polaris-TextField__Backdrop"></div>
-                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
-                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
-                                    <div class="Polaris-TextField__DummyInput"><br></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="form-with-help focus-help" style="display: none">
-        <div class="form-content">
-            <div class="Polaris-Card">
-                <div class="Polaris-Card__Section">
-                    <div class="Polaris-FormLayout">
-                        <div class="Polaris-FormLayout__Item">
-                            <div class="Polaris-Labelled__LabelWrapper">
-                                <div class="Polaris-Label">
-                                    <label class="Polaris-Label__Text">
-                                        Mans focus points
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Polaris-TextField">
-                                <input name="focus[]" id="unique_listing_title_input"
-                                       class="Polaris-TextField__Input"
-                                       placeholder="ex: Hatha Yoga and Ayrveda Retreat"
-                                       data-help-support="true"
-                                       data-help-title="Help"
-                                       data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
-                                <div class="Polaris-TextField__Backdrop"></div>
-                            </div>
-                            <div class="Polaris-TextField Polaris-TextField--multiline">
-                                <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
-                                <div class="Polaris-TextField__Backdrop"></div>
-                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
-                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
-                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                    <div class="form-with-help">
+                        <div class="form-content">
+                            <div class="Polaris-FormLayout">
+                                <div class="Polaris-FormLayout__Item">
+                                    <div class="Polaris-Labelled__LabelWrapper">
+                                        <div class="Polaris-Label">
+                                            <label class="Polaris-Label__Text">
+                                                2nd Focus Point
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="inputs-block">
+                                        <div class="left">
+                                            <div class="Polaris-TextField">
+                                                <input name="focus[]"
+                                                    class="Polaris-TextField__Input"
+                                                    placeholder="ex: Psychology">
+                                                <div class="Polaris-TextField__Backdrop"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="Polaris-TextField Polaris-TextField--multiline">
+                                                <textarea name="{{$b->type}}"
+                                                          placeholder="Placeholder"
+                                                          class="Polaris-TextField__Input"></textarea>
+                                                <div class="Polaris-TextField__Backdrop"></div>
+                                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
+                                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
+                                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="form-with-help focus-help" style="display: none">
+                        <div class="form-content">
+                            <div class="Polaris-FormLayout">
+                                <div class="Polaris-FormLayout__Item">
+                                    <div class="Polaris-Labelled__LabelWrapper">
+                                        <div class="Polaris-Label">
+                                            <label class="Polaris-Label__Text">
+                                                3rd Focus Point
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="inputs-block">
+                                        <div class="left">
+                                            <div class="Polaris-TextField">
+                                                <input name="focus[]"
+                                                    class="Polaris-TextField__Input"
+                                                    placeholder="ex: Psychology">
+                                                <div class="Polaris-TextField__Backdrop"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="Polaris-TextField Polaris-TextField--multiline">
+                                                <textarea name="{{$b->type}}"
+                                                          placeholder="Placeholder"
+                                                          class="Polaris-TextField__Input"></textarea>
+                                                <div class="Polaris-TextField__Backdrop"></div>
+                                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
+                                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
+                                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-with-help focus-help" style="display: none">
+                        <div class="form-content">
+                            <div class="Polaris-FormLayout">
+                                <div class="Polaris-FormLayout__Item">
+                                    <div class="Polaris-Labelled__LabelWrapper">
+                                        <div class="Polaris-Label">
+                                            <label class="Polaris-Label__Text">
+                                                4th Focus Point
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="inputs-block">
+                                        <div class="left">
+                                            <div class="Polaris-TextField">
+                                                <input name="focus[]"
+                                                    class="Polaris-TextField__Input"
+                                                    placeholder="ex: Psychology">
+                                                <div class="Polaris-TextField__Backdrop"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="Polaris-TextField Polaris-TextField--multiline">
+                                                <textarea name="{{$b->type}}"
+                                                          placeholder="Placeholder"
+                                                          class="Polaris-TextField__Input"></textarea>
+                                                <div class="Polaris-TextField__Backdrop"></div>
+                                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
+                                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
+                                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="add-focus Polaris-Button Polaris-Button--sizeSlim">
+                        <span class="Polaris-Button__Content">
+                            <span>Add focus point</span>
+                        </span>
+                    </button>
+                </div>
+                <div class="Polaris-Card__Section">
+                    @include('admin.partials._nav_buttons', ['table' => $v])
                 </div>
             </div>
         </div>
     </div>
-    <input type="button" class="add-focus" value="add focus point">
-    @include('admin.partials._nav_buttons', ['table' => $v])
 </div>

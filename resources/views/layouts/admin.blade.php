@@ -66,8 +66,6 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="{{ asset('jquery/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
