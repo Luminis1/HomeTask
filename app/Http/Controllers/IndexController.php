@@ -46,5 +46,4 @@ class IndexController extends Controller
                 'menu' => $menu
             ]);
    }
-
 }
