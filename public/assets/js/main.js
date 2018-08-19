@@ -248,12 +248,32 @@ function initTablesCore(){
     }
     
     function goTo(table){
-        $(tables).hide().removeClass('show');
-        $("html, body").stop().animate({scrollTop: 0}, 300);
-        $(table).fadeIn(300, function(){
-            $(table).addClass('show');
-        });
+        if($("#general_form").valid()){
+            $(tables).hide().removeClass('show');
+            $("html, body").stop().animate({scrollTop: 0}, 300);
+            $(table).fadeIn(300, function(){
+                $(table).addClass('show');
+            });
+        }
     }
+}
+
+function initFormValidation(){
+    // Validate init
+    $("#general_form").validate();
+    // Rules
+//    $("#form_item_34").rules("add", {
+//        required: true,
+//        minlength: 2
+//    });
+//    $("#form_item_35").rules("add", {
+//        required: true,
+//        minlength: 2222
+//    });
+//    $("#form_item_35").rules("add", {
+//        required: true,
+//        minlength: 2222
+//    });
 }
 
 $(document).ready(function(){
@@ -261,4 +281,5 @@ $(document).ready(function(){
     initNavMenu();
     initInputsHelp();
     initTablesCore();
+    initFormValidation();
 });

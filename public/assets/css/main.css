@@ -5,6 +5,7 @@
 3. POLARIS CUSTOMIZE
 4. PROGRAM PAGE
 5. ACCOMODATION PAGE
+6. JQUERY VALIDATE
 
 **/
 
@@ -169,3 +170,30 @@ textarea.Polaris-TextField__Input{
 .accomodation-table{
     
 }
+
+/********** 6. JQUERY VALIDATE **********/
+.Polaris-TextField label.error{
+    position: absolute;
+    margin-top: 29px;
+    color: #ec0000;
+}
+.Polaris-Select label.error{
+    position: absolute;
+    margin-top: 36px;
+    color: #ec0000;
+    left: 0;
+}
+.Polaris-TextField.Polaris-TextField--multiline .Polaris-TextField__Input.error ~ label.error{
+    position: absolute;
+    margin-top: 84px;
+    color: #ec0000;
+}
+.Polaris-TextField__Input.error ~ .Polaris-TextField__Backdrop{
+    border-color: #ec0000;
+    box-shadow: inset 0 0 0 0 transparent, 0 0 0 1px #ec0000;
+}
+.Polaris-Select__Input.error ~ .Polaris-Select__Backdrop{
+    border-color: #ec0000;
+    box-shadow: inset 0 0 0 0 transparent, 0 0 0 1px #ec0000;
+}
+
