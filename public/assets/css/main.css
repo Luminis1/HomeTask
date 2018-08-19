@@ -4,6 +4,7 @@
 2. BASIC PAGE
 3. POLARIS CUSTOMIZE
 4. PROGRAM PAGE
+5. ACCOMODATION PAGE
 
 **/
 
@@ -78,6 +79,10 @@ body{
 #content .page_title{
     margin-bottom: 20px;
 }
+span.block-desc{
+    display: block;
+    margin-bottom: 15px;
+}
 
 /********** 2. BASIC PAGE **********/
 #general_form .content-inner{
@@ -139,10 +144,6 @@ textarea.Polaris-TextField__Input{
 #main_focus_points_block > h3.Polaris-Heading{
     margin-bottom: 15px;
 }
-#main_focus_points_block > span.block-desc{
-    display: inline-block;
-    margin-bottom: 15px;
-}
 #main_focus_points_block .inputs-block:after{
     content: '';
     display: block;
@@ -156,4 +157,9 @@ textarea.Polaris-TextField__Input{
     float: right;
     width: 66.66%;
     padding-left: 2rem;
+}
+
+/********** 5. ACCOMODATION PAGE **********/
+.accomodation-table{
+    
 }
