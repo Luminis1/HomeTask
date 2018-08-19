@@ -30,7 +30,8 @@
         </select>
 
         <input type="submit" value="remove" class="remove" data-class="{{$v->id}}">
-            @endif
+            @else
+                @endif
         </div>
         <br>
 
