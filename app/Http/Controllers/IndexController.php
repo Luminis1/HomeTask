@@ -37,6 +37,7 @@ class IndexController extends Controller
        $arr = $_POST;
        $object = (object)$arr;
        Added_treat::insert(['treat_object' =>  json_encode($object), 'user_id' => Auth::user()->id ]);
+       return $this->treatList();
    }
    public function treatList()
    {
