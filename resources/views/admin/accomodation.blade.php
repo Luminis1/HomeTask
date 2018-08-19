@@ -1,4 +1,4 @@
-<div class="content-inner table-{{$v->id}}" data-tab-content="{{$v->name}}">
+<div class="content-inner accomodation-table table-{{$v->id}}" data-tab-content="{{$v->name}}">
     <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
         {{$v->name}}
     </h2>
@@ -142,21 +142,22 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label class="Polaris-Label__Text">
+                                    <label for="accomodation_type_select" class="Polaris-Label__Text">
                                         Accomodation Type
                                     </label>
                                 </div>
                             </div>
                             <div class="Polaris-Select">
                                 <select name="{{$b->type}}"
+                                        id="accomodation_type_select"
                                         class="Polaris-Select__Input"
                                         data-help-support="true"
                                         data-help-title="Help"
                                         data-help-text="Select type of retreat">
                                     <option data-val="Hotel" >Hotel</option>
-                                    <option data-val="Hotel" >Hotel</option>
-                                    <option data-val="Hotel" >Hotel</option>
-                                    <option data-val="Hotel" >Hotel</option>
+                                    <option data-val="Hotel" >Guest House</option>
+                                    <option data-val="Hotel" >Lodge</option>
+                                    <option data-val="Hotel" >Resort</option>
                                 </select>
                                 <div class="Polaris-Select__Icon">
                                     <span class="Polaris-Icon">
@@ -169,31 +170,31 @@
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label class="Polaris-Label__Text">
+                                    <label for="hotel_name_input" class="Polaris-Label__Text">
                                         Hotel name
                                     </label>
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="" id="unique_listing_title_input"
+                                <input name="Hotel name" id="hotel_name_input"
                                        class="Polaris-TextField__Input"
-                                       placeholder="ex: Hatha Yoga and Ayrveda Retreat"
-                                       data-help-support="true"
-                                       data-help-title="Help"
-                                       data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
+                                       placeholder="ex: Four Seasons">
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
                         <div class="Polaris-FormLayout__Item">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
-                                    <label class="Polaris-Label__Text">
+                                    <label for="hotel_short_description_textarea" class="Polaris-Label__Text">
                                         Hotel short description
                                     </label>
                                 </div>
                             </div>
                             <div class="Polaris-TextField Polaris-TextField--multiline">
-                                <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="Hotel-short-description">
+                                <textarea name="Hotel short description"
+                                        id="hotel_short_description_textarea"
+                                        placeholder="Website, ads, email, etc."
+                                        class="Polaris-TextField__Input">
                                 </textarea>
                                 <div class="Polaris-TextField__Backdrop"></div>
                                 <div aria-hidden="true" class="Polaris-TextField__Resizer">
@@ -201,8 +202,17 @@
                                     <div class="Polaris-TextField__DummyInput"><br></div>
                                 </div>
                             </div>
-                            <div>
-                                <input type="file" name="hotel">
+                        </div>
+                        <div class="Polaris-FormLayout__Item">
+                            <div class="Polaris-Label" style="margin-bottom: 5px;">
+                                <label for="accomodation_images_input" class="Polaris-Label__Text">
+                                    Accomodation Images
+                                </label>
+                            </div>
+                            <div class="Polaris-TextField Polaris-TextField--multiline">
+                                <input name="Accomodation Images"
+                                        id="accomodation_images_input"
+                                        type="file">
                             </div>
                         </div>
                     </div>
@@ -216,14 +226,17 @@
                 <div class="Polaris-Card__Section">
                     <div class="Polaris-FormLayout">
                         <div class="Polaris-FormLayout__Item">
-                        <div class="Polaris-Labelled__LabelWrapper">
-                            <div class="Polaris-Label">
-                                <label class="Polaris-Label__Text">
-                                    Amenities
-                                </label>
-                            </div>
-                        </div>
-                        <input type="button" value="add amenities">
+                            <h3 class="Polaris-Heading">
+                                AMENITIES
+                            </h3>
+                            <span class="block-desc Polaris-TextStyle--variationSubdued">
+                                Every space is unique. Highlight what makes this place welcoming
+                            </span>
+                            <button type="button" class="Polaris-Button">
+                                <span class="Polaris-Button__Content">
+                                    <span>Select amenities</span>
+                                </span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -236,14 +249,17 @@
                 <div class="Polaris-Card__Section">
                     <div class="Polaris-FormLayout">
                         <div class="Polaris-FormLayout__Item">
-                        <div class="Polaris-Labelled__LabelWrapper">
-                            <div class="Polaris-Label">
-                                <label class="Polaris-Label__Text">
-                                    Rooms
-                                </label>
-                            </div>
-                        </div>
-                        <input type="button" value="add rooms">
+                            <h3 class="Polaris-Heading">
+                                AVAILABLE ROOMS
+                            </h3>
+                            <span class="block-desc Polaris-TextStyle--variationSubdued">
+                                If it is a shared accommodation, add the room type
+                            </span>
+                            <button type="button" class="Polaris-Button">
+                                <span class="Polaris-Button__Content">
+                                    <span>Add rooms</span>
+                                </span>
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,8 @@
 2. BASIC PAGE
 3. POLARIS CUSTOMIZE
 4. PROGRAM PAGE
+5. ACCOMODATION PAGE
+6. JQUERY VALIDATE
 
 **/
 
@@ -78,6 +80,16 @@ body{
 #content .page_title{
     margin-bottom: 20px;
 }
+span.block-desc{
+    display: block;
+    margin-bottom: 15px;
+}
+input[type="date"]{
+    padding: 0.5rem 0 0.5rem 1.2rem;
+    border: 1px solid #c4cdd5;
+    border-radius: 3px;
+    width: 100%;
+}
 
 /********** 2. BASIC PAGE **********/
 #general_form .content-inner{
@@ -139,10 +151,6 @@ textarea.Polaris-TextField__Input{
 #main_focus_points_block > h3.Polaris-Heading{
     margin-bottom: 15px;
 }
-#main_focus_points_block > span.block-desc{
-    display: inline-block;
-    margin-bottom: 15px;
-}
 #main_focus_points_block .inputs-block:after{
     content: '';
     display: block;
@@ -157,3 +165,35 @@ textarea.Polaris-TextField__Input{
     width: 66.66%;
     padding-left: 2rem;
 }
+
+/********** 5. ACCOMODATION PAGE **********/
+.accomodation-table{
+    
+}
+
+/********** 6. JQUERY VALIDATE **********/
+.Polaris-TextField label.error{
+    position: absolute;
+    margin-top: 29px;
+    color: #ec0000;
+}
+.Polaris-Select label.error{
+    position: absolute;
+    margin-top: 36px;
+    color: #ec0000;
+    left: 0;
+}
+.Polaris-TextField.Polaris-TextField--multiline .Polaris-TextField__Input.error ~ label.error{
+    position: absolute;
+    margin-top: 84px;
+    color: #ec0000;
+}
+.Polaris-TextField__Input.error ~ .Polaris-TextField__Backdrop{
+    border-color: #ec0000;
+    box-shadow: inset 0 0 0 0 transparent, 0 0 0 1px #ec0000;
+}
+.Polaris-Select__Input.error ~ .Polaris-Select__Backdrop{
+    border-color: #ec0000;
+    box-shadow: inset 0 0 0 0 transparent, 0 0 0 1px #ec0000;
+}
+
