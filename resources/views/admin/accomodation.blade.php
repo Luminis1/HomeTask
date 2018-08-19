@@ -10,6 +10,7 @@
                         <div class="Polaris-FormLayout__Item">
                             {{--Рисуем блоки--}}
                             @foreach($refTypes as $a => $b)
+                                <div class="form-block__container">
                                 @if($b->table_type == $v->id)
                                     <div class="Polaris-Labelled__LabelWrapper">
                                         <div class="Polaris-Label">
@@ -125,6 +126,7 @@
                                         @endforeach
                                     @endif
                                 @endif
+                                </div>
                             @endforeach
                         </div>
                     </div>

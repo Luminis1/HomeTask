@@ -86,6 +86,7 @@ body{
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
+    margin-bottom: 20px;
 }
 .form-with-help .form-content{
     flex-grow: 1;
@@ -128,4 +129,7 @@ body{
 /********** 3. POLARIS CUSTOMIZE **********/
 .Polaris-Label__Text{
     color: #5c6ac4;
+}
+textarea.Polaris-TextField__Input{
+    min-height: 146px;
 }
