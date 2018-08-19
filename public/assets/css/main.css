@@ -2,6 +2,8 @@
 
 1. MAIN STYLES
 2. BASIC PAGE
+3. POLARIS CUSTOMIZE
+4. PROGRAM PAGE
 
 **/
 
@@ -85,6 +87,7 @@ body{
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
+    margin-bottom: 20px;
 }
 .form-with-help .form-content{
     flex-grow: 1;
@@ -122,4 +125,35 @@ body{
     float: right;
     text-align: right;
     width: 50%;
+}
+
+/********** 3. POLARIS CUSTOMIZE **********/
+.Polaris-Label__Text{
+    color: #5c6ac4;
+}
+textarea.Polaris-TextField__Input{
+    min-height: 146px;
+}
+
+/********** 4. PROGRAM PAGE **********/
+#main_focus_points_block > h3.Polaris-Heading{
+    margin-bottom: 15px;
+}
+#main_focus_points_block > span.block-desc{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+#main_focus_points_block .inputs-block:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+#main_focus_points_block .inputs-block .left{
+    float: left;
+    width: 33.33%;
+}
+#main_focus_points_block .inputs-block .right{
+    float: right;
+    width: 66.66%;
+    padding-left: 2rem;
 }

@@ -28,14 +28,15 @@
                                                             @if($b->table_type == $v->id)
                                                                 <div class="Polaris-Labelled__LabelWrapper">
                                                                     <div class="Polaris-Label">
-                                                                        <label for="unique_listing_title_input" class="Polaris-Label__Text">
+                                                                        <label for="form_item_{{$b->id}}" class="Polaris-Label__Text">
                                                                             {{$b->type}}
                                                                         </label>
                                                                     </div>
                                                                 </div>
                                                                 @if($b->element_type == "select")
                                                                     <div class="Polaris-Select">
-                                                                        <select name="{{$b->type}}" id="type_of_retreat_select"
+                                                                        <select name="{{$b->type}}"
+                                                                                id="form_item_{{$b->id}}"
                                                                                 class="Polaris-Select__Input"
                                                                                 data-help-support="true"
                                                                                 data-help-title="Help"
@@ -56,18 +57,19 @@
                                                                 @endif
                                                                 @if($b->element_type == "input")
                                                                     <div class="Polaris-TextField">
-                                                                    <input name="{{$b->type}}" id="unique_listing_title_input"
+                                                                    <input name="{{$b->type}}"
+                                                                           id="form_item_{{$b->id}}"
                                                                            class="Polaris-TextField__Input"
-                                                                           placeholder="ex: Hatha Yoga and Ayrveda Retreat"
-                                                                           data-help-support="true"
-                                                                           data-help-title="Help"
-                                                                           data-help-text="Add a catchy title. Include the length of the program and the main style (maximum 100 characters).">
+                                                                           placeholder="">
                                                                         <div class="Polaris-TextField__Backdrop"></div>
                                                                     </div>
                                                                 @endif
                                                                 @if($b->element_type == "textarea")
                                                                     <div class="Polaris-TextField Polaris-TextField--multiline">
-                                                                        <textarea id="TextField5" placeholder="Website, ads, email, etc." class="Polaris-TextField__Input" aria-labelledby="TextField5Label" aria-invalid="false" name="{{$b->type}}"></textarea>
+                                                                        <textarea name="{{$b->type}}"
+                                                                                id="form_item_{{$b->id}}"
+                                                                                placeholder=""
+                                                                                class="Polaris-TextField__Input"></textarea>
                                                                         <div class="Polaris-TextField__Backdrop"></div>
                                                                         <div aria-hidden="true" class="Polaris-TextField__Resizer">
                                                                             <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
@@ -83,14 +85,13 @@
                                                                                 <fieldset class="Polaris-ChoiceList">
                                                                                     <ul class="Polaris-ChoiceList__Choices">
                                                                                         <li>
-                                                                                            <label class="Polaris-Choice" for="{{$n->name}}">
+                                                                                            <label class="Polaris-Choice" for="form_item_{{$n->id}}_{{$m}}">
                                                                                                 <div class="Polaris-Choice__Control">
                                                                                                     <div class="Polaris-Checkbox">
-                                                                                                        <input  type="checkbox" id="{{$n->name}}"
+                                                                                                        <input  type="checkbox" id="form_item_{{$n->id}}_{{$m}}"
                                                                                                                 class="Polaris-Checkbox__Input"
                                                                                                                 aria-invalid="false" value="{{$n->name}}"
-                                                                                                                name="{{$b->type}}[]"
-                                                                                                        >
+                                                                                                                name="{{$b->type}}[]">
                                                                                                         <div class="Polaris-Checkbox__Backdrop"></div>
                                                                                                         <div class="Polaris-Checkbox__Icon">
                                                                                                             <span class="Polaris-Icon">
@@ -121,10 +122,15 @@
                                                                         @if( $n->type == $b->type)
                                                                             <div class="Polaris-Stack__Item">
                                                                                 <div>
-                                                                                    <label class="Polaris-Choice">
+                                                                                    <label class="Polaris-Choice" for="form_item_{{$n->id}}_{{$m}}">
                                                                                         <span class="Polaris-Choice__Control">
                                                                                             <span class="Polaris-RadioButton">
-                                                                                                <input id="" name="{{$b->type}}" class="Polaris-RadioButton__Input" aria-describedby="" value="{{$n->name}}" type="radio">
+                                                                                                <input name="{{$b->type}}"
+                                                                                                    id="form_item_{{$n->id}}_{{$m}}"
+                                                                                                    class="Polaris-RadioButton__Input"
+                                                                                                    aria-describedby=""
+                                                                                                    value="{{$n->name}}"
+                                                                                                    type="radio">
                                                                                                 <span class="Polaris-RadioButton__Backdrop"></span>
                                                                                                 <span class="Polaris-RadioButton__Icon"></span>
                                                                                             </span>
@@ -152,14 +158,5 @@
                 @endif
             @endforeach
          {{csrf_field()}}
-         <br><hr><br>
-            <input type="submit" value="вперед братва">
      </form>
-     <div class="Polaris-FormLayout__Item">
-         <button type="button" class="Polaris-Button Polaris-Button--primary">
-             <span class="Polaris-Button__Content">
-                 <span>Submit</span>
-             </span>
-         </button>
-     </div>
 @endsection
