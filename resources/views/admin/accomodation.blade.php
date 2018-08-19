@@ -232,7 +232,7 @@
                             <span class="block-desc Polaris-TextStyle--variationSubdued">
                                 Every space is unique. Highlight what makes this place welcoming
                             </span>
-                            <button type="button" class="add-focus Polaris-Button">
+                            <button type="button" class="Polaris-Button">
                                 <span class="Polaris-Button__Content">
                                     <span>Select amenities</span>
                                 </span>
@@ -255,7 +255,7 @@
                             <span class="block-desc Polaris-TextStyle--variationSubdued">
                                 If it is a shared accommodation, add the room type
                             </span>
-                            <button type="button" class="add-focus Polaris-Button">
+                            <button type="button" class="Polaris-Button">
                                 <span class="Polaris-Button__Content">
                                     <span>Add rooms</span>
                                 </span>
