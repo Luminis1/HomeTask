@@ -152,14 +152,5 @@
                 @endif
             @endforeach
          {{csrf_field()}}
-         <br><hr><br>
-            <input type="submit" value="вперед братва">
      </form>
-     <div class="Polaris-FormLayout__Item">
-         <button type="button" class="Polaris-Button Polaris-Button--primary">
-             <span class="Polaris-Button__Content">
-                 <span>Submit</span>
-             </span>
-         </button>
-     </div>
 @endsection

@@ -17,4 +17,13 @@
         </button>
     </div>
     @endif
+    @if($table->name === 'Travel Help')
+    <div class="right">
+        <button type="submit" class="go-next-btn Polaris-Button Polaris-Button--primary">
+            <span class="Polaris-Button__Content">
+                <span>Submit</span>
+            </span>
+        </button>
+    </div>
+    @endif
 </div>

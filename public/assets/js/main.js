@@ -92,6 +92,7 @@ function initTablesCore(){
     
     function goTo(table){
         $(tables).hide().removeClass('show');
+        $("html, body").stop().animate({scrollTop: 0}, 300);
         $(table).fadeIn(300, function(){
             $(table).addClass('show');
         });
