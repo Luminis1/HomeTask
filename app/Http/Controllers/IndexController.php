@@ -36,16 +36,31 @@ class IndexController extends Controller
    public function object()
    {
        $arr = $_POST;
-       $object = (object)$arr;
+       $object =  $arr;
+
+
+
        Added_treat::insert(['treat_object' =>  json_encode($object), 'user_id' => Auth::user()->id ]);
-       return $this->treatList();
+       return redirect('/treatList');
    }
    public function treatList()
    {
+
+       $treats = Added_treat::where('user_id', Auth::user()->id)->get();
+
+
+
+       $obj = [];
+
+       foreach ($treats as $k => $v)
+       {
+           $obj[] = json_decode($v->treat_object);
+       }
        $menu = null;
         return view('treats.treatList',
             [
-                'menu' => $menu
+                'menu' => $menu,
+                'obj' => $obj
             ]);
    }
 }
