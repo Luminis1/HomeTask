@@ -39,7 +39,8 @@ class AdminAddTablesController extends Controller
                 'table_type' => $_POST['table_id'],
                 'element_type' => $_POST['etype'],
                 'help' => $_POST['attr_help'],
-                'slug' => $_POST['attr_slug']
+                'slug' => $_POST['attr_slug'],
+                'required' => $_POST['required']
             ]);
     }
     public function removeAttrType()

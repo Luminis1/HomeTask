@@ -40,6 +40,8 @@
         <br>
         <label>Name</label><br>
         <input type="text" name="name" class="attribute-add-name"><br>
+        <label>Is required</label><br>
+        <input type="checkbox" name="name" class="attribute-required" value="1"><br>
         <label>Help</label><br>
         <input type="text" name="name" class="attribute-add-help"><br>
         <label>Slug</label><br>

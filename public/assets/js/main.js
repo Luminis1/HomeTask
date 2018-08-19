@@ -93,10 +93,16 @@ function initPageWidgets(){
     });
     $('.add-attribute').click(function(){
         var table_id = $('.tables-add-attr-list option:selected').data('id');
-        var attr_name =$('.attribute-add-name').val();
-        var attr_help =$('.attribute-add-help').val();
+        var attr_name = $('.attribute-add-name').val();
+        var attr_help = $('.attribute-add-help').val();
+        var x = document.getElementsByClassName("attribute-required")[0].checked;
+        var required = 0;
+        if(x === true) {
+            required = $('.attribute-required').val();
+        }
         var attr_slug =$('.attribute-add-slug').val();
         var etype =$('.type-of-element option:selected').data('etype');
+
 
         $.ajax({
             url: '/admin/addReferenceTypes',
@@ -105,7 +111,8 @@ function initPageWidgets(){
                 'attr_name' : attr_name,
                 'etype' : etype,
                 'attr_help' : attr_help,
-                'attr_slug' : attr_slug
+                'attr_slug' : attr_slug,
+                'required' : required
             },
             type: 'POST',
             headers: {
@@ -121,38 +128,6 @@ function initPageWidgets(){
             }
         });
     });
-// $(document).ready(function () {
-//     $('.tbutton').click(function(){
-//         $('div.basics>div').each(function () {
-//
-//             var cls = $(this).find('input').attr('class');
-//             var val = $(this).find('input').val();
-//             if(cls != "" && val != "" && cls != 'undefined' && val != 'undefined') {
-//                 arr[cls] = val;
-//             }
-//             cls = $(this).find('select').attr('class');
-//             val = $(this).find('select option:selected').data('val');
-//
-//             if(cls != "" && val != "" && cls != 'undefined' && val != 'undefined') {
-//                 arr[cls] = val;
-//             }
-//
-//             cls = $(this).find('input[type=checkbox]').attr('class');
-//             // val = $(this).find('input[type=checkbox]:checked').val();
-//             val = $('input:checkbox:checked').map(function() {return this.value;}).get();
-//             console.log(cls);
-//             console.log(val);
-//
-//             if(cls != "" && val != "" && cls != 'undefined' && val != 'undefined') {
-//                 arr[cls] = val;
-//             }
-//
-//
-//         });
-//         console.log(arr);
-//         // console.log(test);
-//     });
-// });
 }
 
 function initNavMenu(){
@@ -282,4 +257,114 @@ $(document).ready(function(){
     initInputsHelp();
     initTablesCore();
     initFormValidation();
+
+//
+// $('.submit').click(function(){
+//     var element = $(this).data('class');
+//     var name = $(".name-"+ element).val();
+//     var type_id = $(".name-"+ element).data('type');
+//     var table_id = $(".name-"+ element).data('table');
+//     $.ajax({
+//         url: '/admin/setAttribute',
+//         data: {
+//             'name' : name,
+//             'type_id' : type_id,
+//             'table_id' : table_id
+//         },
+//         type: 'POST',
+//         headers: {
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//         },
+//         success: function (res) {
+//             alert('sucsess');
+//         },
+//         error: function(res){
+//             alert('error');
+//         }
+//     });
+// });
+// $('.remove').click(function(){
+//     var element = $(this).data('class');
+//     var attr_id = $(".list-" + element + " option:selected").data('id');
+//     $.ajax({
+//         url: '/admin/removeAttribute',
+//         data: {'attr_id' : attr_id},
+//         type: 'POST',
+//         headers: {
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//         },
+//         success: function (res) {
+//             $('.list-' + element + ' option:selected').remove();
+//             alert('sucsess');
+//         },
+//         error: function(res){
+//             alert('error');
+//         }
+//     });
+// });
+// $('.add-table').click(function(){
+//     var name = $('.table-add-name').val();
+//     $.ajax({
+//         url: '/admin/addTable',
+//         data: {'name' : name},
+//         type: 'POST',
+//         headers: {
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//         },
+//         success: function (res) {
+//             $('.language-list option:selected').remove();
+//             alert('sucsess');
+//         },
+//         error: function(res){
+//             alert('error');
+//         }
+//     });
+// });
+// $('.remove-table').click(function(){
+//     var id = $('.tables-list option:selected').data('id');
+//     $.ajax({
+//         url: '/admin/removeTable',
+//         data: {'id' : id},
+//         type: 'POST',
+//         headers: {
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//         },
+//         success: function (res) {
+//             $('.tables-list option:selected').remove();
+//             alert('sucsess');
+//         },
+//         error: function(res){
+//             alert('error');
+//         }
+//     });
+// });
+// $('.add-attribute').click(function(){
+//     var table_id = $('.tables-add-attr-list option:selected').data('id');
+//     var attr_name =$('.attribute-add-name').val();
+//     var attr_help =$('.attribute-add-help').val();
+//     var attr_slug =$('.attribute-add-slug').val();
+//     var etype =$('.type-of-element option:selected').data('etype');
+//     $.ajax({
+//         url: '/admin/addReferenceTypes',
+//         data: {
+//             'table_id' : table_id,
+//             'attr_name' : attr_name,
+//             'etype' : etype,
+//             'attr_help' : attr_help,
+//             'attr_slug' : attr_slug
+//         },
+//         type: 'POST',
+//         headers: {
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//         },
+//         success: function (res) {
+//             $('.language-list option:selected').remove();
+//             alert('sucsess');
+//         },
+//         error: function(res){
+//             alert('error');
+//         }
+//     });
+// });
+
 });

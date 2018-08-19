@@ -9,9 +9,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
-
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-
     <!-- Custom styles for this template -->
     <link href="{{ asset('bootstrap/dashboard/dashboard.css') }}" rel="stylesheet">
 </head>
@@ -64,7 +62,8 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="{{ asset('jquery/jquery-3.3.1.min.js') }}"></script>
+
+<script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
 
