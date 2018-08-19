@@ -258,113 +258,20 @@ $(document).ready(function(){
     initTablesCore();
     initFormValidation();
 
-//
-// $('.submit').click(function(){
-//     var element = $(this).data('class');
-//     var name = $(".name-"+ element).val();
-//     var type_id = $(".name-"+ element).data('type');
-//     var table_id = $(".name-"+ element).data('table');
-//     $.ajax({
-//         url: '/admin/setAttribute',
-//         data: {
-//             'name' : name,
-//             'type_id' : type_id,
-//             'table_id' : table_id
-//         },
-//         type: 'POST',
-//         headers: {
-//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//         },
-//         success: function (res) {
-//             alert('sucsess');
-//         },
-//         error: function(res){
-//             alert('error');
-//         }
-//     });
-// });
-// $('.remove').click(function(){
-//     var element = $(this).data('class');
-//     var attr_id = $(".list-" + element + " option:selected").data('id');
-//     $.ajax({
-//         url: '/admin/removeAttribute',
-//         data: {'attr_id' : attr_id},
-//         type: 'POST',
-//         headers: {
-//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//         },
-//         success: function (res) {
-//             $('.list-' + element + ' option:selected').remove();
-//             alert('sucsess');
-//         },
-//         error: function(res){
-//             alert('error');
-//         }
-//     });
-// });
-// $('.add-table').click(function(){
-//     var name = $('.table-add-name').val();
-//     $.ajax({
-//         url: '/admin/addTable',
-//         data: {'name' : name},
-//         type: 'POST',
-//         headers: {
-//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//         },
-//         success: function (res) {
-//             $('.language-list option:selected').remove();
-//             alert('sucsess');
-//         },
-//         error: function(res){
-//             alert('error');
-//         }
-//     });
-// });
-// $('.remove-table').click(function(){
-//     var id = $('.tables-list option:selected').data('id');
-//     $.ajax({
-//         url: '/admin/removeTable',
-//         data: {'id' : id},
-//         type: 'POST',
-//         headers: {
-//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//         },
-//         success: function (res) {
-//             $('.tables-list option:selected').remove();
-//             alert('sucsess');
-//         },
-//         error: function(res){
-//             alert('error');
-//         }
-//     });
-// });
-// $('.add-attribute').click(function(){
-//     var table_id = $('.tables-add-attr-list option:selected').data('id');
-//     var attr_name =$('.attribute-add-name').val();
-//     var attr_help =$('.attribute-add-help').val();
-//     var attr_slug =$('.attribute-add-slug').val();
-//     var etype =$('.type-of-element option:selected').data('etype');
-//     $.ajax({
-//         url: '/admin/addReferenceTypes',
-//         data: {
-//             'table_id' : table_id,
-//             'attr_name' : attr_name,
-//             'etype' : etype,
-//             'attr_help' : attr_help,
-//             'attr_slug' : attr_slug
-//         },
-//         type: 'POST',
-//         headers: {
-//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//         },
-//         success: function (res) {
-//             $('.language-list option:selected').remove();
-//             alert('sucsess');
-//         },
-//         error: function(res){
-//             alert('error');
-//         }
-//     });
-// });
+    $('button.Polaris-Button').on('click', function(){
+        var attr = $(this).attr('data-id');
+        $('.modal[data-id='+ attr +']').css('display', 'block');
+    });
 
+    $('.Polaris-Modal-Header__CloseButton').on('click', function(){
+        $('.modal').css('display','none');
+    });
+    $('button.Polaris-Button').on('click', function(){
+        var attr = $(this).attr('data-id');
+        $('.modal[data-id='+ attr +']').css('display', 'block');
+    });
+
+    $('.Polaris-Modal-Header__CloseButton').on('click', function(){
+        $('.modal').css('display','none');
+    });
 });

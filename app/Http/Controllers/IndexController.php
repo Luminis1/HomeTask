@@ -23,6 +23,7 @@ class IndexController extends Controller
        $tables = TypeOfTable::all();
 
 
+
        return view('treats.addtreat',
        [
            'menu' => $menu,

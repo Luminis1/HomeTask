@@ -3,12 +3,12 @@
     {{--Рисуем таблицы--}}
      <form id="general_form" method="post" action="/object" enctype='multipart/form-data'>
          @foreach($tables as $k => $v)
-             @if($v->name == 'Accommodation')
-                 @include('admin.accomodation')
-                 @else
-                 @if($v->name == 'Price / Availability')
-                     @include('admin.price')
-                     @else
+             {{--@if($v->name == 'Accommodation')--}}
+                 {{--@include('admin.accomodation')--}}
+                 {{--@else--}}
+                 {{--@if($v->name == 'Price / Availability')--}}
+                     {{--@include('admin.price')--}}
+                     {{--@else--}}
                      @if($v->name == 'Program')
                         @include('admin.program')
                         @else
@@ -33,50 +33,54 @@
                                                                         </label>
                                                                     </div>
                                                                 </div>
-                                                                @if($b->element_type == "select")
-                                                                    <div class="Polaris-Select">
-                                                                        <select name="{{$b->type}}"
-                                                                                id="form_item_{{$b->id}}"
-                                                                                class="Polaris-Select__Input"
-                                                                                data-help-support="true"
-                                                                                data-help-title="Help"
-                                                                                data-help-text="Select type of retreat">
-                                                                            @foreach($attributes as $m => $n)
-                                                                                Polaris-Select               @if($n->type == $b->type)
-                                                                                    <option data-val="{{$n->name}}" >{{$n->name}}</option>
-                                                                                @endif
-                                                                            @endforeach
-                                                                        </select>
-                                                                        <div class="Polaris-Select__Icon">
-                                                                       <span class="Polaris-Icon">
-                                                                           <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg>
-                                                                       </span>
-                                                                        </div>
-                                                                        <div class="Polaris-Select__Backdrop"></div>
-                                                                    </div>
-                                                                @endif
-                                                                @if($b->element_type == "input")
-                                                                    <div class="Polaris-TextField">
-                                                                    <input name="{{$b->type}}"
-                                                                           id="form_item_{{$b->id}}"
-                                                                           class="Polaris-TextField__Input"
-                                                                           placeholder="">
-                                                                        <div class="Polaris-TextField__Backdrop"></div>
-                                                                    </div>
-                                                                @endif
-                                                                @if($b->element_type == "textarea")
-                                                                    <div class="Polaris-TextField Polaris-TextField--multiline">
+                                                                @if($b->required == 0)
+                                                                        @if($b->element_type == "textarea")
+                                                                            <div class="Polaris-TextField Polaris-TextField--multiline">
                                                                         <textarea name="{{$b->type}}"
-                                                                                id="form_item_{{$b->id}}"
-                                                                                placeholder=""
-                                                                                class="Polaris-TextField__Input"></textarea>
-                                                                        <div class="Polaris-TextField__Backdrop"></div>
-                                                                        <div aria-hidden="true" class="Polaris-TextField__Resizer">
-                                                                            <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
-                                                                            <div class="Polaris-TextField__DummyInput"><br></div>
-                                                                        </div>
-                                                                    </div>
-                                                                @endif
+                                                                                  id="form_item_{{$b->id}}"
+                                                                                  placeholder=""
+                                                                                  class="Polaris-TextField__Input"></textarea>
+                                                                                <div class="Polaris-TextField__Backdrop"></div>
+                                                                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
+                                                                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
+                                                                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        @endif
+                                                                            @if($b->element_type == "input")
+                                                                                <div class="Polaris-TextField">
+                                                                                    <input name="{{$b->type}}"
+                                                                                           id="form_item_{{$b->id}}"
+                                                                                           class="Polaris-TextField__Input"
+                                                                                           placeholder="">
+                                                                                    <div class="Polaris-TextField__Backdrop"></div>
+                                                                                </div>
+                                                                            @endif
+                                                                    @else
+                                                                        @if($b->element_type == "textarea")
+                                                                            <div class="Polaris-TextField Polaris-TextField--multiline">
+                                                                        <textarea name="{{$b->type}}"
+                                                                                  id="form_item_{{$b->id}}"
+                                                                                  placeholder=""
+                                                                                  class="Polaris-TextField__Input" required
+                                                                        ></textarea>
+                                                                                <div class="Polaris-TextField__Backdrop"></div>
+                                                                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
+                                                                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
+                                                                                    <div class="Polaris-TextField__DummyInput"><br></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        @endif
+                                                                            @if($b->element_type == "input")
+                                                                                <div class="Polaris-TextField">
+                                                                                    <input name="{{$b->type}}"
+                                                                                           id="form_item_{{$b->id}}"
+                                                                                           class="Polaris-TextField__Input"
+                                                                                           placeholder="" required>
+                                                                                    <div class="Polaris-TextField__Backdrop"></div>
+                                                                                </div>
+                                                                            @endif
+                                                                    @endif
                                                                 @if($b->element_type == "checkbox")
                                                                     <div class="check">
                                                                     @foreach($attributes as $m => $n)
@@ -142,6 +146,28 @@
                                                                         @endif
                                                                     @endforeach
                                                                 @endif
+                                                                    @if($b->element_type == "select")
+                                                                        <div class="Polaris-Select">
+                                                                            <select name="{{$b->type}}"
+                                                                                    id="form_item_{{$b->id}}"
+                                                                                    class="Polaris-Select__Input"
+                                                                                    data-help-support="true"
+                                                                                    data-help-title="Help"
+                                                                                    data-help-text="Select type of retreat">
+                                                                                @foreach($attributes as $m => $n)
+                                                                                    Polaris-Select               @if($n->type == $b->type)
+                                                                                        <option data-val="{{$n->name}}" >{{$n->name}}</option>
+                                                                                    @endif
+                                                                                @endforeach
+                                                                            </select>
+                                                                            <div class="Polaris-Select__Icon">
+                                                                       <span class="Polaris-Icon">
+                                                                           <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg>
+                                                                       </span>
+                                                                            </div>
+                                                                            <div class="Polaris-Select__Backdrop"></div>
+                                                                        </div>
+                                                                    @endif
                                                             @endif
                                                             </div>
                                                         @endforeach
@@ -154,8 +180,8 @@
                                 @include('admin.partials._nav_buttons', ['table' => $v])
                             </div>
                         @endif
-                    @endif
-                @endif
+                    {{--@endif--}}
+                {{--@endif--}}
             @endforeach
          {{csrf_field()}}
      </form>
