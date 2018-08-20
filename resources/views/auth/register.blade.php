@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="email" id="email" type="email" class="Polaris-TextField__Input" value="{{ old('email') }}">
+                                <input name="email" id="email" type="email" class="Polaris-TextField__Input" value="{{ old('email') }}" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                             @if ($errors->has('email'))

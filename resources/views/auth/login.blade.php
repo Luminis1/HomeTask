@@ -14,7 +14,7 @@
     </div>
     <div class="Polaris-Layout">
         <div class="Polaris-Layout__Section">
-            <form id="register-form" class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+            <form id="login-form" class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                 <div class="form-part">
                     <div class="Polaris-Card">
                         <div class="Polaris-Card__Section">
@@ -97,6 +97,5 @@
             </form>
         </div>
     </div>
-
 
 @endsection
