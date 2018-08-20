@@ -296,20 +296,24 @@ function initRegisterForm(){
     
     // Nav buttons events
     $('#register-form .go-next-btn').on('click', function(){
-        var next_part = $(this).closest('.form-part').next('.form-part');
-        var title_id = $(next_part).data('title-id');
-        $('#register-form .form-part').removeClass('show');
-        $(next_part).addClass('show');
-        $('#register_form_titles .form-title').removeClass('show');
-        $('#' + title_id).addClass('show');
+        if($("#register-form").valid()){
+            var next_part = $(this).closest('.form-part').next('.form-part');
+            var title_id = $(next_part).data('title-id');
+            $('#register-form .form-part').removeClass('show');
+            $(next_part).addClass('show');
+            $('#register_form_titles .form-title').removeClass('show');
+            $('#' + title_id).addClass('show');
+        }
     });
     $('#register-form .go-prev-btn').on('click', function(){
-        var prev_part = $(this).closest('.form-part').prev('.form-part');
-        var title_id = $(prev_part).data('title-id');
-        $('#register-form .form-part').removeClass('show');
-        $(prev_part).addClass('show');
-        $('#register_form_titles .form-title').removeClass('show');
-        $('#' + title_id).addClass('show');
+        if($("#register-form").valid()){
+            var prev_part = $(this).closest('.form-part').prev('.form-part');
+            var title_id = $(prev_part).data('title-id');
+            $('#register-form .form-part').removeClass('show');
+            $(prev_part).addClass('show');
+            $('#register_form_titles .form-title').removeClass('show');
+            $('#' + title_id).addClass('show');
+        }
     });
 }
 

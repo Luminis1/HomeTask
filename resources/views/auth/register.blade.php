@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="password" id="password" type="password" class="Polaris-TextField__Input">
+                                <input name="password" id="password" type="password" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                             @if ($errors->has('password'))
@@ -138,7 +138,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="name" id="name" type="text" class="Polaris-TextField__Input" value="{{ old('name') }}">
+                                <input name="name" id="name" type="text" class="Polaris-TextField__Input" value="{{ old('name') }}" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                             @if ($errors->has('name'))
@@ -156,7 +156,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="legal_name_of_business" id="legal_name_of_business" type="text" class="Polaris-TextField__Input">
+                                <input name="legal_name_of_business" id="legal_name_of_business" type="text" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -169,7 +169,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="phone" id="phone" type="phone" class="Polaris-TextField__Input">
+                                <input name="phone" id="phone" type="phone" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -182,7 +182,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="country" id="country" type="phone" class="Polaris-TextField__Input">
+                                <input name="country" id="country" type="phone" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -195,7 +195,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="city" id="city" type="text" class="Polaris-TextField__Input">
+                                <input name="city" id="city" type="text" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -208,7 +208,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="website" id="website" type="text" class="Polaris-TextField__Input">
+                                <input name="website" id="website" type="text" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -221,7 +221,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="instagram_username" id="instagram_username" type="text" class="Polaris-TextField__Input">
+                                <input name="instagram_username" id="instagram_username" type="text" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -234,7 +234,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="facebook_page_link" id="facebook_page_link" type="text" class="Polaris-TextField__Input">
+                                <input name="facebook_page_link" id="facebook_page_link" type="text" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -282,7 +282,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="first_name" id="first_name" type="text" class="Polaris-TextField__Input">
+                                <input name="first_name" id="first_name" type="text" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -295,7 +295,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="last_name" id="last_name" type="text" class="Polaris-TextField__Input">
+                                <input name="last_name" id="last_name" type="text" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -308,7 +308,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="cell_phone" id="cell_phone" type="text" class="Polaris-TextField__Input">
+                                <input name="cell_phone" id="cell_phone" type="text" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -321,7 +321,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-Select">
-                                <select name="role" id="role" class="Polaris-Select__Input">
+                                <select name="role" id="role" class="Polaris-Select__Input" required>
                                     <option value="owner/founder">Owner / Founder</option>
                                     <option value="user">User</option>
                                 </select>
@@ -355,7 +355,7 @@
             <div class="form-part" data-title-id="verify_your_email_address_title">
                 <div class="tables-nav-block">
                     <div class="right">
-                        <button type="submit" class="go-next-btn Polaris-Button Polaris-Button--primary">
+                        <button type="submit" class="Polaris-Button Polaris-Button--primary">
                             <span class="Polaris-Button__Content">
                                 <span>Done</span>
                             </span>
