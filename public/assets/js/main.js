@@ -24,6 +24,55 @@ function initPageWidgets(){
             },
             success: function (res) {
                 alert('sucsess');
+                window.location.reload();
+
+            },
+            error: function(res){
+                alert('error');
+            }
+        });
+    });
+    $('.set-help').click(function(){
+        var element = $(this).data('help');
+        var help = $(".help-"+ element).val();
+
+        $.ajax({
+            url: '/admin/setHelp',
+            data: {
+                'help' : help,
+                'element' : element
+            },
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function (res) {
+                alert('sucsess');
+                window.location.reload();
+
+            },
+            error: function(res){
+                alert('error');
+            }
+        });
+    });
+    $('.set-slug').click(function(){
+        var element = $(this).data('slug');
+        var slug = $(".slug-"+ element).val();
+
+        $.ajax({
+            url: '/admin/setSlug',
+            data: {
+                'slug' : slug,
+                'element' : element
+            },
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function (res) {
+                window.location.reload();
+                alert('sucsess');
 
             },
             error: function(res){
@@ -45,6 +94,7 @@ function initPageWidgets(){
             success: function (res) {
                 $('.list-' + element + ' option:selected').remove();
                 alert('sucsess');
+                window.location.reload();
 
             },
             error: function(res){
@@ -64,6 +114,7 @@ function initPageWidgets(){
             success: function (res) {
                 $('.language-list option:selected').remove();
                 alert('sucsess');
+                window.location.reload();
 
             },
             error: function(res){
@@ -84,6 +135,7 @@ function initPageWidgets(){
             success: function (res) {
                 $('.tables-list option:selected').remove();
                 alert('sucsess');
+                window.location.reload();
 
             },
             error: function(res){
@@ -121,6 +173,7 @@ function initPageWidgets(){
             success: function (res) {
                 $('.language-list option:selected').remove();
                 alert('sucsess');
+                window.location.reload();
 
             },
             error: function(res){
