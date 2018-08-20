@@ -203,24 +203,15 @@ function initTablesCore(){
         
         if(next_btn !== undefined && next_btn !== undefined){
             $(next_btn).on('click', function(){
-                if(validateTable(table)){
-                    goTo(next_table);
-                }
+                goTo(next_table);
             });
         }
         if(previous_btn !== undefined && prev_table !== undefined){
             $(previous_btn).on('click', function(){
-                if(validateTable(table)){
-                    goTo(prev_table);
-                }
+                goTo(prev_table);
             });
         }
     });
-    
-    function validateTable(table){
-        // TODO: Make real validation
-        return true;
-    }
     
     function goTo(table){
         if($("#general_form").valid()){
@@ -233,7 +224,7 @@ function initTablesCore(){
     }
 }
 
-function initFormValidation(){
+function initGeneralFormValidation(){
     // Validate init
     var general_form = $("#general_form").get()[0];
     if(general_form === undefined || general_form === null){
@@ -242,12 +233,40 @@ function initFormValidation(){
     $(general_form).validate();
 }
 
+function initRegisterForm(){
+    // Validation
+    var register_form = $("#register-form").get()[0];
+    if(register_form === undefined || register_form === null){
+        return;
+    }
+//    $(register_form).validate();
+    
+    // Nav buttons events
+    $('#register-form .go-next-btn').on('click', function(){
+        var next_part = $(this).closest('.form-part').next('.form-part');
+        var title_id = $(next_part).data('title-id');
+        $('#register-form .form-part').removeClass('show');
+        $(next_part).addClass('show');
+        $('#register_form_titles .form-title').removeClass('show');
+        $('#' + title_id).addClass('show');
+    });
+    $('#register-form .go-prev-btn').on('click', function(){
+        var prev_part = $(this).closest('.form-part').prev('.form-part');
+        var title_id = $(prev_part).data('title-id');
+        $('#register-form .form-part').removeClass('show');
+        $(prev_part).addClass('show');
+        $('#register_form_titles .form-title').removeClass('show');
+        $('#' + title_id).addClass('show');
+    });
+}
+
 $(document).ready(function(){
     initPageWidgets();
     initNavMenu();
     initInputsHelp();
     initTablesCore();
-    initFormValidation();
+    initGeneralFormValidation();
+    initRegisterForm();
 
     $('button.Polaris-Button').on('click', function(){
         var attr = $(this).attr('data-id');

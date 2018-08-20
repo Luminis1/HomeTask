@@ -5,36 +5,44 @@
 
 
 <div class="Polaris-Layout">
-    <div class="Polaris-Layout__Section">
-        <div class="Polaris-Page__Title">
-            <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
-                Create an account
-            </h2>
-            <p>This address will appear on your invoices. You can edit the address used to calculate shipping rates in your shipping settings</p>
-            <br>
+    <div id="register_form_titles" class="Polaris-Layout__Section">
+        <div class="form-title show" id="create_an_account_title">
+            <div class="Polaris-Page__Title">
+                <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
+                    Create an account
+                </h2>
+                <p>This address will appear on your invoices. You can edit the address used to calculate shipping rates in your shipping settings</p>
+                <br>
+            </div>
         </div>
-        <div class="Polaris-Page__Title">
-            <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
-                Public Information
-            </h2>
-            <p>This address will appear on your invoices. You can edit the address used to calculate shipping rates in your shipping settings</p>
-            <br>
+        <div class="form-title" id="public_information_title">
+            <div class="Polaris-Page__Title">
+                <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
+                    Public Information
+                </h2>
+                <p>This address will appear on your invoices. You can edit the address used to calculate shipping rates in your shipping settings</p>
+                <br>
+            </div>
         </div>
-        <div class="Polaris-Page__Title">
-            <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
-                Private Information
-            </h2>
-            <p>This address will appear on your invoices. You can edit the address used to calculate shipping rates in your shipping settings</p>
-            <br>
+        <div class="form-title" id="private_information_title">
+            <div class="Polaris-Page__Title">
+                <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
+                    Private Information
+                </h2>
+                <p>This address will appear on your invoices. You can edit the address used to calculate shipping rates in your shipping settings</p>
+                <br>
+            </div>
         </div>
-        <div class="Polaris-Page__Title">
-            <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
-                Verify your email address
-            </h2>
-            <p>Please verify your email to help us ensure that this email belongs to you, so we can notify you about updates and new customer messages.</p>
-            <br>
-            <p>Check your email <b>blablayogaretreat@gmail.com</b> and click the link to activate your account. Didnt het the email? <a class="Polaris-Link" href="#" data-polaris-unstyled="true">Click here</a> to resend it.</p>
-            <br>
+        <div class="form-title" id="verify_your_email_address_title">
+            <div class="Polaris-Page__Title">
+                <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
+                    Verify your email address
+                </h2>
+                <p>Please verify your email to help us ensure that this email belongs to you, so we can notify you about updates and new customer messages.</p>
+                <br>
+                <p>Check your email <b>blablayogaretreat@gmail.com</b> and click the link to activate your account. Didnt het the email? <a class="Polaris-Link" href="#" data-polaris-unstyled="true">Click here</a> to resend it.</p>
+                <br>
+            </div>
         </div>
     </div>
     <div class="Polaris-Layout__Section Polaris-Layout__Section--secondary"></div>
@@ -42,7 +50,7 @@
 <div class="Polaris-Layout">
     <div class="Polaris-Layout__Section">
         <form id="register-form" class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
-            <div class="form-part">
+            <div class="form-part show" data-title-id="create_an_account_title">
                 <div class="Polaris-Card">
                     <div class="Polaris-Card__Section">
                         {{ csrf_field() }}
@@ -118,7 +126,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-part">
+            <div class="form-part" data-title-id="public_information_title">
                 <div class="Polaris-Card">
                     <div class="Polaris-Card__Section">
                         <div class="form-block__container{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -262,7 +270,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-part">
+            <div class="form-part" data-title-id="private_information_title">
                 <div class="Polaris-Card">
                     <div class="Polaris-Card__Section">
                         <div class="form-block__container{{ $errors->has('first_name') ? ' has-error' : '' }}">
@@ -344,7 +352,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-part">
+            <div class="form-part" data-title-id="verify_your_email_address_title">
                 <div class="tables-nav-block">
                     <div class="right">
                         <button type="submit" class="go-next-btn Polaris-Button Polaris-Button--primary">

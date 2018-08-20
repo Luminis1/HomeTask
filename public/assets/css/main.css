@@ -6,6 +6,7 @@
 4. PROGRAM PAGE
 5. ACCOMODATION PAGE
 6. JQUERY VALIDATE
+7. REGISTER PAGE
 
 **/
 
@@ -215,3 +216,16 @@ textarea.Polaris-TextField__Input{
     border: 0;
 }
 
+/********** 7. REGISTER PAGE **********/
+#register_form_titles .form-title{
+    display: none;
+}
+#register_form_titles .form-title.show{
+    display: block;
+}
+#register-form .form-part{
+    display: none;
+}
+#register-form .form-part.show{
+    display: block;
+}
