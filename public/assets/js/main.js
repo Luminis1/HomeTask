@@ -235,20 +235,11 @@ function initTablesCore(){
 
 function initFormValidation(){
     // Validate init
-    $("#general_form").validate();
-    // Rules
-//    $("#form_item_34").rules("add", {
-//        required: true,
-//        minlength: 2
-//    });
-//    $("#form_item_35").rules("add", {
-//        required: true,
-//        minlength: 2222
-//    });
-//    $("#form_item_35").rules("add", {
-//        required: true,
-//        minlength: 2222
-//    });
+    var general_form = $("#general_form").get()[0];
+    if(general_form === undefined || general_form === null){
+        return;
+    }
+    $(general_form).validate();
 }
 
 $(document).ready(function(){
