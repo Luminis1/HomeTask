@@ -364,6 +364,27 @@ function initGeneralFormHelp(){
     });
 }
 
+function initRegisterFormHelp(){
+    var inputs = $('#register-form [data-help-text]').get();
+    $(inputs).each(function(){
+        var input = this;
+        var help_text = $(input).data('help-text');
+        if(help_text === '' || help_text === undefined || help_text === null){
+            return;
+        }
+        $(input).mouseenter(function(){
+            $('#register-form-help').addClass('active');
+            $('#register-form-help .Polaris-Card__Section > p').text(help_text).hide().stop().fadeIn(200);
+        });
+        $(input).mouseleave(function(){
+            $('#register-form-help').removeClass('active');
+            $('#register-form-help .Polaris-Card__Section > p').stop().fadeOut(600, function(){
+                $(this).html('<span style="color:#afafaf;">We can help you...</span>').stop().fadeIn(200);
+            });
+        });
+    });
+}
+
 $(document).ready(function(){
     initPageWidgets();
     initNavMenu();
@@ -373,5 +394,6 @@ $(document).ready(function(){
     initRegisterForm();
     initHeaderDropdown();
     initGeneralFormHelp();
+    initRegisterFormHelp();
 });
 

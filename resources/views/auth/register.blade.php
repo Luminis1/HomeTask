@@ -63,7 +63,13 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="email" id="email" type="email" class="Polaris-TextField__Input" value="{{ old('email') }}" required>
+                                <input name="email"
+                                       id="email"
+                                       type="email"
+                                       class="Polaris-TextField__Input"
+                                       value="{{ old('email') }}"
+                                       data-help-text="Help example"
+                                       required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                             @if ($errors->has('email'))
@@ -366,12 +372,14 @@
         </form>
     </div>
     <div class="Polaris-Layout__Section Polaris-Layout__Section--secondary">
-        <div class="Polaris-Card">
+        <div id="register-form-help" class="Polaris-Card">
             <div class="Polaris-Card__Header">
                 <h2 class="Polaris-Heading">Help</h2>
             </div>
             <div class="Polaris-Card__Section">
-                <p>Select styles that that are included in your program</p>
+                <p>
+                    <span class="placeholder">We can help you...</span>
+                </p>
             </div>
         </div>
     </div>

@@ -246,3 +246,20 @@ textarea.Polaris-TextField__Input{
 #register-form .form-part.show{
     display: block;
 }
+#register-form-help{
+    margin-top: 51px;
+}
+#register-form-help .Polaris-Card__Section p{
+    display: block;
+}
+#register-form-help .Polaris-Card__Section p > span.placeholder{
+    color:#afafaf;
+}
+#register-form-help.active{
+    box-shadow: 0 0 0 1px rgba(54, 54, 202, 0.3), 0 1px 3px 0 rgba(31, 31, 222, 0.47);
+}
+@media (max-width: 1039px){
+    #register-form-help{
+        margin-top: 0;
+    }
+}
