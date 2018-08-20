@@ -23,6 +23,7 @@
                                         <div class="Polaris-Select">
                                             <select name="{{$b->type}}"
                                                     id="form_item_{{$b->id}}"
+                                                    data-help-text="{{$b->help}}"
                                                     class="Polaris-Select__Input">
                                                 @foreach($attributes as $m => $n)
                                                     @if($n->type == $b->type)
@@ -43,7 +44,8 @@
                                             <input name="{{$b->type}}" id="form_item_{{$b->id}}"
                                                    id="form_item_{{$b->id}}"
                                                    class="Polaris-TextField__Input"
-                                                   placeholder="">
+                                                   placeholder="{{$b->slug}}"
+                                                   data-help-text="{{$b->help}}">
                                             <div class="Polaris-TextField__Backdrop"></div>
                                         </div>
                                     @endif
@@ -51,7 +53,8 @@
                                         <div class="Polaris-TextField Polaris-TextField--multiline">
                                             <textarea name="{{$b->type}}"
                                                     id="form_item_{{$b->id}}"
-                                                    placeholder=""
+                                                    placeholder="{{$b->slug}}"
+                                                    data-help-text="{{$b->help}}"
                                                     class="Polaris-TextField__Input"></textarea>
                                             <div class="Polaris-TextField__Backdrop"></div>
                                             <div aria-hidden="true" class="Polaris-TextField__Resizer">
@@ -73,7 +76,8 @@
                                                                             <input  type="checkbox"
                                                                                     id="form_item_{{$n->id}}_{{$m}}"
                                                                                     class="Polaris-Checkbox__Input"
-                                                                                    aria-invalid="false" value="{{$n->name}}"
+                                                                                    data-help-text="{{$b->help}}"
+                                                                                    value="{{$n->name}}"
                                                                                     name="{{$b->type}}[]"
                                                                             >
                                                                             <div class="Polaris-Checkbox__Backdrop"></div>
@@ -111,7 +115,7 @@
                                                                     <input name="{{$b->type}}"
                                                                         id="form_item_{{$n->id}}_{{$m}}"
                                                                         class="Polaris-RadioButton__Input"
-                                                                        aria-describedby=""
+                                                                        data-help-text="{{$b->help}}"
                                                                         value="{{$n->name}}"
                                                                         type="radio">
                                                                     <span class="Polaris-RadioButton__Backdrop"></span>

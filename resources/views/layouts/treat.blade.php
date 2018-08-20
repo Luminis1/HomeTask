@@ -18,7 +18,7 @@
         <div class="profile__name">
             Helen
         </div>
-        <div class="profile__menu">
+        <div class="profile__menu" style="display: none;">
             <ul>
                 <li>
                     <a href="">Your profile</a>

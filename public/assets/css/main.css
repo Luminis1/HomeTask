@@ -139,6 +139,23 @@ input[type="date"]{
     text-align: right;
     width: 50%;
 }
+#general-form-help{
+    margin-top: 51px;
+}
+#general-form-help .Polaris-Card__Section p{
+    display: block;
+}
+#general-form-help .Polaris-Card__Section p > span.placeholder{
+    color:#afafaf;
+}
+#general-form-help.active{
+    box-shadow: 0 0 0 1px rgba(54, 54, 202, 0.3), 0 1px 3px 0 rgba(31, 31, 222, 0.47);
+}
+@media (max-width: 1039px){
+    #general-form-help{
+        margin-top: 0;
+    }
+}
 
 /********** 3. POLARIS CUSTOMIZE **********/
 .Polaris-Label__Text{

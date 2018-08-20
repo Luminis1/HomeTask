@@ -317,14 +317,7 @@ function initRegisterForm(){
     });
 }
 
-$(document).ready(function(){
-    initPageWidgets();
-    initNavMenu();
-    initInputsHelp();
-    initTablesCore();
-    initGeneralFormValidation();
-    initRegisterForm();
-
+function initHeaderDropdown(){
     $('button.Polaris-Button').on('click', function(){
         var attr = $(this).attr('data-id');
         $('.modal[data-id='+ attr +']').css('display', 'block');
@@ -348,5 +341,37 @@ $(document).ready(function(){
     $( ".profile__menu" ).mouseleave(function() {
         $( ".profile__menu" ).css("display", "none");
     });
+}
+
+function initGeneralFormHelp(){
+    var inputs = $('#general_form [data-help-text]').get();
+    $(inputs).each(function(){
+        var input = this;
+        var help_text = $(input).data('help-text');
+        if(help_text === '' || help_text === undefined || help_text === null){
+            return;
+        }
+        $(input).mouseenter(function(){
+            $('#general-form-help').addClass('active');
+            $('#general-form-help .Polaris-Card__Section > p').text(help_text).hide().stop().fadeIn(200);
+        });
+        $(input).mouseleave(function(){
+            $('#general-form-help').removeClass('active');
+            $('#general-form-help .Polaris-Card__Section > p').stop().fadeOut(600, function(){
+                $(this).html('<span style="color:#afafaf;">We can help you...</span>').stop().fadeIn(200);
+            });
+        });
+    });
+}
+
+$(document).ready(function(){
+    initPageWidgets();
+    initNavMenu();
+    initInputsHelp();
+    initTablesCore();
+    initGeneralFormValidation();
+    initRegisterForm();
+    initHeaderDropdown();
+    initGeneralFormHelp();
 });
 
