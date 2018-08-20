@@ -10,28 +10,44 @@
                     <br>
                     <div class="{{$v->type}}">
                         <h6>Add new {{$v->type}}</h6>
-                        <div class="row">
+                        <div class="row mb-3">
                             <div class="col-md-8">
                                 <input type="text" name="name" class="name-{{$v->id}} form-control" data-type="{{$v->id}}" data-table="{{$table_id}}">
                             </div>
                             <div class="col-md-4">
                                 <input type="submit" value="Add new" class="submit btn btn-primary" data-class="{{$v->id}}">
                             </div>
-                            <h6>Set new help below</h6><br>
-                            <input type="text" name="help" value="{{$v->help}}" class="help-{{$v->id}}">
-                            <input type="button" class="set-help" value="set-help" data-help="{{$v->id}}">
+                        </div>
+                        <h6>Set new help below</h6>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input type="text" name="help" value="{{$v->help}}" class="help-{{$v->id}} form-control">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="button" class="set-help btn btn-primary" value="set-help" data-help="{{$v->id}}">
+                            </div>
                         </div>
                     </div>
                 @else
                     <h6>This is {{$v->element_type}} and has {{$v->type}} name</h6>
-                    <h6>Set new help below</h6><br>
-                    <input type="text" name="help" value="{{$v->help}}" class="help-{{$v->id}}">
-                    <input type="button" class="set-help" value="set-help" data-help="{{$v->id}}">
-                    <br>
-                    <br>
-                    <h6>Set placeholder help below</h6><br>
-                    <input type="text" name="slug" value="{{$v->slug}}" class="slug-{{$v->id}}">
-                    <input type="button" class="set-slug" value="set-slug" data-slug="{{$v->id}}">
+                    <h6>Set new help below</h6>
+                    <div class="row mb-3">
+                        <div class="col-md-8">
+                            <input type="text" name="help" value="{{$v->help}}" class="help-{{$v->id}} form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="button" class="set-help btn btn-primary" value="set-help" data-help="{{$v->id}}">
+                        </div>
+                    </div>
+                    <h6>Set placeholder help below</h6>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type="text" name="slug" value="{{$v->slug}}" class="slug-{{$v->id}} form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="button" class="set-slug btn btn-primary" value="set-slug" data-slug="{{$v->id}}">
+                        </div>
+                    </div>
                 @endif
             </div>
             <div class="col-md-4">
