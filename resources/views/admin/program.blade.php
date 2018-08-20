@@ -159,8 +159,7 @@
                                             <div class="Polaris-TextField">
                                                 <input name="focus[]"
                                                     class="Polaris-TextField__Input"
-                                                    placeholder="ex: Anatomy"
-                                                    required>
+                                                    placeholder="ex: Anatomy">
                                                 <div class="Polaris-TextField__Backdrop"></div>
                                             </div>
                                         </div>
@@ -168,8 +167,7 @@
                                             <div class="Polaris-TextField Polaris-TextField--multiline">
                                                 <textarea name="{{$b->type}}"
                                                           placeholder="Placeholder"
-                                                          class="Polaris-TextField__Input"
-                                                          required></textarea>
+                                                          class="Polaris-TextField__Input"></textarea>
                                                 <div class="Polaris-TextField__Backdrop"></div>
                                                 <div aria-hidden="true" class="Polaris-TextField__Resizer">
                                                     <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
@@ -198,8 +196,7 @@
                                             <div class="Polaris-TextField">
                                                 <input name="focus[]"
                                                     class="Polaris-TextField__Input"
-                                                    placeholder="ex: Psychology"
-                                                    required>
+                                                    placeholder="ex: Psychology">
                                                 <div class="Polaris-TextField__Backdrop"></div>
                                             </div>
                                         </div>
@@ -207,8 +204,7 @@
                                             <div class="Polaris-TextField Polaris-TextField--multiline">
                                                 <textarea name="{{$b->type}}"
                                                     placeholder="Placeholder"
-                                                    class="Polaris-TextField__Input"
-                                                    required></textarea>
+                                                    class="Polaris-TextField__Input"></textarea>
                                                 <div class="Polaris-TextField__Backdrop"></div>
                                                 <div aria-hidden="true" class="Polaris-TextField__Resizer">
                                                     <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>

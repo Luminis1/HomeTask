@@ -5,9 +5,9 @@
         <div class="Polaris-Layout__Section">
             <form id="general_form" method="post" action="/object" enctype='multipart/form-data'>
                 @foreach($tables as $k => $v)
-                    {{--@if($v->name == 'Accommodation')--}}
-                        {{--@include('admin.accomodation')--}}
-                        {{--@else--}}
+                    @if($v->name == 'Accommodation')
+                        @include('admin.accomodation')
+                        @else
                         {{--@if($v->name == 'Price / Availability')--}}
                             {{--@include('admin.price')--}}
                             {{--@else--}}
@@ -186,7 +186,7 @@
                                    </div>
                                @endif
                            {{--@endif--}}
-                       {{--@endif--}}
+                       @endif
                    @endforeach
                 {{csrf_field()}}
             </form>

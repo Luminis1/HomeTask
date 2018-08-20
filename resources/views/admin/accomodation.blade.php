@@ -8,130 +8,83 @@
                 <div class="Polaris-Card__Section">
                     <div class="Polaris-FormLayout">
                         <div class="Polaris-FormLayout__Item">
-                            {{--Рисуем блоки--}}
-                            @foreach($refTypes as $a => $b)
-                                <div class="form-block__container">
-                                @if($b->table_type == $v->id)
-                                    <div class="Polaris-Labelled__LabelWrapper">
-                                        <div class="Polaris-Label">
-                                            <label for="form_item_{{$b->id}}" class="Polaris-Label__Text">
-                                                {{$b->type}}
-                                            </label>
-                                        </div>
-                                    </div>
-                                    @if($b->element_type == "select")
-                                        <div class="Polaris-Select">
-                                            <select name="{{$b->type}}"
-                                                    id="form_item_{{$b->id}}"
-                                                    data-help-text="{{$b->help}}"
-                                                    class="Polaris-Select__Input">
-                                                @foreach($attributes as $m => $n)
-                                                    @if($n->type == $b->type)
-                                                        <option data-val="{{$n->name}}" >{{$n->name}}</option>
-                                                    @endif
-                                                @endforeach
-                                            </select>
-                                            <div class="Polaris-Select__Icon">
-                                                <span class="Polaris-Icon">
-                                                    <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg>
-                                                </span>
-                                            </div>
-                                            <div class="Polaris-Select__Backdrop"></div>
-                                        </div>
-                                    @endif
-                                    @if($b->element_type == "input")
-                                        <div class="Polaris-TextField">
-                                            <input name="{{$b->type}}" id="form_item_{{$b->id}}"
-                                                   id="form_item_{{$b->id}}"
-                                                   class="Polaris-TextField__Input"
-                                                   placeholder="{{$b->slug}}"
-                                                   data-help-text="{{$b->help}}">
-                                            <div class="Polaris-TextField__Backdrop"></div>
-                                        </div>
-                                    @endif
-                                    @if($b->element_type == "textarea")
-                                        <div class="Polaris-TextField Polaris-TextField--multiline">
-                                            <textarea name="{{$b->type}}"
-                                                    id="form_item_{{$b->id}}"
-                                                    placeholder="{{$b->slug}}"
-                                                    data-help-text="{{$b->help}}"
-                                                    class="Polaris-TextField__Input"></textarea>
-                                            <div class="Polaris-TextField__Backdrop"></div>
-                                            <div aria-hidden="true" class="Polaris-TextField__Resizer">
-                                                <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
-                                                <div class="Polaris-TextField__DummyInput"><br></div>
-                                            </div>
-                                        </div>
-                                    @endif
-                                    @if($b->element_type == "checkbox")
-                                        @foreach($attributes as $m => $n)
-                                            @if( $n->type == $b->type)
-                                                <div class="Polaris-FormLayout__Item">
-                                                    <fieldset class="Polaris-ChoiceList">
-                                                        <ul class="Polaris-ChoiceList__Choices">
-                                                            <li>
-                                                                <label class="Polaris-Choice" for="form_item_{{$n->id}}_{{$m}}">
-                                                                    <div class="Polaris-Choice__Control">
-                                                                        <div class="Polaris-Checkbox">
-                                                                            <input  type="checkbox"
-                                                                                    id="form_item_{{$n->id}}_{{$m}}"
-                                                                                    class="Polaris-Checkbox__Input"
-                                                                                    data-help-text="{{$b->help}}"
-                                                                                    value="{{$n->name}}"
-                                                                                    name="{{$b->type}}[]"
-                                                                            >
-                                                                            <div class="Polaris-Checkbox__Backdrop"></div>
-                                                                            <div class="Polaris-Checkbox__Icon">
-                                                                        <span class="Polaris-Icon">
-                                                                            <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
-                                                                            <g fill-rule="evenodd">
-                                                                            <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
-                                                                            <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
-                                                                            </g>
-                                                                            </svg>
-                                                                        </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="Polaris-Choice__Label">
-                                                                        {{$n->name}}
-                                                                    </div>
-                                                                </label>
-                                                            </li>
-                                                        </ul>
-                                                    </fieldset>
-                                                </div>
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                    @if($b->element_type == "radio")
-                                        @foreach($attributes as $m => $n)
-                                            @if( $n->type == $b->type)
-                                                <div class="Polaris-Stack__Item">
-                                                    <div>
-                                                        <label class="Polaris-Choice" for="form_item_{{$n->id}}_{{$m}}">
-                                                            <span class="Polaris-Choice__Control">
-                                                                <span class="Polaris-RadioButton">
-                                                                    <input name="{{$b->type}}"
-                                                                        id="form_item_{{$n->id}}_{{$m}}"
-                                                                        class="Polaris-RadioButton__Input"
-                                                                        data-help-text="{{$b->help}}"
-                                                                        value="{{$n->name}}"
-                                                                        type="radio">
-                                                                    <span class="Polaris-RadioButton__Backdrop"></span>
-                                                                    <span class="Polaris-RadioButton__Icon"></span>
-                                                                </span>
-                                                            </span>
-                                                            <span class="Polaris-Choice__Label">{{$n->name}}</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                @endif
+                            <div class="Polaris-Labelled__LabelWrapper">
+                                <div class="Polaris-Label">
+                                    <label for="retreat_center_address" class="Polaris-Label__Text">
+                                        Address of the retreat center
+                                    </label>
                                 </div>
-                            @endforeach
+                            </div>
+                            <div class="Polaris-TextField">
+                                <input name="retreat_center_address" id="retreat_center_address_input" class="Polaris-TextField__Input" placeholder="ex: 123 West ave" data-help-text="">
+                                <div class="Polaris-TextField__Backdrop"></div>
+                            </div>
+                        </div>
+                        <div class="Polaris-FormLayout__Item">
+                            <div class="Polaris-Labelled__LabelWrapper">
+                                <div class="Polaris-Label">
+                                    <label for="airport_arrival_input" class="Polaris-Label__Text">
+                                        Airport arrival
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="Polaris-TextField">
+                                <input name="airport_arrival" id="airport_arrival_input" class="Polaris-TextField__Input" placeholder="ex: Los Angeles Internation Airport (LAX)" data-help-text="">
+                                <div class="Polaris-TextField__Backdrop"></div>
+                            </div>
+                        </div>
+                        <div class="Polaris-FormLayout__Item">
+                            <div class="Polaris-Labelled__LabelWrapper">
+                                <div class="Polaris-Label">
+                                    <label for="" class="Polaris-Label__Text">
+                                        Transfer from airport
+                                    </label>
+                                </div>
+                            </div>
+                            <ul class="Polaris-ChoiceList__Choices">
+                                <li>
+                                    <label class="Polaris-Choice" for="airport_transfer__free__radio">
+                                        <span class="Polaris-Choice__Control">
+                                            <span class="Polaris-RadioButton">
+                                                <input id="airport_transfer__free__radio" name="airport_transfer" type="radio" class="Polaris-RadioButton__Input" value="free">
+                                                <span class="Polaris-RadioButton__Backdrop"></span>
+                                                <span class="Polaris-RadioButton__Icon"></span>
+                                            </span>
+                                        </span>
+                                        <span class="Polaris-Choice__Label">
+                                            We will pick up the guests from this airport free of charge
+                                        </span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="Polaris-Choice" for="airport_transfer__additional_costs__radio">
+                                        <span class="Polaris-Choice__Control">
+                                            <span class="Polaris-RadioButton">
+                                                <input id="airport_transfer__additional_costs__radio" name="airport_transfer" type="radio" class="Polaris-RadioButton__Input" value="additional_costs">
+                                                <span class="Polaris-RadioButton__Backdrop"></span>
+                                                <span class="Polaris-RadioButton__Icon"></span>
+                                            </span>
+                                        </span>
+                                        <span class="Polaris-Choice__Label">
+                                            We can pick up the guests at additional costs from this airport
+                                        </span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="Polaris-Choice" for="airport_transfer__own_transport__radio">
+                                        <span class="Polaris-Choice__Control">
+                                            <span class="Polaris-RadioButton">
+                                                <input id="airport_transfer__own_transport__radio" name="airport_transfer" type="radio" class="Polaris-RadioButton__Input" value="own_transport">
+                                                <span class="Polaris-RadioButton__Backdrop"></span>
+                                                <span class="Polaris-RadioButton__Icon"></span>
+                                            </span>
+                                        </span>
+                                        <span class="Polaris-Choice__Label">
+                                            The guests have to arrange their own transport
+                                        </span>
+                                    </label>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -197,9 +150,8 @@
                             <div class="Polaris-TextField Polaris-TextField--multiline">
                                 <textarea name="Hotel short description"
                                         id="hotel_short_description_textarea"
-                                        placeholder="Website, ads, email, etc."
-                                        class="Polaris-TextField__Input">
-                                </textarea>
+                                        placeholder="Describe the diet and the meal plan for this retreat"
+                                        class="Polaris-TextField__Input"></textarea>
                                 <div class="Polaris-TextField__Backdrop"></div>
                                 <div aria-hidden="true" class="Polaris-TextField__Resizer">
                                     <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
@@ -221,12 +173,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="form-with-help">
-        <div class="form-content">
-            <div class="Polaris-Card">
                 <div class="Polaris-Card__Section">
                     <div class="Polaris-FormLayout">
                         <div class="Polaris-FormLayout__Item">
@@ -244,12 +190,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="form-with-help">
-        <div class="form-content">
-            <div class="Polaris-Card">
                 <div class="Polaris-Card__Section">
                     <div class="Polaris-FormLayout">
                         <div class="Polaris-FormLayout__Item">

@@ -395,5 +395,9 @@ $(document).ready(function(){
     initHeaderDropdown();
     initGeneralFormHelp();
     initRegisterFormHelp();
+    
+//    $(document).ready(function(){
+//        $('.table-8 .go-next-btn').click();
+//    });
 });
 
