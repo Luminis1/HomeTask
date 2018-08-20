@@ -7,6 +7,7 @@
 5. ACCOMODATION PAGE
 6. JQUERY VALIDATE
 7. REGISTER PAGE
+8. MOADLS
 
 **/
 
@@ -185,10 +186,92 @@ textarea.Polaris-TextField__Input{
 }
 
 /********** 5. ACCOMODATION PAGE **********/
-.accomodation-table{
-    
+.accomodation-amenities-list{
+    display: block;
+    margin-bottom: 15px;
 }
-
+.accomodation-rooms-table-placeholder{
+    display: block;
+    margin-bottom: 15px;
+}
+.accomodation-rooms-table-wrap{
+    margin-left: -20px;
+    width: calc(100% + 40px);
+}
+#accomodation_rooms_table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+#accomodation_rooms_table td{
+    padding: 11px 5px;
+    border-bottom: 1px solid #dfe3e8;
+}
+#accomodation_rooms_table td:first-child{
+    padding-left: 2rem;
+}
+#accomodation_rooms_table td:last-child{
+    padding-right: 2rem;
+}
+#accomodation_rooms_table td.preview{
+    width: 37%;
+}
+#accomodation_rooms_table td.preview img{
+    display: block;
+    width: 50px;
+    height: auto;
+}
+#accomodation_rooms_table td.bed-configuration{
+    width: 22%;
+}
+#accomodation_rooms_table td.people-in-room{
+    width: 41%;
+}
+#accomodation_rooms_table td.preview .preview-wrap{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-shrink: 1;
+}
+#accomodation_rooms_table td.preview .preview-wrap > a{
+    margin-left: 10px;
+    font-weight: 500;
+}
+#select_amenities_modal .modal-footer:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+#select_amenities_modal .modal-footer .left{
+    width: 40%;
+    float: left;
+}
+#select_amenities_modal .modal-footer .right{
+    width: 60%;
+    float: right;
+    text-align: right;
+}
+#select_amenities_modal .modal-footer .right button:first-child{
+    margin-left: 0;
+}
+#select_amenities_modal .modal-footer .right button{
+    margin-left: 5px;
+}
+#select_amenities_modal .main-form .left{
+    width: 50%;
+    float: left;
+    padding-right: 10px;
+}
+#select_amenities_modal .main-form .right{
+    width: 50%;
+    float: right;
+    padding-left: 10px;
+}
+#select_amenities_modal .modal-footer:after{
+    content: '';
+    display: block;
+    clear: both;
+}
 /********** 6. JQUERY VALIDATE **********/
 .Polaris-TextField label.error{
     position: absolute;
@@ -214,8 +297,6 @@ textarea.Polaris-TextField__Input{
     border-color: #ec0000;
     box-shadow: inset 0 0 0 0 transparent, 0 0 0 1px #ec0000;
 }
-
-
 .listing-page{
     max-width: 650px;
     margin-right: auto;
@@ -262,4 +343,84 @@ textarea.Polaris-TextField__Input{
     #register-form-help{
         margin-top: 0;
     }
+}
+
+/********** 8. MOADLS **********/
+.modal{
+    padding-right: 17px;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    overflow: hidden;
+    opacity: 0;
+    outline: 0;
+    overflow-y: auto;
+    transition: all 0.3s ease-out;
+}
+.modal.show{
+    display: block;
+    opacity: 1;
+}
+.modal .modal-dialog{
+    width: 100%;
+    max-width: 700px;
+    margin: 100px auto 25px auto;
+    box-shadow: 0 2px 16px 0 rgba(33, 43, 54, 0.08), 0 31px 41px 0 rgba(33, 43, 54, 0.2);
+}
+.modal .modal-content{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+.modal .modal-header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+.modal .modal-header .close{
+    cursor: pointer;
+    padding: 1rem;
+    margin: -1rem -1rem -1rem auto;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.45);
+    text-shadow: 0 1px 0 #fff;
+    outline: none;
+}
+.modal .modal-header .modal-title{
+    margin-bottom: 0;
+    font-size: 2.3rem;
+    line-height: 1.7;
+}
+.modal .modal-body{
+    padding: 1rem 2rem;
+}
+.modal .modal-footer{
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #e9ecef;
 }

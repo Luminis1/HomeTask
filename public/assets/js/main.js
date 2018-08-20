@@ -385,6 +385,13 @@ function initRegisterFormHelp(){
     });
 }
 
+function initModalsCore(){
+    $('.modal').each(function(){
+        var modal = this;
+        $(modal).modal('hide');
+    });
+}
+
 $(document).ready(function(){
     initPageWidgets();
     initNavMenu();
@@ -395,9 +402,6 @@ $(document).ready(function(){
     initHeaderDropdown();
     initGeneralFormHelp();
     initRegisterFormHelp();
-    
-//    $(document).ready(function(){
-//        $('.table-8 .go-next-btn').click();
-//    });
+    initModalsCore();
 });
 

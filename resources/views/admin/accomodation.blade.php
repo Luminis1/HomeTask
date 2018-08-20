@@ -179,10 +179,11 @@
                             <h3 class="Polaris-Heading">
                                 AMENITIES
                             </h3>
-                            <span class="block-desc Polaris-TextStyle--variationSubdued">
-                                Every space is unique. Highlight what makes this place welcoming
+                            <span class="accomodation-amenities-list Polaris-TextStyle--variationSubdued">
+                                (Every space is unique. Highlight what makes this place welcoming)<br>
+                                Kitchen, Internet, Essentials. Shampoo, Heating, AC, Washer, Dryer, Pool, Hot Tub, Hair Dryer, Iron, Hangers, Gym, Elevator.
                             </span>
-                            <button type="button" class="Polaris-Button">
+                            <button type="button" class="Polaris-Button" data-toggle="modal" data-target="#select_amenities_modal">
                                 <span class="Polaris-Button__Content">
                                     <span>Select amenities</span>
                                 </span>
@@ -196,9 +197,57 @@
                             <h3 class="Polaris-Heading">
                                 AVAILABLE ROOMS
                             </h3>
-                            <span class="block-desc Polaris-TextStyle--variationSubdued">
+                            <span class="accomodation-rooms-table-placeholder Polaris-TextStyle--variationSubdued">
                                 If it is a shared accommodation, add the room type
                             </span>
+                            <div class="accomodation-rooms-table-wrap">
+                                <table id="accomodation_rooms_table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="preview">
+                                                <div class="preview-wrap">
+                                                    <img src="https://picsum.photos/85/85" alt="Room name" title="Room name">
+                                                    <a href="#" class="Polaris-Link" data-toggle="modal" data-target="#select_amenities_modal">Room name</a>
+                                                </div>
+                                            </td>
+                                            <td class="bed-configuration">
+                                                Queen Bed
+                                            </td>
+                                            <td class="people-in-room">
+                                                Private
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="preview">
+                                                <div class="preview-wrap">
+                                                    <img src="https://picsum.photos/110/110" alt="Room name" title="Room name">
+                                                    <a href="#" class="Polaris-Link" data-toggle="modal" data-target="#select_amenities_modal">Room name</a>
+                                                </div>
+                                            </td>
+                                            <td class="bed-configuration">
+                                                Twin Bed
+                                            </td>
+                                            <td class="people-in-room">
+                                                Shared with 2 other people
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="preview">
+                                                <div class="preview-wrap">
+                                                    <img src="https://picsum.photos/100/100" alt="Room name" title="Room name">
+                                                    <a href="#" class="Polaris-Link" data-toggle="modal" data-target="#select_amenities_modal">Room name</a>
+                                                </div>
+                                            </td>
+                                            <td class="bed-configuration">
+                                                King Bed
+                                            </td>
+                                            <td class="people-in-room">
+                                                Shared with 3 other people
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <button type="button" class="Polaris-Button">
                                 <span class="Polaris-Button__Content">
                                     <span>Add rooms</span>
@@ -210,5 +259,28 @@
             </div>
         </div>
     </div>
+    <div class="form-with-help">
+        <div class="form-content">
+            <div class="Polaris-Card">
+                <div class="Polaris-Card__Section">
+                    <div class="Polaris-FormLayout">
+                        <div class="Polaris-FormLayout__Item">
+                            <h3 class="Polaris-Heading">
+                                Add accommodation
+                            </h3>
+                            <br>
+                            <button type="button" class="Polaris-Button">
+                                <span class="Polaris-Button__Content">
+                                    <span>Add accommodation</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @include('admin.partials._nav_buttons', ['table' => $v])
 </div>
+@include('admin.partials._add_room_modal')
+@include('admin.partials._select_amenities_modal')
