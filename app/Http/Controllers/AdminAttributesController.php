@@ -6,6 +6,7 @@ use App\Model\Reference;
 use App\Model\ReferenceTypes;
 use App\Model\TypeOfTable;
 use App\Http\Requests;
+use DB;
 
 class AdminAttributesController extends Controller
 {
@@ -32,5 +33,14 @@ class AdminAttributesController extends Controller
     public function removeAttribute()
     {
         Reference::destroy($_POST['attr_id']);
+    }
+
+    public function setHelp()
+    {
+        DB::update('update reference_types set help=? where id=?',[$_POST['help'], $_POST['element']]);
+    }
+    public function setSlug()
+    {
+        DB::update('update reference_types set slug=? where id=?',[$_POST['slug'], $_POST['element']]);
     }
 }

@@ -31,6 +31,52 @@ function initPageWidgets(){
             }
         });
     });
+    $('.set-help').click(function(){
+        var element = $(this).data('help');
+        var help = $(".help-"+ element).val();
+
+        $.ajax({
+            url: '/admin/setHelp',
+            data: {
+                'help' : help,
+                'element' : element
+            },
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function (res) {
+                alert('sucsess');
+
+            },
+            error: function(res){
+                alert('error');
+            }
+        });
+    });
+    $('.set-slug').click(function(){
+        var element = $(this).data('slug');
+        var slug = $(".slug-"+ element).val();
+
+        $.ajax({
+            url: '/admin/setSlug',
+            data: {
+                'slug' : slug,
+                'element' : element
+            },
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function (res) {
+                alert('sucsess');
+
+            },
+            error: function(res){
+                alert('error');
+            }
+        });
+    });
     $('.remove').click(function(){
         var element = $(this).data('class');
         var attr_id = $(".list-" + element + " option:selected").data('id');
