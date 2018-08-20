@@ -13,7 +13,29 @@
     {{--<link rel="stylesheet" href="{{ asset('css/treat.css') }}">--}}
 </head>
 <body>
-<header id="header"></header>
+<header id="header">
+    <div class="profile">
+        <div class="profile__name">
+            Helen
+        </div>
+        <div class="profile__menu">
+            <ul>
+                <li>
+                    <a href="">Your profile</a>
+                </li>
+                <li>
+                    <a href="">Organization profile</a>
+                </li>
+                <li>
+                    <a href="">Send a message</a>
+                </li>
+                <li>
+                    <a href="/logout">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
 <div class="Polaris-Page">
     @if(!empty($menu))
 <div id="nav">

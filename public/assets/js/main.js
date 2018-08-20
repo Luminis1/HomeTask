@@ -274,4 +274,12 @@ $(document).ready(function(){
     $('.Polaris-Modal-Header__CloseButton').on('click', function(){
         $('.modal').css('display','none');
     });
+
+    $( ".profile__name" ).mouseenter(function() {
+        $( ".profile__menu" ).css("display", "block");
+    });
+    $( ".profile__menu" ).mouseleave(function() {
+        $( ".profile__menu" ).css("display", "none");
+    });
 });
+
