@@ -5716,3 +5716,90 @@ body{
 .form-block__container {
     margin-bottom: 30px;
 }
+
+header{
+    position: relative;
+}
+.profile {position: absolute;right: 50px;cursor: pointer;}
+.profile__name {
+
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+
+}
+
+.profile__menu {
+
+    position: absolute;
+    right: 0;
+    width: 200px;
+    background: #fff;
+    top: 70px;
+    z-index: 456;
+    border-radius: 2px;
+    box-sizing:border-box ;
+    box-shadow: 0 2px 16px 0 rgba(33, 43, 54, 0.08), 0 0 0 1px rgba(6, 44, 82, 0.1);
+
+}
+.profile__menu::before {
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #ffffff transparent;
+    content: '';
+    position: relative;
+    top: -29px;
+    left: 170px;
+
+}
+.profile__menu ul {
+    padding: 0;
+
+    padding-bottom: 0px;
+    padding-left: 0px;
+
+    padding-bottom: 0px;
+
+    padding-left: 0px;
+
+    right: 0;
+
+    margin: 0;
+
+    margin-top: 0px;
+
+    padding-left: 0;
+
+    padding-bottom: 0;
+
+    margin-top: -20px;
+
+}
+.profile__menu li {
+
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    box-sizing: border-box;
+
+}
+.profile__menu a {
+
+    color: #9197a3;
+    text-decoration: none;
+
+}
+.profile__menu li:hover > a {
+
+    color: #fff;
+
+}
+.profile__menu li:hover {
+
+    background: #3e50b4;
+
+}
