@@ -4,6 +4,16 @@
 
     <div class="Polaris-Layout">
         <div class="Polaris-Layout__Section">
+            <div class="Polaris-Page__Title">
+                <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
+                    Login
+                </h2>
+            </div>
+        </div>
+        <div class="Polaris-Layout__Section Polaris-Layout__Section--secondary"></div>
+    </div>
+    <div class="Polaris-Layout">
+        <div class="Polaris-Layout__Section">
             <form id="register-form" class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                 <div class="form-part">
                     <div class="Polaris-Card">
@@ -72,13 +82,13 @@
                         <div class="left">
                             Don`t have an account?
                             <a class="Polaris-Link" href="{{ url('/register') }}" data-polaris-unstyled="true">
-                                Register it
+                                Create it
                             </a>
                         </div>
                         <div class="right">
                             <button type="submit" class="go-next-btn Polaris-Button Polaris-Button--primary">
                             <span class="Polaris-Button__Content">
-                                <span>Log in</span>
+                                <span>Login</span>
                             </span>
                             </button>
                         </div>
