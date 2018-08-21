@@ -435,21 +435,42 @@ function initAccommodationLogic(){
         initAccommodationFormBlock(new_accommodation_item);
     });
     
+    $('#select_amenities_form_submit').on('click', function(event){
+        var modal = $('#select_amenities_modal').get()[0];
+        var select_amenities_form = $('#select_amenities_form').get()[0];
+        var form_data = $(select_amenities_form).serializeArray();
+        var index = $(modal).attr('data-accomodations-index');
+        var accomodations_item = $('#accomodations_form_parts .accomodations_form_item[data-accomodations-index="' + index + '"]');
+        if(form_data.length > 0){
+            var amenities_string = '';
+            form_data.forEach(function(amenity_name, index){
+                var amenity_label = $('#select_amenities_form').find('input[type="checkbox"][value="' + amenity_name.value + '"]').closest('.Polaris-Choice').find('.Polaris-Choice__Label').html().trim();
+                amenities_string += amenity_label;
+                if((index+1) < form_data.length){
+                    amenities_string += ', ';
+                }
+            });
+            $(accomodations_item).find('.accomodation-amenities-list > .items').html(amenities_string);
+            $(accomodations_item).find('.accomodation-amenities-list > .placeholder').hide();
+            $(accomodations_item).find('.accomodation-amenities-list > .items').show();
+        } else {
+            $(accomodations_item).find('.accomodation-amenities-list > .placeholder').show();
+            $(accomodations_item).find('.accomodation-amenities-list > .items').html('').hide();
+        }
+        $(modal).modal('hide');
+    });
+    
     $(select_amenities_modal).on('shown.bs.modal', function(event){
         var modal = this;
         var accomodations_item = $(event.relatedTarget).closest('.accomodations_form_item').get()[0];
-        var index = $(accomodations_item).data('index');
-        var select_amenities_form = $('#select_amenities_form').get()[0];
-        
-        $('#select_amenities_form_submit').on('click', function(event){
-            console.log($(select_amenities_form).serializeArray());
-        });
+        var index = $(accomodations_item).attr('data-accomodations-index');
+        $(modal).attr('data-accomodations-index', index);
     });
     
     function initAccommodationFormBlock(accommodation_item){
         var default_id, new_id, element;
         // Set index data for accommodation item
-        $(accommodation_item).data('index', current_index);
+        $(accommodation_item).attr('data-accomodations-index', current_index);
         
         // Select hotel type
         default_id = 'accomodation_type_select';

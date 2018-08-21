@@ -182,8 +182,8 @@
                                     AMENITIES
                                 </h3>
                                 <span class="accomodation-amenities-list Polaris-TextStyle--variationSubdued">
-                                    (Every space is unique. Highlight what makes this place welcoming)<br>
-                                    Kitchen, Internet, Essentials. Shampoo, Heating, AC, Washer, Dryer, Pool, Hot Tub, Hair Dryer, Iron, Hangers, Gym, Elevator.
+                                    <span class="placeholder">Every space is unique. Highlight what makes this place welcoming</span>
+                                    <span class="items"></span>
                                 </span>
                                 <button type="button" class="Polaris-Button" data-toggle="modal" data-target="#select_amenities_modal">
                                     <span class="Polaris-Button__Content">
