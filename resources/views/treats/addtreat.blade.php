@@ -205,3 +205,7 @@
         </div>
     </div>
 @endsection
+@section('modal')
+    @include('admin.partials._add_room_modal')
+    @include('admin.partials._select_amenities_modal')
+@endsection

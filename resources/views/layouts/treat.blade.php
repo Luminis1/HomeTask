@@ -54,10 +54,9 @@
     <div id="content">
         @yield('treatContent')
         @yield('treatList')
+        @yield('modal')
     </div>
 </div>
-@include('admin.partials._add_room_modal')
-@include('admin.partials._select_amenities_modal')
 
 <script type="text/javascript" src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
