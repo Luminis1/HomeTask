@@ -64,7 +64,7 @@ class AdminAttributesController extends Controller
         $needls = [',','.','/','"',"'", ' '];
         $labelNorm = str_replace($needls,"_", $labelNorm);
 
-        Accomodation_modal::insert(['label' => $label, 'label-norm' => $labelNorm]);
+        Accomodation_modal::insert(['label' => $label, 'label_norm' => $labelNorm]);
 
     }
     public function removeModal()
