@@ -2,28 +2,51 @@ var arr = [];
 
 function stickyHelp(){
     var helpBar = $('#general-form-help').offset();
-    var help_block_with = $('#general-form-help').width();
     
     $(document).scroll(function(){
+        calcHelpBlockPosition();
+    });
+    $(window).resize(function(){
+        calcHelpBlockPosition();
+    });
+    
+    function calcHelpBlockPosition(){
         var y = window.scrollY;
+        var win_width = window.innerWidth;
         
-        if(y > helpBar.top){
+        if(win_width <= 1039){
             $('#general-form-help').css({
                 'position': 'fixed',
-                'width': help_block_with + 'px',
-                'margin-top': 0,
-                'top': '30px'
-            });
-        }else{
-            $('#general-form-help').css({
-                'position': 'static',
                 'width': '100%',
-                'margin-top': '51px',
-                'top': 'auto'
+                'margin-top': 0,
+                'top': 0,
+                'left': 0
             });
-            $('#general-form-help').css('top', helpBar);
+            $('#general-form-help').addClass('stick_to_head');
+        } else{
+            if(y > helpBar.top){
+                var help_block_with = ($('#general-form-help').hasClass('stick_to_head')) ? '100%' : ($('#general-form-help').width() + 'px');
+                $('#general-form-help').css({
+                    'position': 'fixed',
+                    'width': help_block_with,
+                    'margin-top': 0,
+                    'top': '30px',
+                    'left': 'auto'
+                });
+                $('#general-form-help').removeClass('stick_to_head');
+            }else{
+                $('#general-form-help').css({
+                    'position': 'static',
+                    'width': '100%',
+                    'margin-top': '51px',
+                    'top': 'auto',
+                    'left': 'auto'
+                });
+                $('#general-form-help').removeClass('stick_to_head');
+                $('#general-form-help').css('top', helpBar);
+            }
         }
-    });
+    }
 }
 
 function initPageWidgets(){

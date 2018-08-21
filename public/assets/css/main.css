@@ -142,6 +142,17 @@ input[type="date"]{
 }
 #general-form-help{
     margin-top: 51px;
+    z-index: 100;
+}
+
+#general-form-help.stick_to_head{
+    border-radius: 0;
+}
+#general-form-help.stick_to_head .Polaris-Card__Header{
+    padding: 1rem 2rem 0;
+}
+#general-form-help.stick_to_head .Polaris-Card__Section{
+    padding: 1rem 2rem;
 }
 #general-form-help .Polaris-Card__Section p{
     display: block;
@@ -154,7 +165,7 @@ input[type="date"]{
 }
 @media (max-width: 1039px){
     #general-form-help{
-        margin-top: 0;
+        margin-top: 0!important;
     }
 }
 
