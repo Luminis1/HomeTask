@@ -1,5 +1,31 @@
 var arr = [];
 
+function stickyHelp(){
+    var helpBar = $('#general-form-help').offset();
+    var help_block_with = $('#general-form-help').width();
+    
+    $(document).scroll(function(){
+        var y = window.scrollY;
+        
+        if(y > helpBar.top){
+            $('#general-form-help').css({
+                'position': 'fixed',
+                'width': help_block_with + 'px',
+                'margin-top': 0,
+                'top': '30px'
+            });
+        }else{
+            $('#general-form-help').css({
+                'position': 'static',
+                'width': '100%',
+                'margin-top': '51px',
+                'top': 'auto'
+            });
+            $('#general-form-help').css('top', helpBar);
+        }
+    });
+}
+
 function initPageWidgets(){
     $('.add-focus').click(function () {
         $('.focus-help').first().show();
@@ -463,6 +489,7 @@ function initAccommodationLogic(){
 }
 
 $(document).ready(function(){
+    stickyHelp();
     initPageWidgets();
     initNavMenu();
     initInputsHelp();
