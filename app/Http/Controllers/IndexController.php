@@ -9,6 +9,7 @@ use App\Model\ReferenceTypes;
 use App\Model\TypeOfTable;
 use App\Model\Added_treat;
 use Illuminate\Support\Facades\Auth;
+use App\Model\Accomodation_modal;
 
 use App\Http\Requests;
 
@@ -21,6 +22,7 @@ class IndexController extends Controller
        $refTypes = ReferenceTypes::all();
        $menu = NavGeneratorTrait::navGenerate();
        $tables = TypeOfTable::all();
+       $modal = Accomodation_modal::all();
 
 
 
@@ -29,7 +31,8 @@ class IndexController extends Controller
            'menu' => $menu,
            'attributes' => $attributes,
            'tables' => $tables,
-           'refTypes' => $refTypes
+           'refTypes' => $refTypes,
+           'modal' => $modal
        ]);
    }
 
