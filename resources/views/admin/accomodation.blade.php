@@ -91,168 +91,171 @@
             </div>
         </div>
     </div>
-    <div class="form-with-help">
-        <div class="form-content">
-            <div class="Polaris-Card">
-                <div class="Polaris-Card__Section">
-                    <div class="Polaris-FormLayout">
-                        <div class="Polaris-FormLayout__Item">
-                            <div class="Polaris-Labelled__LabelWrapper">
-                                <div class="Polaris-Label">
-                                    <label for="accomodation_type_select" class="Polaris-Label__Text">
-                                        Accomodation Type
-                                    </label>
+    <div id="accomodations_form_parts">
+        <div class="form-with-help accomodations_form_item">
+            <div class="form-content">
+                <div class="Polaris-Card">
+                    <div class="Polaris-Card__Section">
+                        <div class="Polaris-FormLayout">
+                            <div class="Polaris-FormLayout__Item">
+                                <div class="Polaris-Labelled__LabelWrapper">
+                                    <div class="Polaris-Label">
+                                        <label for="accomodation_type_select" class="Polaris-Label__Text">
+                                            Accomodation Type
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Select">
+                                    <select name=""
+                                            id="accomodation_type_select"
+                                            class="Polaris-Select__Input"
+                                            data-help-support="true"
+                                            data-help-title="Help"
+                                            data-help-text="Select type of retreat">
+                                        <option data-val="Hotel" >Hotel</option>
+                                        <option data-val="Hotel" >Guest House</option>
+                                        <option data-val="Hotel" >Lodge</option>
+                                        <option data-val="Hotel" >Resort</option>
+                                    </select>
+                                    <div class="Polaris-Select__Icon">
+                                        <span class="Polaris-Icon">
+                                            <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg>
+                                        </span>
+                                    </div>
+                                    <div class="Polaris-Select__Backdrop"></div>
                                 </div>
                             </div>
-                            <div class="Polaris-Select">
-                                <select name="{{$b->type}}"
-                                        id="accomodation_type_select"
-                                        class="Polaris-Select__Input"
-                                        data-help-support="true"
-                                        data-help-title="Help"
-                                        data-help-text="Select type of retreat">
-                                    <option data-val="Hotel" >Hotel</option>
-                                    <option data-val="Hotel" >Guest House</option>
-                                    <option data-val="Hotel" >Lodge</option>
-                                    <option data-val="Hotel" >Resort</option>
-                                </select>
-                                <div class="Polaris-Select__Icon">
-                                    <span class="Polaris-Icon">
-                                        <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg>
+                            <div class="Polaris-FormLayout__Item">
+                                <div class="Polaris-Labelled__LabelWrapper">
+                                    <div class="Polaris-Label">
+                                        <label for="hotel_name_input" class="Polaris-Label__Text">
+                                            Hotel name
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="Polaris-TextField">
+                                    <input name=""
+                                           id="hotel_name_input"
+                                           class="Polaris-TextField__Input"
+                                           placeholder="ex: Four Seasons">
+                                    <div class="Polaris-TextField__Backdrop"></div>
+                                </div>
+                            </div>
+                            <div class="Polaris-FormLayout__Item">
+                                <div class="Polaris-Labelled__LabelWrapper">
+                                    <div class="Polaris-Label">
+                                        <label for="hotel_short_description_textarea" class="Polaris-Label__Text">
+                                            Hotel short description
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="Polaris-TextField Polaris-TextField--multiline">
+                                    <textarea name=""
+                                            id="hotel_short_description_textarea"
+                                            placeholder="Describe the diet and the meal plan for this retreat"
+                                            class="Polaris-TextField__Input"></textarea>
+                                    <div class="Polaris-TextField__Backdrop"></div>
+                                    <div aria-hidden="true" class="Polaris-TextField__Resizer">
+                                        <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
+                                        <div class="Polaris-TextField__DummyInput"><br></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Polaris-FormLayout__Item">
+                                <div class="Polaris-Label" style="margin-bottom: 5px;">
+                                    <label for="accomodation_images_input" class="Polaris-Label__Text">
+                                        Accomodation Images
+                                    </label>
+                                </div>
+                                <div class="Polaris-TextField Polaris-TextField--multiline">
+                                    <input name=""
+                                            id="accomodation_images_input"
+                                            type="file">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Polaris-Card__Section">
+                        <div class="Polaris-FormLayout">
+                            <div class="Polaris-FormLayout__Item">
+                                <h3 class="Polaris-Heading">
+                                    AMENITIES
+                                </h3>
+                                <span class="accomodation-amenities-list Polaris-TextStyle--variationSubdued">
+                                    (Every space is unique. Highlight what makes this place welcoming)<br>
+                                    Kitchen, Internet, Essentials. Shampoo, Heating, AC, Washer, Dryer, Pool, Hot Tub, Hair Dryer, Iron, Hangers, Gym, Elevator.
+                                </span>
+                                <button type="button" class="Polaris-Button" data-toggle="modal" data-target="#select_amenities_modal">
+                                    <span class="Polaris-Button__Content">
+                                        <span>Select amenities</span>
                                     </span>
-                                </div>
-                                <div class="Polaris-Select__Backdrop"></div>
-                            </div>
-                        </div>
-                        <div class="Polaris-FormLayout__Item">
-                            <div class="Polaris-Labelled__LabelWrapper">
-                                <div class="Polaris-Label">
-                                    <label for="hotel_name_input" class="Polaris-Label__Text">
-                                        Hotel name
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Polaris-TextField">
-                                <input name="Hotel name" id="hotel_name_input"
-                                       class="Polaris-TextField__Input"
-                                       placeholder="ex: Four Seasons">
-                                <div class="Polaris-TextField__Backdrop"></div>
-                            </div>
-                        </div>
-                        <div class="Polaris-FormLayout__Item">
-                            <div class="Polaris-Labelled__LabelWrapper">
-                                <div class="Polaris-Label">
-                                    <label for="hotel_short_description_textarea" class="Polaris-Label__Text">
-                                        Hotel short description
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Polaris-TextField Polaris-TextField--multiline">
-                                <textarea name="Hotel short description"
-                                        id="hotel_short_description_textarea"
-                                        placeholder="Describe the diet and the meal plan for this retreat"
-                                        class="Polaris-TextField__Input"></textarea>
-                                <div class="Polaris-TextField__Backdrop"></div>
-                                <div aria-hidden="true" class="Polaris-TextField__Resizer">
-                                    <div class="Polaris-TextField__DummyInput">Website, ads, email, etc.<br></div>
-                                    <div class="Polaris-TextField__DummyInput"><br></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="Polaris-FormLayout__Item">
-                            <div class="Polaris-Label" style="margin-bottom: 5px;">
-                                <label for="accomodation_images_input" class="Polaris-Label__Text">
-                                    Accomodation Images
-                                </label>
-                            </div>
-                            <div class="Polaris-TextField Polaris-TextField--multiline">
-                                <input name="Accomodation Images"
-                                        id="accomodation_images_input"
-                                        type="file">
+                                </button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="Polaris-Card__Section">
-                    <div class="Polaris-FormLayout">
-                        <div class="Polaris-FormLayout__Item">
-                            <h3 class="Polaris-Heading">
-                                AMENITIES
-                            </h3>
-                            <span class="accomodation-amenities-list Polaris-TextStyle--variationSubdued">
-                                (Every space is unique. Highlight what makes this place welcoming)<br>
-                                Kitchen, Internet, Essentials. Shampoo, Heating, AC, Washer, Dryer, Pool, Hot Tub, Hair Dryer, Iron, Hangers, Gym, Elevator.
-                            </span>
-                            <button type="button" class="Polaris-Button" data-toggle="modal" data-target="#select_amenities_modal">
-                                <span class="Polaris-Button__Content">
-                                    <span>Select amenities</span>
+                    <div class="Polaris-Card__Section">
+                        <div class="Polaris-FormLayout">
+                            <div class="Polaris-FormLayout__Item">
+                                <h3 class="Polaris-Heading">
+                                    AVAILABLE ROOMS
+                                </h3>
+                                <span class="accomodation-rooms-table-placeholder Polaris-TextStyle--variationSubdued">
+                                    If it is a shared accommodation, add the room type
                                 </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="Polaris-Card__Section">
-                    <div class="Polaris-FormLayout">
-                        <div class="Polaris-FormLayout__Item">
-                            <h3 class="Polaris-Heading">
-                                AVAILABLE ROOMS
-                            </h3>
-                            <span class="accomodation-rooms-table-placeholder Polaris-TextStyle--variationSubdued">
-                                If it is a shared accommodation, add the room type
-                            </span>
-                            <div class="accomodation-rooms-table-wrap">
-                                <table id="accomodation_rooms_table">
-                                    <tbody>
-                                        <tr>
-                                            <td class="preview">
-                                                <div class="preview-wrap">
-                                                    <img src="https://picsum.photos/85/85" alt="Room name" title="Room name">
-                                                    <a href="#" class="Polaris-Link" data-toggle="modal" data-target="#select_amenities_modal">Room name</a>
-                                                </div>
-                                            </td>
-                                            <td class="bed-configuration">
-                                                Queen Bed
-                                            </td>
-                                            <td class="people-in-room">
-                                                Private
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="preview">
-                                                <div class="preview-wrap">
-                                                    <img src="https://picsum.photos/110/110" alt="Room name" title="Room name">
-                                                    <a href="#" class="Polaris-Link" data-toggle="modal" data-target="#select_amenities_modal">Room name</a>
-                                                </div>
-                                            </td>
-                                            <td class="bed-configuration">
-                                                Twin Bed
-                                            </td>
-                                            <td class="people-in-room">
-                                                Shared with 2 other people
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="preview">
-                                                <div class="preview-wrap">
-                                                    <img src="https://picsum.photos/100/100" alt="Room name" title="Room name">
-                                                    <a href="#" class="Polaris-Link" data-toggle="modal" data-target="#select_amenities_modal">Room name</a>
-                                                </div>
-                                            </td>
-                                            <td class="bed-configuration">
-                                                King Bed
-                                            </td>
-                                            <td class="people-in-room">
-                                                Shared with 3 other people
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="accomodation-rooms-table-wrap">
+                                    <table id="accomodation_rooms_table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="preview">
+                                                    <div class="preview-wrap">
+                                                        <img src="https://picsum.photos/85/85" alt="Room name" title="Room name">
+                                                        <a href="#" class="Polaris-Link" data-toggle="modal" data-target="#add_room_modal">Room name</a>
+                                                    </div>
+                                                </td>
+                                                <td class="bed-configuration">
+                                                    Queen Bed
+                                                </td>
+                                                <td class="people-in-room">
+                                                    Private
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="preview">
+                                                    <div class="preview-wrap">
+                                                        <img src="https://picsum.photos/110/110" alt="Room name" title="Room name">
+                                                        <a href="#" class="Polaris-Link" data-toggle="modal" data-target="#add_room_modal">Room name</a>
+                                                    </div>
+                                                </td>
+                                                <td class="bed-configuration">
+                                                    Twin Bed
+                                                </td>
+                                                <td class="people-in-room">
+                                                    Shared with 2 other people
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="preview">
+                                                    <div class="preview-wrap">
+                                                        <img src="https://picsum.photos/100/100" alt="Room name" title="Room name">
+                                                        <a href="#" class="Polaris-Link" data-toggle="modal" data-target="#add_room_modal">Room name</a>
+                                                    </div>
+                                                </td>
+                                                <td class="bed-configuration">
+                                                    King Bed
+                                                </td>
+                                                <td class="people-in-room">
+                                                    Shared with 3 other people
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <button type="button" class="Polaris-Button" data-toggle="modal" data-target="#add_room_modal">
+                                    <span class="Polaris-Button__Content">
+                                        <span>Add rooms</span>
+                                    </span>
+                                </button>
                             </div>
-                            <button type="button" class="Polaris-Button">
-                                <span class="Polaris-Button__Content">
-                                    <span>Add rooms</span>
-                                </span>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -269,7 +272,7 @@
                                 Add accommodation
                             </h3>
                             <br>
-                            <button type="button" class="Polaris-Button">
+                            <button type="button" class="Polaris-Button" id="add_accommodation_btn">
                                 <span class="Polaris-Button__Content">
                                     <span>Add accommodation</span>
                                 </span>
@@ -282,5 +285,3 @@
     </div>
     @include('admin.partials._nav_buttons', ['table' => $v])
 </div>
-@include('admin.partials._add_room_modal')
-@include('admin.partials._select_amenities_modal')

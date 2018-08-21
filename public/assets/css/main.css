@@ -237,37 +237,56 @@ textarea.Polaris-TextField__Input{
     margin-left: 10px;
     font-weight: 500;
 }
-#select_amenities_modal .modal-footer:after{
+#add_room_modal .modal-footer:after{
     content: '';
     display: block;
     clear: both;
 }
-#select_amenities_modal .modal-footer .left{
+#add_room_modal .modal-footer .left{
     width: 40%;
     float: left;
 }
-#select_amenities_modal .modal-footer .right{
+#add_room_modal .modal-footer .right{
     width: 60%;
     float: right;
     text-align: right;
 }
-#select_amenities_modal .modal-footer .right button:first-child{
+#add_room_modal .modal-footer .right button:first-child{
     margin-left: 0;
 }
-#select_amenities_modal .modal-footer .right button{
+#add_room_modal .modal-footer .right button{
     margin-left: 5px;
 }
-#select_amenities_modal .main-form .left{
+#add_room_modal .main-form .left{
     width: 50%;
     float: left;
     padding-right: 10px;
 }
-#select_amenities_modal .main-form .right{
+#add_room_modal .main-form .right{
     width: 50%;
     float: right;
     padding-left: 10px;
 }
-#select_amenities_modal .modal-footer:after{
+#add_room_modal .modal-footer:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+#select_amenities_modal .modal-footer{
+    text-align: right;
+}
+#select_amenities_modal .modal-footer button{
+    margin-left: 5px;
+}
+#select_amenities_modal .amenities-list .left{
+    width: 50%;
+    float: left;
+}
+#select_amenities_modal .amenities-list .right{
+    width: 50%;
+    float: right;
+}
+#select_amenities_modal .amenities-list:after{
     content: '';
     display: block;
     clear: both;

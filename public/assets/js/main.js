@@ -392,6 +392,76 @@ function initModalsCore(){
     });
 }
 
+function initAccommodationLogic(){
+    var accommodation_first_item = $('#accomodations_form_parts .accomodations_form_item').get()[0];
+    var accommodation_template = $(accommodation_first_item).clone();
+    var add_btn = $('#add_accommodation_btn').get()[0];
+    var current_index = 0;
+    var select_amenities_modal = $('#select_amenities_modal').get()[0];
+    
+    // Init first item
+    initAccommodationFormBlock(accommodation_first_item);
+    
+    $(add_btn).on('click', function(){
+        var new_accommodation_item = $(accommodation_template).clone()[0];
+        $('#accomodations_form_parts').append(new_accommodation_item);
+        $(new_accommodation_item).hide().slideDown();
+        initAccommodationFormBlock(new_accommodation_item);
+    });
+    
+    $(select_amenities_modal).on('shown.bs.modal', function(event){
+        var modal = this;
+        var accomodations_item = $(event.relatedTarget).closest('.accomodations_form_item').get()[0];
+        var index = $(accomodations_item).data('index');
+        var select_amenities_form = $('#select_amenities_form').get()[0];
+        
+        $('#select_amenities_form_submit').on('click', function(event){
+            console.log($(select_amenities_form).serializeArray());
+        });
+    });
+    
+    function initAccommodationFormBlock(accommodation_item){
+        var default_id, new_id, element;
+        // Set index data for accommodation item
+        $(accommodation_item).data('index', current_index);
+        
+        // Select hotel type
+        default_id = 'accomodation_type_select';
+        new_id = default_id + '_' + current_index;
+        element = $(accommodation_item).find('#' + default_id)[0];
+        $(element).attr('id', new_id);
+        $(element).attr('name', 'accomodation[' + current_index + '][hotel_type]');
+        $(accommodation_item).find('label[for="' + default_id + '"]').attr('for', new_id);
+        
+        // Input hotel name
+        default_id = 'hotel_name_input';
+        new_id = default_id + '_' + current_index;
+        element = $(accommodation_item).find('#hotel_name_input')[0];
+        $(element).attr('id', new_id);
+        $(element).attr('name', 'accomodation[' + current_index + '][hotel_name]');
+        $(accommodation_item).find('label[for="' + default_id + '"]').attr('for', new_id);
+        
+        // Textarea short description
+        default_id = 'hotel_short_description_textarea';
+        new_id = default_id + '_' + current_index;
+        element = $(accommodation_item).find('#' + default_id)[0];
+        $(element).attr('id', new_id);
+        $(element).attr('name', 'accomodation[' + current_index + '][short_description]');
+        $(accommodation_item).find('label[for="' + default_id + '"]').attr('for', new_id);
+        
+        // accomodation_images_input
+        default_id = 'accomodation_images_input';
+        new_id = default_id + '_' + current_index;
+        element = $(accommodation_item).find('#' + default_id)[0];
+        $(element).attr('id', new_id);
+        $(element).attr('name', 'accomodation[' + current_index + '][accomodation_images]');
+        $(accommodation_item).find('label[for="' + default_id + '"]').attr('for', new_id);
+        
+        // Increment current index
+        current_index++;
+    }
+}
+
 $(document).ready(function(){
     initPageWidgets();
     initNavMenu();
@@ -403,5 +473,8 @@ $(document).ready(function(){
     initGeneralFormHelp();
     initRegisterFormHelp();
     initModalsCore();
+    initAccommodationLogic();
+    
+    $('.table-8 .go-next-btn').click();
 });
 

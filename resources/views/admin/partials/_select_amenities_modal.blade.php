@@ -2,192 +2,391 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title">Select Amenities</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <div class="main-form">
-                    <div class="left">
-                        <div class="Polaris-FormLayout">
-                            <div class="Polaris-FormLayout__Item">
-                                <div class="Polaris-Labelled__LabelWrapper">
-                                    <div class="Polaris-Label">
-                                        <label for="select_amenities__room_name__input" class="Polaris-Label__Text">
-                                            Room name
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="Polaris-TextField">
-                                    <input name="select_amenities__room_name"
-                                           id="select_amenities__room_name__input"
-                                           class="Polaris-TextField__Input"
-                                           placeholder="Ocean view"
-                                           data-help-text="">
-                                    <div class="Polaris-TextField__Backdrop"></div>
-                                </div>
-                            </div>
-                            <div class="Polaris-FormLayout__Item">
-                                <div class="Polaris-Labelled__LabelWrapper">
-                                    <div class="Polaris-Label">
-                                        <label for="select_amenities__images__input" class="Polaris-Label__Text">
-                                            Images
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="Polaris-TextField Polaris-TextField--multiline">
-                                    <input name="select_amenities__images" id="select_amenities__images__input" type="file">
-                                </div>
+                <form id="select_amenities_form">
+                    <div class="Polaris-Labelled__LabelWrapper">
+                        <div class="Polaris-Labelled__LabelWrapper">
+                            <div class="Polaris-Label">
+                                <label for="" class="Polaris-Label__Text">
+                                    Sport Activities (optional)
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <div class="right">
-                        <div class="Polaris-FormLayout">
-                            <div class="Polaris-FormLayout__Item">
-                                <div class="Polaris-Labelled__LabelWrapper">
-                                    <div class="Polaris-Label">
-                                        <label for="select_amenities__people_in_room__select" class="Polaris-Label__Text">
-                                            People in room
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="Polaris-Select">
-                                    <select name="select_amenities__people_in_room" id="select_amenities__people_in_room__select" class="Polaris-Select__Input" data-help-text="">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                    </select>
-                                    <div class="Polaris-Select__Icon">
-                                        <span class="Polaris-Icon">
-                                            <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg>
-                                        </span>
-                                    </div>
-                                    <div class="Polaris-Select__Backdrop"></div>
-                                </div>
-                            </div>
-                            <div class="Polaris-FormLayout__Item">
-                                <div class="Polaris-Labelled__LabelWrapper">
-                                    <div class="Polaris-Labelled__LabelWrapper">
-                                        <div class="Polaris-Label">
-                                            <label for="" class="Polaris-Label__Text">
-                                                Bed configuration
-                                            </label>
+                    <div class="amenities-list">
+                        <div class="left">
+                            <label class="Polaris-Choice" for="amenities_list__essentials__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__essentials__checkbox" class="Polaris-Checkbox__Input" value="essentials">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
-                                <ul class="Polaris-ChoiceList__Choices">
-                                    <li>
-                                        <label class="Polaris-Choice" for="select_amenities_bed_config__single">
-                                            <span class="Polaris-Choice__Control">
-                                                <span class="Polaris-RadioButton">
-                                                    <input id="select_amenities_bed_config__single" name="select_amenities__bed_config" type="radio" class="Polaris-RadioButton__Input" value="single">
-                                                    <span class="Polaris-RadioButton__Backdrop"></span>
-                                                    <span class="Polaris-RadioButton__Icon"></span>
-                                                </span>
+                                <div class="Polaris-Choice__Label">
+                                    Essentials (towels, sheets, soap)
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__wifi__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__wifi__checkbox" class="Polaris-Checkbox__Input" value="wifi">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                            <span class="Polaris-Choice__Label">
-                                                Single
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Wifi
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__shampoo__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__shampoo__checkbox" class="Polaris-Checkbox__Input" value="shampoo">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="Polaris-Choice" for="select_amenities_bed_config__double">
-                                            <span class="Polaris-Choice__Control">
-                                                <span class="Polaris-RadioButton">
-                                                    <input id="select_amenities_bed_config__double" name="select_amenities__bed_config" type="radio" class="Polaris-RadioButton__Input" value="double">
-                                                    <span class="Polaris-RadioButton__Backdrop"></span>
-                                                    <span class="Polaris-RadioButton__Icon"></span>
-                                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Shampoo
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__closet_drawers__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__closet_drawers__checkbox" class="Polaris-Checkbox__Input" value="closet_drawers">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                            <span class="Polaris-Choice__Label">
-                                                Double
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Closet / Drawers
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__heat__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__heat__checkbox" class="Polaris-Checkbox__Input" value="heat">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="Polaris-Choice" for="select_amenities_bed_config__twin">
-                                            <span class="Polaris-Choice__Control">
-                                                <span class="Polaris-RadioButton">
-                                                    <input id="select_amenities_bed_config__twin" name="select_amenities__bed_config" type="radio" class="Polaris-RadioButton__Input" value="twin">
-                                                    <span class="Polaris-RadioButton__Backdrop"></span>
-                                                    <span class="Polaris-RadioButton__Icon"></span>
-                                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Heat
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__air_conditioning__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__air_conditioning__checkbox" class="Polaris-Checkbox__Input" value="air_conditioning">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                            <span class="Polaris-Choice__Label">
-                                                Twin
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Air conditioning
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__iron__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__iron__checkbox" class="Polaris-Checkbox__Input" value="iron">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="Polaris-Choice" for="select_amenities_bed_config__queen">
-                                            <span class="Polaris-Choice__Control">
-                                                <span class="Polaris-RadioButton">
-                                                    <input id="select_amenities_bed_config__queen" name="select_amenities__bed_config" type="radio" class="Polaris-RadioButton__Input" value="queen">
-                                                    <span class="Polaris-RadioButton__Backdrop"></span>
-                                                    <span class="Polaris-RadioButton__Icon"></span>
-                                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Iron
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__hair_dryer__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__hair_dryer__checkbox" class="Polaris-Checkbox__Input" value="hair_dryer">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                            <span class="Polaris-Choice__Label">
-                                                Queen
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Hair Dryer
+                                </div>
+                            </label>
+                        </div>
+                        <div class="right">
+                            <label class="Polaris-Choice" for="amenities_list__washer__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__washer__checkbox" class="Polaris-Checkbox__Input" value="washer">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="Polaris-Choice" for="select_amenities_bed_config__king">
-                                            <span class="Polaris-Choice__Control">
-                                                <span class="Polaris-RadioButton">
-                                                    <input id="select_amenities_bed_config__king" name="select_amenities__bed_config" type="radio" class="Polaris-RadioButton__Input" value="king">
-                                                    <span class="Polaris-RadioButton__Backdrop"></span>
-                                                    <span class="Polaris-RadioButton__Icon"></span>
-                                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Washer
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__dryer__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__dryer__checkbox" class="Polaris-Checkbox__Input" value="dryer">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                            <span class="Polaris-Choice__Label">
-                                                King
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Dryer
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__hangers__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__hangers__checkbox" class="Polaris-Checkbox__Input" value="hangers">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="Polaris-Choice" for="select_amenities_bed_config__dorm">
-                                            <span class="Polaris-Choice__Control">
-                                                <span class="Polaris-RadioButton">
-                                                    <input id="select_amenities_bed_config__dorm" name="select_amenities__bed_config" type="radio" class="Polaris-RadioButton__Input" value="dorm">
-                                                    <span class="Polaris-RadioButton__Backdrop"></span>
-                                                    <span class="Polaris-RadioButton__Icon"></span>
-                                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Hangers
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__kitchen__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__kitchen__checkbox" class="Polaris-Checkbox__Input" value="kitchen">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                            <span class="Polaris-Choice__Label">
-                                                Dorm
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Kitchen
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__hot_tub__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__hot_tub__checkbox" class="Polaris-Checkbox__Input" value="hot_tub">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
                                             </span>
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Hot tub
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__gym__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__gym__checkbox" class="Polaris-Checkbox__Input" value="gym">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Gym
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__elevator__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__elevator__checkbox" class="Polaris-Checkbox__Input" value="elevator">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Elevator
+                                </div>
+                            </label>
+                            <br>
+                            <label class="Polaris-Choice" for="amenities_list__pool__checkbox">
+                                <div class="Polaris-Choice__Control">
+                                    <div class="Polaris-Checkbox">
+                                        <input name="amenities_list[]" type="checkbox" id="amenities_list__pool__checkbox" class="Polaris-Checkbox__Input" value="pool">
+                                        <div class="Polaris-Checkbox__Backdrop"></div>
+                                        <div class="Polaris-Checkbox__Icon">
+                                            <span class="Polaris-Icon">
+                                                <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20">
+                                                <g fill-rule="evenodd">
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                                                </g>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Polaris-Choice__Label">
+                                    Pool
+                                </div>
+                            </label>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
             <div class="modal-footer">
-                <div class="left">
-                    <button type="button" class="Polaris-Button">
-                        <span class="Polaris-Button__Content">
-                            <span>Delete</span>
-                        </span>
-                    </button>
-                </div>
-                <div class="right">
-                    <button type="button" class="Polaris-Button" data-dismiss="modal">
-                        <span class="Polaris-Button__Content">
-                            <span>Cancel</span>
-                        </span>
-                    </button>
-                    <button type="button" class="Polaris-Button Polaris-Button--primary">
-                        <span class="Polaris-Button__Content">
-                            <span>Save</span>
-                        </span>
-                    </button>
-                </div>
+                <button type="button" class="Polaris-Button" data-dismiss="modal">
+                    <span class="Polaris-Button__Content">
+                        <span>Cancel</span>
+                    </span>
+                </button>
+                <button id="select_amenities_form_submit" type="button" class="Polaris-Button Polaris-Button--primary">
+                    <span class="Polaris-Button__Content">
+                        <span>Save</span>
+                    </span>
+                </button>
             </div>
         </div>
     </div>
