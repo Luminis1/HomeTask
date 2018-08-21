@@ -392,7 +392,27 @@ function initModalsCore(){
     });
 }
 
+function stickyHelp(){
+    console.log();
+    $(document).scroll(function(){
+        var helpBar = $('#general-form-help').offset()
+        var y = window.scrollY;
+        if(y > helpBar.top){
+            $('#general-form-help').css('position', 'fixed');
+        }else{
+            $('#general-form-help').css('position', 'fixed');
+            $('#general-form-help').css('top', helpBar);
+
+        }
+
+    });
+    $('#general-form-help').offset()
+
+
+}
+
 $(document).ready(function(){
+    stickyHelp();
     initPageWidgets();
     initNavMenu();
     initInputsHelp();
