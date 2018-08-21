@@ -19,8 +19,8 @@
                         </div>
                     </div>
                     <div class="amenities-list">
-                        <div class="left">
-                            @foreach($modal as $k => $v)
+                        @foreach($modal as $k => $v)
+                        <div class="checkbox-wrap">
                             <label class="Polaris-Choice" for="amenities_list__essentials__checkbox_{{$v->id}}">
                                 <div class="Polaris-Choice__Control">
                                     <div class="Polaris-Checkbox">
@@ -42,9 +42,8 @@
                                     {{$v->label}}
                                 </div>
                             </label>
-                            <br>
-                            @endforeach
                         </div>
+                        @endforeach
                     </div>
                 </form>
             </div>

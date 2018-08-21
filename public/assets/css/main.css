@@ -278,13 +278,9 @@ textarea.Polaris-TextField__Input{
 #select_amenities_modal .modal-footer button{
     margin-left: 5px;
 }
-#select_amenities_modal .amenities-list .left{
+#select_amenities_modal .amenities-list .checkbox-wrap{
     width: 50%;
     float: left;
-}
-#select_amenities_modal .amenities-list .right{
-    width: 50%;
-    float: right;
 }
 #select_amenities_modal .amenities-list:after{
     content: '';
