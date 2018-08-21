@@ -467,6 +467,13 @@ function initAccommodationLogic(){
         $(modal).attr('data-accomodations-index', index);
     });
     
+    $(select_amenities_modal).on('hidden.bs.modal', function(event){
+        var modal = this;
+        var accomodations_item = $(event.relatedTarget).closest('.accomodations_form_item').get()[0];
+        var index = $(modal).attr('data-accomodations-index');
+        console.log(index);
+    });
+    
     function initAccommodationFormBlock(accommodation_item){
         var default_id, new_id, element;
         // Set index data for accommodation item
@@ -523,6 +530,6 @@ $(document).ready(function(){
     initModalsCore();
     initAccommodationLogic();
     
-    $('.table-8 .go-next-btn').click();
+//    $('.table-8 .go-next-btn').click();
 });
 
