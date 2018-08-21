@@ -443,19 +443,23 @@ function initAccommodationLogic(){
         var accomodations_item = $('#accomodations_form_parts .accomodations_form_item[data-accomodations-index="' + index + '"]');
         if(form_data.length > 0){
             var amenities_string = '';
+            var amenities_arr = [];
             form_data.forEach(function(amenity_name, index){
                 var amenity_label = $('#select_amenities_form').find('input[type="checkbox"][value="' + amenity_name.value + '"]').closest('.Polaris-Choice').find('.Polaris-Choice__Label').html().trim();
                 amenities_string += amenity_label;
                 if((index+1) < form_data.length){
                     amenities_string += ', ';
                 }
+                amenities_arr.push(amenity_name.value);
             });
             $(accomodations_item).find('.accomodation-amenities-list > .items').html(amenities_string);
             $(accomodations_item).find('.accomodation-amenities-list > .placeholder').hide();
             $(accomodations_item).find('.accomodation-amenities-list > .items').show();
+            $(accomodations_item).find('input.accomodation_amenities_data').val(JSON.stringify(amenities_arr));
         } else {
             $(accomodations_item).find('.accomodation-amenities-list > .placeholder').show();
             $(accomodations_item).find('.accomodation-amenities-list > .items').html('').hide();
+            $(accomodations_item).find('input.accomodation_amenities_data').val('');
         }
         $(modal).modal('hide');
     });
@@ -464,14 +468,25 @@ function initAccommodationLogic(){
         var modal = this;
         var accomodations_item = $(event.relatedTarget).closest('.accomodations_form_item').get()[0];
         var index = $(accomodations_item).attr('data-accomodations-index');
+        var amenities_data = $(accomodations_item).find('.accomodation_amenities_data').val();
+        
+        if(amenities_data !== ''){
+            amenities_data = JSON.parse(amenities_data);
+            amenities_data.forEach(function(item){
+                var checkbox = $(modal).find('input[type="checkbox"][value="' + item + '"]').get()[0];
+                checkbox.checked = true;
+            });
+        }
         $(modal).attr('data-accomodations-index', index);
     });
     
-    $(select_amenities_modal).on('hidden.bs.modal', function(event){
+    $(select_amenities_modal).on('hidden.bs.modal', function(){
         var modal = this;
-        var accomodations_item = $(event.relatedTarget).closest('.accomodations_form_item').get()[0];
-        var index = $(modal).attr('data-accomodations-index');
-        console.log(index);
+        $(modal).find('input[type="checkbox"]').each(function(){
+            if(this.checked === true){
+                this.checked = false;
+            }
+        });
     });
     
     function initAccommodationFormBlock(accommodation_item){
@@ -503,13 +518,17 @@ function initAccommodationLogic(){
         $(element).attr('name', 'accomodation[' + current_index + '][short_description]');
         $(accommodation_item).find('label[for="' + default_id + '"]').attr('for', new_id);
         
-        // accomodation_images_input
+        // Accomodation images_input
         default_id = 'accomodation_images_input';
         new_id = default_id + '_' + current_index;
         element = $(accommodation_item).find('#' + default_id)[0];
         $(element).attr('id', new_id);
         $(element).attr('name', 'accomodation[' + current_index + '][accomodation_images]');
         $(accommodation_item).find('label[for="' + default_id + '"]').attr('for', new_id);
+        
+        // Accomodation amenities data hidden input
+        element = $(accommodation_item).find('.accomodation_amenities_data')[0];
+        $(element).attr('name', 'accomodation[' + current_index + '][amenities_data]');
         
         // Increment current index
         current_index++;
@@ -529,7 +548,5 @@ $(document).ready(function(){
     initRegisterFormHelp();
     initModalsCore();
     initAccommodationLogic();
-    
-//    $('.table-8 .go-next-btn').click();
 });
 

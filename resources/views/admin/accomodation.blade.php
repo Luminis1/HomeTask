@@ -93,6 +93,7 @@
     </div>
     <div id="accomodations_form_parts">
         <div class="form-with-help accomodations_form_item">
+            <input class="accomodation_amenities_data" type="hidden" name="" value="">
             <div class="form-content">
                 <div class="Polaris-Card">
                     <div class="Polaris-Card__Section">
