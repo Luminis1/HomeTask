@@ -207,6 +207,51 @@ function initPageWidgets(){
             }
         });
     });
+
+    $('.submit-modal').click(function(){
+
+        var modal = $('.name-modal').val();
+
+
+        $.ajax({
+            url: '/admin/setModal',
+            data: {
+                'label' : modal,
+            },
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function (res) {
+                alert('sucsess');
+                window.location.reload();
+
+            },
+            error: function(res){
+                alert('error');
+            }
+        });
+    });
+    $('.remove-modal').click(function(){
+          var attr_id = $('.modal-list option:checked').data('id');
+
+          $.ajax({
+              url: '/admin/removeModal',
+              data: {'attr_id' : attr_id},
+              type: 'POST',
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              success: function (res) {
+                  $('.modal-list option:checked').remove();
+                  alert('sucsess');
+                  window.location.reload();
+              },
+              error: function(res){
+                  alert('error');
+              }
+          });
+      });
 }
 
 function initNavMenu(){

@@ -29,6 +29,8 @@ Route::group(['middleware' => 'admin'], function () {
 
 //route group to add/remove attributes
     Route::post('/admin/setAttribute', 'AdminAttributesController@setAttribute');
+    Route::post('/admin/setModal', 'AdminAttributesController@setModal');
+    Route::post('/admin/removeModal', 'AdminAttributesController@removeModal');
     Route::post('/admin/setHelp', 'AdminAttributesController@setHelp');
     Route::post('/admin/setSlug', 'AdminAttributesController@setSlug');
     Route::post('/admin/removeAttribute', 'AdminAttributesController@removeAttribute');

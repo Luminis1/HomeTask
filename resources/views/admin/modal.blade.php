@@ -7,10 +7,10 @@
             <h6>Add new Accomodation</h6>
             <div class="row mb-3">
                 <div class="col-md-8">
-                    <input type="text" name="name" class="name form-control">
+                    <input type="text" name="name" class="name-modal form-control">
                 </div>
                 <div class="col-md-4">
-                    <input type="submit" value="Add new" class="submit btn btn-primary">
+                    <input type="submit" value="Add new" class="submit-modal btn btn-primary">
                 </div>
             </div>
         </div>
@@ -21,14 +21,14 @@
         <br>
         <div class="row">
             <div class="col-md-8">
-                <select class="list form-control">
+                <select class="list form-control modal-list">
                     @foreach($modals as $a => $b)
                             <option data-id="{{$b['id']}}">{{ $b['label'] }} </option>
                     @endforeach
                 </select>
             </div>
             <div class="col-md-4">
-                <input type="submit" value="remove" class="remove btn btn-danger">
+                <input type="submit" value="remove" class="remove-modal btn btn-danger">
             </div>
         </div>
     </div>

@@ -55,4 +55,22 @@ class AdminAttributesController extends Controller
     {
         DB::update('update reference_types set slug=? where id=?',[$_POST['slug'], $_POST['element']]);
     }
+
+    public function setModal()
+    {
+
+        $label = $_POST['label'];
+        $labelNorm = mb_strtolower($label);
+        $needls = [',','.','/','"',"'", ' '];
+        $labelNorm = str_replace($needls,"_", $labelNorm);
+
+        Accomodation_modal::insert(['label' => $label, 'label-norm' => $labelNorm]);
+
+    }
+    public function removeModal()
+    {
+
+        Accomodation_modal::destroy($_POST['attr_id']);
+
+    }
 }
