@@ -45,6 +45,12 @@
                         </a>
                     </li>
                 @endforeach
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/modal">
+                            <span data-feather="home"></span>
+                            Accomodation modal <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -56,6 +62,7 @@
 
         @yield('AdminContent')
         @yield('AdminContentTables')
+        @yield('modal')
 
     </div>
 </main>

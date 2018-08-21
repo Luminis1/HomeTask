@@ -24,6 +24,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/tableAdd', 'AdminAddTablesController@index');
     Route::get('/basics', 'AdminAttributesController@basics');
     Route::get('/admin', 'AdminNavController@index');
+    Route::get('/modal', 'AdminAttributesController@modal');
 
 
 //route group to add/remove attributes
