@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Requests\Request;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\Http\Controllers\Mails\MailController;
 
 class AuthController extends Controller
 {
@@ -73,6 +75,15 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        $salt = 'pLdsqpfCvijNwjutFbRKFkq4kdeCEtxdi4t7LEni';
+
+        $verifyToken = md5((string)$data['email'] . (string)$data['password'] . (string)$salt);
+
+        $mailer = MailController::getInstance();
+        $mailer->mailer($data['email'],$data['name'], $verifyToken);
+        session([
+            $verifyToken => $data['email']
+        ]);
 
         return User::create([
             'name' => $data['name'],
@@ -92,4 +103,5 @@ class AuthController extends Controller
 
         ]);
     }
+
 }

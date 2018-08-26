@@ -10,7 +10,8 @@ use App\Model\TypeOfTable;
 use App\Model\Added_treat;
 use Illuminate\Support\Facades\Auth;
 use App\Model\Accomodation_modal;
-
+use App\User;
+use DB;
 use App\Http\Requests;
 
 class IndexController extends Controller
@@ -35,7 +36,6 @@ class IndexController extends Controller
            'modal' => $modal
        ]);
    }
-
    public function object()
    {
        $arr = $_POST;
@@ -66,4 +66,14 @@ class IndexController extends Controller
                 'obj' => $obj
             ]);
    }
+   public function emailVerify($token)
+    {
+        $email = session($token);
+        if(!empty($email)){
+            DB::update('update users set isActive=? where email=?', [1, $email]);
+            return redirect('/login')->with(['status' => 'Email verified. Please login']);
+        }else{
+            return redirect('/login')->with(['status' => 'Email verify is unsuccess. Register now and verify your email not longer than 24 hour']);
+        }
+    }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <h1>{{session('status')}}</h1>
     <div class="Polaris-Layout">
         <div class="Polaris-Layout__Section">
             <div class="Polaris-Page__Title">

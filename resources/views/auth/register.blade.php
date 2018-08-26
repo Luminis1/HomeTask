@@ -328,7 +328,6 @@
                             </div>
                             <div class="Polaris-Select">
                                 <select name="role" id="role" class="Polaris-Select__Input" required>
-                                    <option value="owner/founder">Owner / Founder</option>
                                     <option value="user">User</option>
                                 </select>
                                 <div class="Polaris-Select__Icon">

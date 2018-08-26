@@ -38,6 +38,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/admin/removeTable', 'AdminAddTablesController@removeTable');
     Route::post('/admin/addReferenceTypes', 'AdminAddTablesController@addReferenceTypes');
     Route::post('/admin/removeReferenceTypes', 'AdminAddTablesController@removeReferenceTypes');
+    Route::get('/mail', 'Mails\MailController@mailer');
 });
 
 Route::group(['middleware' => 'user'], function () {
@@ -47,6 +48,7 @@ Route::group(['middleware' => 'user'], function () {
 });
 
 Route::get('/', 'HomeController@index');
+Route::get('/emailVerify/{token}', 'IndexController@emailVerify');
 
 
 
