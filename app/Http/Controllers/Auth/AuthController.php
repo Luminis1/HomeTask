@@ -51,7 +51,6 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
             'legal_name_of_business' => 'required',
@@ -80,13 +79,12 @@ class AuthController extends Controller
         $verifyToken = md5((string)$data['email'] . (string)$data['password'] . (string)$salt);
 
         $mailer = MailController::getInstance();
-        $mailer->mailer($data['email'],$data['name'], $verifyToken);
+        $mailer->mailer($data['email'],$data['first_name'], $verifyToken);
         session([
             $verifyToken => $data['email']
         ]);
 
         return User::create([
-            'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'phone' => $data['phone'],
