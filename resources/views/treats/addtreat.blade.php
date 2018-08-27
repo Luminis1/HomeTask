@@ -191,8 +191,8 @@
                 {{csrf_field()}}
             </form>
         </div>
-        <div class="Polaris-Layout__Section Polaris-Layout__Section--secondary">
-            <div id="general-form-help" class="Polaris-Card">
+        <div class="form-help-wraper Polaris-Layout__Section Polaris-Layout__Section--secondary">
+            <div id="form-help" class="Polaris-Card">
                 <div class="Polaris-Card__Header">
                     <h2 class="Polaris-Heading">Help</h2>
                 </div>

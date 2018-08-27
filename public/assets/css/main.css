@@ -92,13 +92,10 @@ input[type="date"]{
     border-radius: 3px;
     width: 100%;
 }
-#content{
+#content .log-in-page-content{
     max-width: 500px;
-    padding: 6rem 0 0 0;
     margin: 0 auto;
 }
-
-
 .has-error .help-block{
     color: #ec0000;
     line-height: 2.5rem;
@@ -107,10 +104,32 @@ input[type="date"]{
     border-color: #ec0000;
     box-shadow: inset 0 0 0 0 transparent, 0 0 0 1px #ec0000;
 }
-
-
-
-
+.form-help-wraper{
+    visibility: hidden;
+    position: relative;
+}
+#form-help{
+    position: absolute;
+    width: 100%;
+}
+#form-help .Polaris-Card__Section p{
+    display: block;
+}
+#form-help .Polaris-Card__Section p > span.placeholder{
+    color:#afafaf;
+}
+#form-help.active{
+    box-shadow: 0 0 0 1px rgba(54, 54, 202, 0.3), 0 1px 3px 0 rgba(31, 31, 222, 0.47);
+}
+.show-password{
+    z-index: 100;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.show-password img{
+    width: 18px;
+}
 /********** 2. BASIC PAGE **********/
 #general_form .content-inner{
     margin-bottom: 20px;
@@ -157,34 +176,6 @@ input[type="date"]{
     float: right;
     text-align: right;
     width: 50%;
-}
-#general-form-help{
-    margin-top: 51px;
-    z-index: 100;
-}
-
-#general-form-help.stick_to_head{
-    border-radius: 0;
-}
-#general-form-help.stick_to_head .Polaris-Card__Header{
-    padding: 1rem 2rem 0;
-}
-#general-form-help.stick_to_head .Polaris-Card__Section{
-    padding: 1rem 2rem;
-}
-#general-form-help .Polaris-Card__Section p{
-    display: block;
-}
-#general-form-help .Polaris-Card__Section p > span.placeholder{
-    color:#afafaf;
-}
-#general-form-help.active{
-    box-shadow: 0 0 0 1px rgba(54, 54, 202, 0.3), 0 1px 3px 0 rgba(31, 31, 222, 0.47);
-}
-@media (max-width: 1039px){
-    #general-form-help{
-        margin-top: 0!important;
-    }
 }
 
 /********** 3. POLARIS CUSTOMIZE **********/
@@ -370,23 +361,6 @@ textarea.Polaris-TextField__Input{
 }
 #register-form .form-part.show{
     display: block;
-}
-#register-form-help{
-    margin-top: 51px;
-}
-#register-form-help .Polaris-Card__Section p{
-    display: block;
-}
-#register-form-help .Polaris-Card__Section p > span.placeholder{
-    color:#afafaf;
-}
-#register-form-help.active{
-    box-shadow: 0 0 0 1px rgba(54, 54, 202, 0.3), 0 1px 3px 0 rgba(31, 31, 222, 0.47);
-}
-@media (max-width: 1039px){
-    #register-form-help{
-        margin-top: 0;
-    }
 }
 
 /********** 8. MOADLS **********/

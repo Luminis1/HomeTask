@@ -87,7 +87,10 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="password" id="password" type="password" class="Polaris-TextField__Input" required>
+                                <input name="password" id="password" type="password" class="Polaris-TextField__Input" minlength="6" required>
+                                <button type="button" class="show-password" onclick="if (password.type == 'text') password.type = 'password'; else password.type = 'text';">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANOSURBVGhD7dlJyI1RHMfxa56nhVmGhciUhcxEokRCpoWNpFCUIcnCwrAwJbEgG/NCNookkqQM2ViYokwhlDlDxu/vjdtzz/s/zz3Pvc+93sXzq8/m7Tnn3Ofe5/zPOc+by5IlS5YsWepQemIWNuEITuEizuI4dmERhqAh6lQGYgvu4XcCb6CbnYYG+G+ZiguwPmRSD7EaLVC1DMdlWB+oXM+xGPVRsbTCHvyE9SHSdAX9kXr64T6sQV3vcAwLMAmDMRpzsQ2h/XyF+kgtM/AR1mBRr7EMTVAs43EVVj8uPQWNUHLqYSN+wRog6jRaI0nU/yr8gNVn1CV0ROJokL2wOnXpunLK5xR8g9V31G10QnB0E/tgdebSgpfGGrAQVv+uOwi+mdCbeIm2SCtaHK1xXLqZ9ojNWliNLctRLN0wFiqlxdaGHlClssZyqVB4i8pMhExsUYltDF/64DyibR5DJTguBxFtE0e/oKZBQfriE6wGFq0TvvSG9lFWO9HK7ct0WG18ViIffbM3YF3oo8npi/tLuD6jK6yohFttfPQoasGtyWZYF8WZCCv6gCGP5wr48hZWG59bqJkvH/7+IYn8t+BkFKzrXbvhi6qS1SbOZOTORP4QagysDIB1vWsDfHkBq43PF3RGbhC+w7rIZw6sqMQ+gtUmagSs6NQYsmWJWo98tsK6yGc7fJkNq80/OvL6MgxWG5+7KFhPmuMmrIst2orHZSlUndx2J6CxfElSeLQ/043XihaxJBN/HOKiCqbqpG245sRIxKUpnsAay6Ijgzd69kNPgNdQa2UtIzqzW+NYDqNolsBqbClYWcuIqt17WGO49GopbntUkHWwOnGpwug8UU46IPT4q7N83Bwzo5dsVmcuTbq4LUtctCt+AKtflx7lNigpmlChdf0ouiMkzaA5EVpcTqLsd14T8ArWAC79OgegFxYtEY0Wu6FQiQ2tTio8qnipvefqAr1gsAaLo3OLFi29eEv6Pkw7BL1Oqkjm4ymsgdOiX3Un9EKwotHzvQZJN3fF6AYOoReqGtXyeTgHfQjrw4XQeULlvqT3VmlHJzv9X2QHdGPPYM0JzZnr2A/tx6r+7ZcaPefac7VDmtuZLFmyZMmSJcXkcn8AwYEbc9EOz28AAAAASUVORK5CYII=">
+                                </button>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                             @if ($errors->has('password'))
@@ -96,7 +99,7 @@
                                 </span>
                             @endif
                         </div>
-                        <div class="form-block__container{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+<!--                        <div class="form-block__container{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
                                     <label for="password-confirm" class="Polaris-Label__Text">
@@ -105,7 +108,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="password_confirmation" id="password-confirm" type="password" class="Polaris-TextField__Input">
+                                <input name="password_confirmation" id="password-confirm" type="password" class="Polaris-TextField__Input" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                             @if ($errors->has('password_confirmation'))
@@ -113,7 +116,7 @@
                                     <strong>{{ $errors->first('password_confirmation') }}</strong>
                                 </span>
                             @endif
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div class="tables-nav-block">
@@ -135,24 +138,6 @@
             <div class="form-part" data-title-id="public_information_title">
                 <div class="Polaris-Card">
                     <div class="Polaris-Card__Section">
-                        <div class="form-block__container{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <div class="Polaris-Labelled__LabelWrapper">
-                                <div class="Polaris-Label">
-                                    <label for="name" class="Polaris-Label__Text">
-                                        Name
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Polaris-TextField">
-                                <input name="name" id="name" type="text" class="Polaris-TextField__Input" value="{{ old('name') }}" required>
-                                <div class="Polaris-TextField__Backdrop"></div>
-                            </div>
-                            @if ($errors->has('name'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span>
-                            @endif
-                        </div>
                         <div class="form-block__container{{ $errors->has('legal_name_of_business') ? ' has-error' : '' }}">
                             <div class="Polaris-Labelled__LabelWrapper">
                                 <div class="Polaris-Label">
@@ -162,7 +147,7 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="legal_name_of_business" id="legal_name_of_business" type="text" class="Polaris-TextField__Input" required>
+                                <input name="legal_name_of_business" id="legal_name_of_business" type="text" class="Polaris-TextField__Input" data-help-text="Enter name of business" required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -349,9 +334,9 @@
                         </button>
                     </div>
                     <div class="right">
-                        <button type="button" class="go-next-btn Polaris-Button Polaris-Button--primary">
+                        <button type="submit" class="Polaris-Button Polaris-Button--primary">
                             <span class="Polaris-Button__Content">
-                                <span>Next</span>
+                                <span>Register</span>
                             </span>
                         </button>
                     </div>
@@ -360,18 +345,18 @@
             <div class="form-part" data-title-id="verify_your_email_address_title">
                 <div class="tables-nav-block">
                     <div class="right">
-                        <button type="submit" class="Polaris-Button Polaris-Button--primary">
+                        <a href="{{ url('/login') }}" class="Polaris-Button Polaris-Button--primary">
                             <span class="Polaris-Button__Content">
                                 <span>Done</span>
                             </span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-    <div class="Polaris-Layout__Section Polaris-Layout__Section--secondary">
-        <div id="register-form-help" class="Polaris-Card">
+    <div class="form-help-wraper Polaris-Layout__Section Polaris-Layout__Section--secondary">
+        <div id="form-help" class="Polaris-Card">
             <div class="Polaris-Card__Header">
                 <h2 class="Polaris-Heading">Help</h2>
             </div>

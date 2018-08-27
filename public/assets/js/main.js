@@ -1,54 +1,5 @@
 var arr = [];
 
-function stickyHelp(){
-    var helpBar = $('#general-form-help').offset();
-    
-    $(document).scroll(function(){
-        calcHelpBlockPosition();
-    });
-    $(window).resize(function(){
-        calcHelpBlockPosition();
-    });
-    
-    function calcHelpBlockPosition(){
-        var y = window.scrollY;
-        var win_width = window.innerWidth;
-        
-        if(win_width <= 1039){
-            $('#general-form-help').css({
-                'position': 'fixed',
-                'width': '100%',
-                'margin-top': 0,
-                'top': 0,
-                'left': 0
-            });
-            $('#general-form-help').addClass('stick_to_head');
-        } else{
-            if(y > helpBar.top){
-                var help_block_with = ($('#general-form-help').hasClass('stick_to_head')) ? '100%' : ($('#general-form-help').width() + 'px');
-                $('#general-form-help').css({
-                    'position': 'fixed',
-                    'width': help_block_with,
-                    'margin-top': 0,
-                    'top': '30px',
-                    'left': 'auto'
-                });
-                $('#general-form-help').removeClass('stick_to_head');
-            }else{
-                $('#general-form-help').css({
-                    'position': 'static',
-                    'width': '100%',
-                    'margin-top': '51px',
-                    'top': 'auto',
-                    'left': 'auto'
-                });
-                $('#general-form-help').removeClass('stick_to_head');
-                $('#general-form-help').css('top', helpBar);
-            }
-        }
-    }
-}
-
 function initPageWidgets(){
     $('.add-focus').click(function () {
         $('.focus-help').first().show();
@@ -386,7 +337,6 @@ function initRegisterForm(){
     if(register_form === undefined || register_form === null){
         return;
     }
-//    $(register_form).validate();
     
     // Nav buttons events
     $('#register-form .go-next-btn').on('click', function(){
@@ -400,13 +350,44 @@ function initRegisterForm(){
         }
     });
     $('#register-form .go-prev-btn').on('click', function(){
-        if($("#register-form").valid()){
-            var prev_part = $(this).closest('.form-part').prev('.form-part');
-            var title_id = $(prev_part).data('title-id');
-            $('#register-form .form-part').removeClass('show');
-            $(prev_part).addClass('show');
-            $('#register_form_titles .form-title').removeClass('show');
-            $('#' + title_id).addClass('show');
+        var prev_part = $(this).closest('.form-part').prev('.form-part');
+        var title_id = $(prev_part).data('title-id');
+        $('#register-form .form-part').removeClass('show');
+        $(prev_part).addClass('show');
+        $('#register_form_titles .form-title').removeClass('show');
+        $('#' + title_id).addClass('show');
+    });
+    
+    // Sumbmit form processing
+    $(register_form).on('submit', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        
+        var form_data = $(register_form).serializeArray();
+        var form_data_formated = {};
+        form_data.forEach(function(item){
+            form_data_formated[item.name] = item.value;
+        });
+        
+        if($(register_form).valid()){
+            $.ajax({
+                url: '/register',
+                type: 'POST',
+                dataType: 'json',
+                data: form_data_formated,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response){
+                    console.log(response);
+                },
+                complete: function(){
+                    $('#register-form .form-part').removeClass('show');
+                    $('#register_form_titles .form-title').removeClass('show');
+                    $('#register-form .form-part[data-title-id="verify_your_email_address_title"]').addClass('show');
+                    $('#verify_your_email_address_title').addClass('show');
+                }
+            });
         }
     });
 }
@@ -437,8 +418,8 @@ function initHeaderDropdown(){
     });
 }
 
-function initGeneralFormHelp(){
-    var inputs = $('#general_form [data-help-text]').get();
+function initFormHelp(){
+    var inputs = $('[data-help-text]').get();
     $(inputs).each(function(){
         var input = this;
         var help_text = $(input).data('help-text');
@@ -446,34 +427,33 @@ function initGeneralFormHelp(){
             return;
         }
         $(input).mouseenter(function(){
-            $('#general-form-help').addClass('active');
-            $('#general-form-help .Polaris-Card__Section > p').text(help_text).hide().stop().fadeIn(200);
-        });
-        $(input).mouseleave(function(){
-            $('#general-form-help').removeClass('active');
-            $('#general-form-help .Polaris-Card__Section > p').stop().fadeOut(600, function(){
-                $(this).html('<span style="color:#afafaf;">We can help you...</span>').stop().fadeIn(200);
+            var wrap_offset_top = $('.form-help-wraper').offset().top;
+            var input_offset_top = $(this).offset().top;
+            var help_block_top = input_offset_top - wrap_offset_top;
+            
+            $('#form-help').addClass('active');
+            $('#form-help .Polaris-Card__Section > p').text(help_text);
+            $('#form-help').css({
+                'left': '300px',
+                'top': help_block_top + 'px',
+                'visibility': 'visible'
             });
-        });
-    });
-}
-
-function initRegisterFormHelp(){
-    var inputs = $('#register-form [data-help-text]').get();
-    $(inputs).each(function(){
-        var input = this;
-        var help_text = $(input).data('help-text');
-        if(help_text === '' || help_text === undefined || help_text === null){
-            return;
-        }
-        $(input).mouseenter(function(){
-            $('#register-form-help').addClass('active');
-            $('#register-form-help .Polaris-Card__Section > p').text(help_text).hide().stop().fadeIn(200);
+            $('#form-help').stop().animate({
+                'left': 0,
+                'opacity': 1
+            },
+            400);
         });
         $(input).mouseleave(function(){
-            $('#register-form-help').removeClass('active');
-            $('#register-form-help .Polaris-Card__Section > p').stop().fadeOut(600, function(){
-                $(this).html('<span style="color:#afafaf;">We can help you...</span>').stop().fadeIn(200);
+            $('#form-help').stop().animate({
+                'opacity': 0,
+                'left': '300px'
+            },
+            200,
+            function(){
+                $('#form-help').removeClass('active');
+                $('#form-help .Polaris-Card__Section > p').text('');
+                $('#form-help').css({'visibility': 'hidden'});
             });
         });
     });
@@ -604,7 +584,6 @@ function initAccommodationLogic(){
 }
 
 $(document).ready(function(){
-    stickyHelp();
     initPageWidgets();
     initNavMenu();
     initInputsHelp();
@@ -612,8 +591,7 @@ $(document).ready(function(){
     initGeneralFormValidation();
     initRegisterForm();
     initHeaderDropdown();
-    initGeneralFormHelp();
-    initRegisterFormHelp();
+    initFormHelp();
     initModalsCore();
     initAccommodationLogic();
 });

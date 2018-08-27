@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="log-in-page-content">
     <h1>{{session('status')}}</h1>
     <div class="Polaris-Layout">
         <div class="Polaris-Layout__Section">
@@ -97,5 +98,6 @@
             </form>
         </div>
     </div>
+</div>
 
 @endsection
