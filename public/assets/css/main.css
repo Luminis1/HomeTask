@@ -92,6 +92,24 @@ input[type="date"]{
     border-radius: 3px;
     width: 100%;
 }
+#content{
+    max-width: 500px;
+    padding: 6rem 0 0 0;
+    margin: 0 auto;
+}
+
+
+.has-error .help-block{
+    color: #ec0000;
+    line-height: 2.5rem;
+}
+.has-error .Polaris-TextField__Backdrop{
+    border-color: #ec0000;
+    box-shadow: inset 0 0 0 0 transparent, 0 0 0 1px #ec0000;
+}
+
+
+
 
 /********** 2. BASIC PAGE **********/
 #general_form .content-inner{
