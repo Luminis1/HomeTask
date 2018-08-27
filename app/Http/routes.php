@@ -14,7 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::auth();
 
 //user routes
