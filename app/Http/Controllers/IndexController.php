@@ -49,10 +49,7 @@ class IndexController extends Controller
    public function treatList()
    {
 
-       $treats = Added_treat::where('user_id', Auth::user()->id)->get();
-
-
-
+       $treats = Added_treat::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();
        $obj = [];
 
        foreach ($treats as $k => $v)
