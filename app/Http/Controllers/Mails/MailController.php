@@ -25,13 +25,10 @@ class MailController extends Controller
     {
         $data = [
             'name' => $name,
-            'link' => 'yoga/emailVerify/'. $token ,
+            'link' => $_SERVER['HTTP_HOST'] . '/emailVerify/'. $token ,
             'token' => $token
             ];
-
         $email = $address;
-
-
         Mail::send(['text'=>'mail'],$data, function($message) use ($email){
             $message->to($email, 'luminis')->subject('Yoga email confirmation');
             $message->from('Luminis111@gmail.com', 'Yoga');

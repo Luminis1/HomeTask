@@ -96,7 +96,6 @@ class AuthController extends Controller
             'last_name' => $data['last_name'],
             'cell_phone' => $data['last_name'],
             'role' => $data['role'],
-
         ]);
     }
 
