@@ -1,5 +1,11 @@
 var arr = [];
 
+function createCustomValidationMethods(){
+    $.validator.methods.email = function(value, element) {
+        return this.optional(element) || /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
+    };
+}
+
 function initPageWidgets(){
     $('.add-focus').click(function () {
         $('.focus-help').first().show();
@@ -337,6 +343,14 @@ function initRegisterForm(){
     if(register_form === undefined || register_form === null){
         return;
     }
+    $(register_form).validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            }
+        }
+    });
     
     // Nav buttons events
     $('#register-form .go-next-btn').on('click', function(){
@@ -433,28 +447,55 @@ function initFormHelp(){
             
             $('#form-help').addClass('active');
             $('#form-help .Polaris-Card__Section > p').text(help_text);
-            $('#form-help').css({
-                'left': '300px',
-                'top': help_block_top + 'px',
-                'visibility': 'visible'
-            });
-            $('#form-help').stop().animate({
-                'left': 0,
-                'opacity': 1
-            },
-            400);
+            
+            if(window.innerWidth < 854){
+                console.log(wrap_offset_top);
+                console.log(input_offset_top);
+                $('#form-help').css({
+                    'left': '0',
+                    'top': '-' + (wrap_offset_top - input_offset_top + $('#form-help').height() + 200) + 'px',
+                    'visibility': 'visible'
+                });
+                $('#form-help').stop().animate({
+                    'opacity': 1,
+                    'top': '-' + (wrap_offset_top - input_offset_top + $('#form-help').height() + 30) + 'px'
+                },
+                400);
+            } else {
+                $('#form-help').css({
+                    'left': '300px',
+                    'top': help_block_top + 'px',
+                    'visibility': 'visible'
+                });
+                $('#form-help').stop().animate({
+                    'left': 0,
+                    'opacity': 1
+                },
+                400);
+            }
         });
         $(input).mouseleave(function(){
-            $('#form-help').stop().animate({
-                'opacity': 0,
-                'left': '300px'
-            },
-            200,
-            function(){
-                $('#form-help').removeClass('active');
-                $('#form-help .Polaris-Card__Section > p').text('');
-                $('#form-help').css({'visibility': 'hidden'});
-            });
+            if(window.innerWidth < 854){
+                $('#form-help').stop().animate({
+                    'opacity': 0
+                },
+                200,
+                function(){
+                    $('#form-help').removeClass('active');
+                    $('#form-help .Polaris-Card__Section > p').text('');
+                    $('#form-help').css({'visibility': 'hidden'});
+                });
+            } else {
+                $('#form-help').stop().animate({
+                    'opacity': 0
+                },
+                200,
+                function(){
+                    $('#form-help').removeClass('active');
+                    $('#form-help .Polaris-Card__Section > p').text('');
+                    $('#form-help').css({'visibility': 'hidden'});
+                });
+            }
         });
     });
 }
@@ -584,6 +625,7 @@ function initAccommodationLogic(){
 }
 
 $(document).ready(function(){
+    createCustomValidationMethods();
     initPageWidgets();
     initNavMenu();
     initInputsHelp();
