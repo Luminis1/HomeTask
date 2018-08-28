@@ -444,21 +444,21 @@ function initFormHelp(){
             var wrap_offset_top = $('.form-help-wraper').offset().top;
             var input_offset_top = $(this).offset().top;
             var help_block_top = input_offset_top - wrap_offset_top;
+            var input_card_block_width = $(this).closest('.Polaris-Card').width();
+            var help_card_block_width = $('#form-help').closest('.Polaris-Card').width();
             
             $('#form-help').addClass('active');
             $('#form-help .Polaris-Card__Section > p').text(help_text);
             
-            if(window.innerWidth < 854){
-                console.log(wrap_offset_top);
-                console.log(input_offset_top);
+            if(input_card_block_width === help_card_block_width){   // Mobile variant
                 $('#form-help').css({
                     'left': '0',
-                    'top': '-' + (wrap_offset_top - input_offset_top + $('#form-help').height() + 200) + 'px',
+                    'top': help_block_top - $('#form-help').height() - 100 + 'px',
                     'visibility': 'visible'
                 });
                 $('#form-help').stop().animate({
                     'opacity': 1,
-                    'top': '-' + (wrap_offset_top - input_offset_top + $('#form-help').height() + 30) + 'px'
+                    'top': help_block_top - $('#form-help').height() - 30 + 'px'
                 },
                 400);
             } else {
@@ -475,7 +475,10 @@ function initFormHelp(){
             }
         });
         $(input).mouseleave(function(){
-            if(window.innerWidth < 854){
+            var input_card_block_width = $(this).closest('.Polaris-Card').width();
+            var help_card_block_width = $('#form-help').closest('.Polaris-Card').width();
+            
+            if(input_card_block_width === help_card_block_width){   // Mobile variant
                 $('#form-help').stop().animate({
                     'opacity': 0
                 },
