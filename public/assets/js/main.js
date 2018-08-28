@@ -232,6 +232,20 @@ function initPageWidgets(){
               }
           });
       });
+    $('.resend-email').click(function(){
+        $.ajax({
+            url: '/resendEmail',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function (res) {
+                alert('sucsess');
+            },
+            error: function(res){
+                alert('error');
+            }
+        });
+    });
 }
 
 function initNavMenu(){
@@ -376,25 +390,27 @@ function initRegisterForm(){
     $(register_form).on('submit', function(event){
         event.preventDefault();
         event.stopPropagation();
-        
+
         var form_data = $(register_form).serializeArray();
         var form_data_formated = {};
         form_data.forEach(function(item){
             form_data_formated[item.name] = item.value;
         });
-        
+
         if($(register_form).valid()){
             $.ajax({
                 url: '/register',
                 type: 'POST',
-                dataType: 'json',
+                // dataType: 'json',
                 data: form_data_formated,
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(response){
-                    console.log(response);
-                    $('.reg-verify-email').html(response.email);
+                    $('.reg-verify-email').html(response);
+                },
+                error: function(res){
+                    console.log(res);
                 },
                 complete: function(){
                     $('#register-form .form-part').removeClass('show');

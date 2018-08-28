@@ -48,6 +48,7 @@ Route::group(['middleware' => 'user'], function () {
 
 Route::get('/', 'HomeController@index');
 Route::get('/emailVerify/{token}', 'IndexController@emailVerify');
+Route::get('/resendEmail', 'IndexController@resendEmail');
 
 
 

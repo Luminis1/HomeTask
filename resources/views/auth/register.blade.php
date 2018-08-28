@@ -56,7 +56,7 @@
                 </h2>
                 <p>Please verify your email to help us ensure that this email belongs to you, so we can notify you about updates and new customer messages.</p>
                 <br>
-                <p>Check your email <b class="reg-verify-email"></b> and click the link to activate your account. Didnt het the email? <a class="Polaris-Link" href="#" data-polaris-unstyled="true">Click here</a> to resend it.</p>
+                <p>Check your email <b class="reg-verify-email">{{isset($email)}}</b> and click the link to activate your account. Didnt get the email? <p class="Polaris-Link resend-email" data-polaris-unstyled="true">Click here</p> to resend it.</p>
                 <br>
             </div>
         </div>
@@ -391,7 +391,6 @@
                             </div>
                             <div class="Polaris-Select">
                                 <select name="role" id="role" class="Polaris-Select__Input" required>
-                                    <option value="owner / founder" selected> Owner / Founder</option>
                                     <option value="user">User</option>
                                 </select>
                                 <div class="Polaris-Select__Icon">

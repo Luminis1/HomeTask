@@ -13,6 +13,7 @@ use App\Model\Accomodation_modal;
 use App\User;
 use DB;
 use App\Http\Requests;
+use App\Http\Controllers\Mails\MailController;
 
 class IndexController extends Controller
 {
@@ -72,5 +73,10 @@ class IndexController extends Controller
         }else{
             return redirect('/login')->with(['status' => 'Email verify is unsuccess. Register now and verify your email not longer than 24 hour']);
         }
+    }
+    public function resendEmail()
+    {
+        $mailer = MailController::getInstance();
+        $mailer->mailer();
     }
 }
