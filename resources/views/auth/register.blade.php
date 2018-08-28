@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
 <div class="Polaris-Layout">
     <div id="register_form_titles" class="Polaris-Layout__Section">
         <div class="form-title show" id="create_an_account_title">
@@ -16,6 +14,12 @@
             </div>
         </div>
         <div class="form-title" id="public_information_title">
+            <div class="Polaris-ProgressBar Polaris-ProgressBar--sizeSmall">
+                <progress class="Polaris-ProgressBar__Progress" value="33" max="100"></progress>
+                <div class="Polaris-ProgressBar__Indicator" role="progressbar" aria-hidden="true" style="width: 33%;">
+                    <span class="Polaris-ProgressBar__Label">33%</span>
+                </div>
+            </div>
             <div class="Polaris-Page__Title">
                 <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
                     Public Information
@@ -25,6 +29,12 @@
             </div>
         </div>
         <div class="form-title" id="private_information_title">
+            <div class="Polaris-ProgressBar Polaris-ProgressBar--sizeSmall">
+                <progress class="Polaris-ProgressBar__Progress" value="66" max="100"></progress>
+                <div class="Polaris-ProgressBar__Indicator" role="progressbar" aria-hidden="true" style="width: 66%;">
+                    <span class="Polaris-ProgressBar__Label">66%</span>
+                </div>
+            </div>
             <div class="Polaris-Page__Title">
                 <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
                     Private Information
@@ -34,13 +44,19 @@
             </div>
         </div>
         <div class="form-title" id="verify_your_email_address_title">
+            <div class="Polaris-ProgressBar Polaris-ProgressBar--sizeSmall">
+                <progress class="Polaris-ProgressBar__Progress" value="100" max="100"></progress>
+                <div class="Polaris-ProgressBar__Indicator" role="progressbar" aria-hidden="true" style="width: 100%;">
+                    <span class="Polaris-ProgressBar__Label">100%</span>
+                </div>
+            </div>
             <div class="Polaris-Page__Title">
                 <h2 class="page_title Polaris-DisplayText Polaris-DisplayText--sizeLarge">
                     Verify your email address
                 </h2>
                 <p>Please verify your email to help us ensure that this email belongs to you, so we can notify you about updates and new customer messages.</p>
                 <br>
-                <p>Check your email <b>blablayogaretreat@gmail.com</b> and click the link to activate your account. Didnt het the email? <a class="Polaris-Link" href="#" data-polaris-unstyled="true">Click here</a> to resend it.</p>
+                <p>Check your email <b class="reg-verify-email"></b> and click the link to activate your account. Didnt het the email? <a class="Polaris-Link" href="#" data-polaris-unstyled="true">Click here</a> to resend it.</p>
                 <br>
             </div>
         </div>
@@ -67,8 +83,8 @@
                                        id="email"
                                        type="email"
                                        class="Polaris-TextField__Input"
+                                       placeholder="email@domain.com"
                                        value="{{ old('email') }}"
-                                       data-help-text="Help example"
                                        required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
@@ -87,7 +103,13 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="password" id="password" type="password" class="Polaris-TextField__Input" minlength="6" required>
+                                <input name="password"
+                                       id="password"
+                                       type="password"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="Eight symbols minimum"
+                                       minlength="6"
+                                       required>
                                 <button type="button" class="show-password" onclick="if (password.type == 'text') password.type = 'password'; else password.type = 'text';">
                                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANOSURBVGhD7dlJyI1RHMfxa56nhVmGhciUhcxEokRCpoWNpFCUIcnCwrAwJbEgG/NCNookkqQM2ViYokwhlDlDxu/vjdtzz/s/zz3Pvc+93sXzq8/m7Tnn3Ofe5/zPOc+by5IlS5YsWepQemIWNuEITuEizuI4dmERhqAh6lQGYgvu4XcCb6CbnYYG+G+ZiguwPmRSD7EaLVC1DMdlWB+oXM+xGPVRsbTCHvyE9SHSdAX9kXr64T6sQV3vcAwLMAmDMRpzsQ2h/XyF+kgtM/AR1mBRr7EMTVAs43EVVj8uPQWNUHLqYSN+wRog6jRaI0nU/yr8gNVn1CV0ROJokL2wOnXpunLK5xR8g9V31G10QnB0E/tgdebSgpfGGrAQVv+uOwi+mdCbeIm2SCtaHK1xXLqZ9ojNWliNLctRLN0wFiqlxdaGHlClssZyqVB4i8pMhExsUYltDF/64DyibR5DJTguBxFtE0e/oKZBQfriE6wGFq0TvvSG9lFWO9HK7ct0WG18ViIffbM3YF3oo8npi/tLuD6jK6yohFttfPQoasGtyWZYF8WZCCv6gCGP5wr48hZWG59bqJkvH/7+IYn8t+BkFKzrXbvhi6qS1SbOZOTORP4QagysDIB1vWsDfHkBq43PF3RGbhC+w7rIZw6sqMQ+gtUmagSs6NQYsmWJWo98tsK6yGc7fJkNq80/OvL6MgxWG5+7KFhPmuMmrIst2orHZSlUndx2J6CxfElSeLQ/043XihaxJBN/HOKiCqbqpG245sRIxKUpnsAay6Ijgzd69kNPgNdQa2UtIzqzW+NYDqNolsBqbClYWcuIqt17WGO49GopbntUkHWwOnGpwug8UU46IPT4q7N83Bwzo5dsVmcuTbq4LUtctCt+AKtflx7lNigpmlChdf0ouiMkzaA5EVpcTqLsd14T8ArWAC79OgegFxYtEY0Wu6FQiQ2tTio8qnipvefqAr1gsAaLo3OLFi29eEv6Pkw7BL1Oqkjm4ymsgdOiX3Un9EKwotHzvQZJN3fF6AYOoReqGtXyeTgHfQjrw4XQeULlvqT3VmlHJzv9X2QHdGPPYM0JzZnr2A/tx6r+7ZcaPefac7VDmtuZLFmyZMmSJcXkcn8AwYEbc9EOz28AAAAASUVORK5CYII=">
                                 </button>
@@ -147,7 +169,12 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="legal_name_of_business" id="legal_name_of_business" type="text" class="Polaris-TextField__Input" data-help-text="Enter name of business" required>
+                                <input name="legal_name_of_business"
+                                       id="legal_name_of_business"
+                                       type="text"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="Organic Yoga Retreats"
+                                       required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -160,7 +187,12 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="phone" id="phone" type="phone" class="Polaris-TextField__Input" required>
+                                <input name="phone"
+                                       id="phone"
+                                       type="phone"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="+1 323 456 7890"
+                                       required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -172,9 +204,16 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="Polaris-TextField">
-                                <input name="country" id="country" type="phone" class="Polaris-TextField__Input" required>
-                                <div class="Polaris-TextField__Backdrop"></div>
+                            <div class="Polaris-Select">
+                                <select name="country" id="country" class="Polaris-Select__Input" required>
+                                    @include('admin.partials._all_countries_select_options')
+                                </select>
+                                <div class="Polaris-Select__Icon">
+                                    <span class="Polaris-Icon">
+                                        <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path d="M13 8l-3-3-3 3h6zm-.1 4L10 14.9 7.1 12h5.8z" fill-rule="evenodd"></path></svg>
+                                    </span>
+                                </div>
+                                <div class="Polaris-Select__Backdrop"></div>
                             </div>
                         </div>
                         <div class="form-block__container{{ $errors->has('city') ? ' has-error' : '' }}">
@@ -186,7 +225,12 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="city" id="city" type="text" class="Polaris-TextField__Input" required>
+                                <input name="city"
+                                       id="city"
+                                       type="text"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="Los Angeles, California"
+                                       required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -199,7 +243,12 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="website" id="website" type="text" class="Polaris-TextField__Input" required>
+                                <input name="website"
+                                       id="website"
+                                       type="text"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="https://organicyogaretreats.com"
+                                       required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -212,7 +261,12 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="instagram_username" id="instagram_username" type="text" class="Polaris-TextField__Input" required>
+                                <input name="instagram_username"
+                                       id="instagram_username"
+                                       type="text"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="organicyogaretreats"
+                                       required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -225,7 +279,12 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="facebook_page_link" id="facebook_page_link" type="text" class="Polaris-TextField__Input" required>
+                                <input name="facebook_page_link"
+                                       id="facebook_page_link"
+                                       type="text"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="https://www.facebook.com/luxuryretreats"
+                                       required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -238,7 +297,11 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="tripadvisor" id="tripadvisor" type="text" class="Polaris-TextField__Input">
+                                <input name="tripadvisor"
+                                       id="tripadvisor"
+                                       type="text"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="https://www.tripadvisor.com/retreat">
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -273,7 +336,12 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="first_name" id="first_name" type="text" class="Polaris-TextField__Input" required>
+                                <input name="first_name"
+                                       id="first_name"
+                                       type="text"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="Johnny"
+                                       required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -286,7 +354,12 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="last_name" id="last_name" type="text" class="Polaris-TextField__Input" required>
+                                <input name="last_name"
+                                       id="last_name"
+                                       type="text"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="Appleseed"
+                                       required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -299,7 +372,12 @@
                                 </div>
                             </div>
                             <div class="Polaris-TextField">
-                                <input name="cell_phone" id="cell_phone" type="text" class="Polaris-TextField__Input" required>
+                                <input name="cell_phone"
+                                       id="cell_phone"
+                                       type="text"
+                                       class="Polaris-TextField__Input"
+                                       placeholder="+1 323 456 7890"
+                                       required>
                                 <div class="Polaris-TextField__Backdrop"></div>
                             </div>
                         </div>
@@ -313,6 +391,7 @@
                             </div>
                             <div class="Polaris-Select">
                                 <select name="role" id="role" class="Polaris-Select__Input" required>
+                                    <option value="owner / founder" selected> Owner / Founder</option>
                                     <option value="user">User</option>
                                 </select>
                                 <div class="Polaris-Select__Icon">
@@ -368,4 +447,5 @@
         </div>
     </div>
 </div>
+
 @endsection

@@ -239,12 +239,6 @@
                                     </label>
                                 </div>
                             </div>
-                            
-                            
-                            
-                            
-                            
-                            
                             <ul class="Polaris-ChoiceList__Choices">
                                 <li>
                                     <label class="Polaris-Choice" for="price_arrivals__daily__input">
