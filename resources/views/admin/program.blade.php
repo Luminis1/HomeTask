@@ -297,10 +297,8 @@
                         </span>
                     </button>
                 </div>
-                <div class="Polaris-Card__Section">
-                    @include('admin.partials._nav_buttons', ['table' => $v])
-                </div>
             </div>
         </div>
     </div>
+    @include('admin.partials._nav_buttons', ['table' => $v])
 </div>

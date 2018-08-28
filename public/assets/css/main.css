@@ -364,7 +364,13 @@ textarea.Polaris-TextField__Input{
 #register-form .form-part.show{
     display: block;
 }
-
+#register_form_titles .form-title .Polaris-ProgressBar{
+    margin-bottom: 50px;
+    background-color: #eff1f3;
+}
+#register_form_titles .form-title .Polaris-ProgressBar .Polaris-ProgressBar__Indicator{
+    background-color: #adb9c1;
+}
 /********** 8. MOADLS **********/
 .modal{
     padding-right: 17px;

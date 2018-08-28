@@ -394,6 +394,7 @@ function initRegisterForm(){
                 },
                 success: function(response){
                     console.log(response);
+                    $('.reg-verify-email').html(response.email);
                 },
                 complete: function(){
                     $('#register-form .form-part').removeClass('show');
