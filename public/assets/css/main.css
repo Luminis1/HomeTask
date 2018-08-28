@@ -40,32 +40,19 @@ body{
     margin: 0;
 }
 #nav .nav-list > .nav-item{
-    padding: 9px 0;
+    padding: 6px 0;
 }
 #nav .nav-list > .nav-item > .Polaris-Link{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-right: 5px;
     white-space: nowrap;
+    opacity: 0.5;
 }
-#nav .nav-list > .nav-item > .Polaris-Link > i{
-    font-size: 1.9rem;
-    color: #637381;
-    margin-right: 6px;
-}
-#nav .nav-list > .nav-item > .Polaris-Link:hover > i{
-    color: #5c6ac4;
-}
-#nav .nav-list > .nav-item > .Polaris-Link.active > i{
-    color: #5c6ac4;
+#nav .nav-list > .nav-item > .Polaris-Link.active{
+    opacity: 1;
 }
 #nav .nav-list > .nav-item > .Polaris-Link > span{
     color: #212b36;
-}
-#nav .nav-list > .nav-item > .Polaris-Link:hover > span{
-    color: #5c6ac4;
-}
-#nav .nav-list > .nav-item > .Polaris-Link.active > span{
-    color: #5c6ac4;
 }
 #content{
     flex-basis: 100%;

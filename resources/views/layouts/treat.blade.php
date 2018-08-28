@@ -42,8 +42,7 @@
     <ul class="nav-list">
         @foreach($menu as $k => $v)
             <li class="nav-item">
-                <a class="Polaris-Link active" href="#" data-tab-target="basic">
-                    {{--<i class="fas fa-home"></i>--}}
+                <a class="Polaris-Link" href="#" data-tab-target="{{$v->name}}">
                     <span>{{$v->name}}</span>
                 </a>
             </li>
