@@ -21,18 +21,18 @@ class MailController extends Controller
         }
         return self::$instance;
     }
-    public function mailer($address, $name, $token)
+    public function mailer()
     {
         $data = [
-            'name' => $name,
-            'link' => $_SERVER['HTTP_HOST'] . '/emailVerify/'. $token ,
-            'token' => $token
+            'name' => session('name'),
+            'link' => $_SERVER['HTTP_HOST'] . '/emailVerify/'. session('token') ,
             ];
-        $email = $address;
+        $email = session('email');
         Mail::send(['text'=>'mail'],$data, function($message) use ($email){
             $message->to($email, 'luminis')->subject('Yoga email confirmation');
             $message->from('Luminis111@gmail.com', 'Yoga');
         });
+
     }
     private function __construct(){}
     private function __clone() {}

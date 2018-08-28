@@ -74,13 +74,19 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+
         $salt = 'pLdsqpfCvijNwjutFbRKFkq4kdeCEtxdi4t7LEni';
         $verifyToken = md5((string)$data['email'] . (string)$data['password'] . (string)$salt);
-        $mailer = MailController::getInstance();
-        $mailer->mailer($data['email'],$data['first_name'], $verifyToken);
         session([
-            $verifyToken => $data['email']
+            $verifyToken => $data['email'],
+            'token' => $verifyToken,
+            'name' => $data['first_name'],
+            'email' => $data['email']
         ]);
+
+        $mailer = MailController::getInstance();
+        $mailer->mailer();
+
 
         return User::create([
             'email' => $data['email'],
