@@ -59,6 +59,7 @@
                 <p>Check your email {{isset($email)}} and click the link to activate your account. Didnt get the email?
                 <p class="Polaris-Link resend-email" data-polaris-unstyled="true">Click here</p> to resend it.</p>
                 <br>
+                <p class="resend-done"></p>
             </div>
         </div>
     </div>

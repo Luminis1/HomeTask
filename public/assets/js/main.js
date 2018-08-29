@@ -9,6 +9,7 @@ function createCustomValidationMethods(){
 function initPageWidgets(){
     $('.add-focus').click(function () {
         $('.focus-help').first().show();
+        $('.remove-focus').first().show();
         $('.focus-help').first().removeClass('focus-help');
     });
     $('.submit').click(function(){
@@ -239,7 +240,7 @@ function initPageWidgets(){
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             success: function (res) {
-                alert('sucsess');
+                $('.resend-done').text('Email was successfully sent');
             },
             error: function(res){
                 alert('error');
@@ -429,6 +430,10 @@ function initRegisterForm(){
                 },
                 success: function(response){
                     $('.reg-verify-email').html(response);
+                },
+                error: function(res){
+                },
+                complete: function(){
                     $('#register-form .form-part').removeClass('show');
                     $('#register_form_titles .form-title').removeClass('show');
                     $('#register-form .form-part[data-title-id="verify_your_email_address_title"]').addClass('show');

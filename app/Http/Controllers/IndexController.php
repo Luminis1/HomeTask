@@ -66,7 +66,7 @@ class IndexController extends Controller
    }
    public function emailVerify($token)
     {
-        $email = session($token);
+        $email = base64_decode($token);
         if(!empty($email)){
             DB::update('update users set isActive=? where email=?', [1, $email]);
             return redirect('/login')->with(['status' => 'Email verified. Please login']);
