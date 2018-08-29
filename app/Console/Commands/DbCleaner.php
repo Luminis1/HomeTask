@@ -39,9 +39,13 @@ class DbCleaner extends Command
      */
     public function handle()
     {
-        $connect = new mysqli(env('DB_CONNECTION', 'mysql'));
-        $sql = "DELETE * FROM users WHERE  isActive = 0";
-        $connect->query($sql);
+        $connect = mysqli_connect(
+                env('DB_HOST',
+                env('DB_USERNAME',
+                env('DB_PASSWORD',
+                env('DB_DATABASE')
+                    );
+        mysqli_query($connect ,"DELETE * FROM users WHERE  isActive = 0");
         $connect->close();
 //        $terms = ['isActive' => 0, 'created_at' => ];
 //        DB::table('users')
