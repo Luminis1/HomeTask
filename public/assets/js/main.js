@@ -438,7 +438,6 @@ function initHeaderDropdown(){
         var attr = $(this).attr('data-id');
         $('.modal[data-id='+ attr +']').css('display', 'block');
     });
-
     $('.Polaris-Modal-Header__CloseButton').on('click', function(){
         $('.modal').css('display','none');
     });
@@ -446,11 +445,9 @@ function initHeaderDropdown(){
         var attr = $(this).attr('data-id');
         $('.modal[data-id='+ attr +']').css('display', 'block');
     });
-
     $('.Polaris-Modal-Header__CloseButton').on('click', function(){
         $('.modal').css('display','none');
     });
-
     $( ".profile__name" ).mouseenter(function() {
         $( ".profile__menu" ).css("display", "block");
     });
