@@ -4,6 +4,9 @@ function createCustomValidationMethods(){
     $.validator.methods.email = function(value, element) {
         return this.optional(element) || /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
     };
+    $.validator.methods.phone = function(value, element) {
+        return this.optional(element) || /^\+?\d{5,13}$/.test(value);
+    };
 }
 
 function initPageWidgets(){
@@ -381,12 +384,28 @@ function initRegisterForm(){
     if(register_form === undefined || register_form === null){
         return;
     }
-    $(register_form).validate({
-        rules: {
-            email: {
-                required: true,
-                email: true
-            }
+    $(register_form).validate();
+    // Rules
+    $("#email").rules("add", {
+        required: true,
+        email: true
+    });
+    $("#phone").rules("add", {
+        required: true,
+        minlength: 5,
+        maxlength: 13,
+        phone: true,
+        messages: {
+            phone: "Enter phone number is format: +1234567899"
+        }
+    });
+    $("#cell_phone").rules("add", {
+        required: true,
+        minlength: 5,
+        maxlength: 13,
+        phone: true,
+        messages: {
+            phone: "Enter phone number is format: +1234567899"
         }
     });
     
@@ -430,10 +449,7 @@ function initRegisterForm(){
                 },
                 success: function(response){
                     $('.reg-verify-email').html(response);
-                },
-                error: function(res){
-                },
-                complete: function(){
+                    
                     $('#register-form .form-part').removeClass('show');
                     $('#register_form_titles .form-title').removeClass('show');
                     $('#register-form .form-part[data-title-id="verify_your_email_address_title"]').addClass('show');
