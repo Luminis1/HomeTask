@@ -476,23 +476,21 @@ function initFormHelp(){
             
             if(input_card_block_width === help_card_block_width){   // Mobile variant
                 $('#form-help').css({
-                    'left': '0',
-                    'top': help_block_top - $('#form-help').height() - 100 + 'px',
+                    'opacity': 0,
+                    'top': help_block_top - $('#form-help').height() - 30 + 'px',
                     'visibility': 'visible'
                 });
                 $('#form-help').stop().animate({
-                    'opacity': 1,
-                    'top': help_block_top - $('#form-help').height() - 30 + 'px'
+                    'opacity': 1
                 },
-                400);
+                300);
             } else {
                 $('#form-help').css({
-                    'left': '300px',
                     'top': help_block_top + 'px',
+                    'opacity': 0,
                     'visibility': 'visible'
                 });
                 $('#form-help').stop().animate({
-                    'left': 0,
                     'opacity': 1
                 },
                 400);
