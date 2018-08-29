@@ -16,7 +16,7 @@ class CheckRoleAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (!empty(Auth::user()->role) && Auth::user()->role == 'admin') {
+        if (!empty(Auth::user()->role) && !empty(Auth::user()->role) == 'admin') {
             return $next($request);
         }else {
             return redirect('/login');

@@ -16,7 +16,7 @@ class CheckRoleUser
      */
     public function handle($request, Closure $next)
     {
-        if ((Auth::user()->role == 'user' || Auth::user()->role == 'admin') && Auth::user()->isActive == 1) {
+        if ((!empty(Auth::user()->role) == 'user' || !empty(Auth::user()->role) == 'admin') && Auth::user()->isActive == 1) {
             return $next($request);
         }else {
             return redirect('/logout');
