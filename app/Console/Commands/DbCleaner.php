@@ -45,7 +45,7 @@ class DbCleaner extends Command
                 env('DB_PASSWORD'),
                 env('DB_DATABASE')
                     );
-        mysqli_query($connect ,"DELETE * FROM users WHERE  isActive = 0");
+        mysqli_query($connect ,"DELETE FROM users WHERE created_at < DATE_SUB(NOW(), INTERVAL 7 DAY) and isActive = 0");
         $connect->close();
     }
 }
