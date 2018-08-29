@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
 
 class CheckRoleUser
 {
@@ -16,9 +18,14 @@ class CheckRoleUser
      */
     public function handle($request, Closure $next)
     {
-        if ((!empty(Auth::user()->role) == 'user' || !empty(Auth::user()->role) == 'admin') && Auth::user()->isActive == 1) {
-            return $next($request);
-        }else {
+        if ((!empty(Auth::user()->role) == 'user' || !empty(Auth::user()->role) == 'admin') && Auth::user()) {
+            if(Auth::user()->isActive !== 1) {
+                session(['veryfied' => 'You need to confirm your acaunt via link from your email']);
+                return redirect('/logout')->with(session('veryfied'));
+            }else{
+                return $next($request);
+            }
+        }else{
             return redirect('/logout');
         }
     }

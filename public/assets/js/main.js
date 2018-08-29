@@ -239,7 +239,7 @@ function initPageWidgets(){
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             success: function (res) {
-                alert('sucsess');
+                $('.resend-done').text('Email was successfully sent');
             },
             error: function(res){
                 alert('error');
@@ -407,11 +407,9 @@ function initRegisterForm(){
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(response){
-                    console.log(11111111);
                     $('.reg-verify-email').html(response);
                 },
                 error: function(res){
-                    console.log(res);
                 },
                 complete: function(){
                     $('#register-form .form-part').removeClass('show');

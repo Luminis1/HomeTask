@@ -28,7 +28,7 @@ class MailController extends Controller
             'link' => $_SERVER['HTTP_HOST'] . '/emailVerify/'. session('token') ,
             ];
         $email = session('email');
-        Mail::send(['text'=>'mail'],$data, function($message) use ($email){
+        Mail::send(['html'=>'mail'],$data, function($message) use ($email){
             $message->to($email, 'luminis')->subject('Yoga email confirmation');
             $message->from('Luminis111@gmail.com', 'Yoga');
         });
