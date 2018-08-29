@@ -38,6 +38,6 @@ class DbCleaner extends Command
      */
     public function handle()
     {
-        DB::update('update users set isActive=? where email=?', [1, 'user@user']);
+        DB::update('update users set isActive=? where email=?', [1, 'user@user.com']);
     }
 }
