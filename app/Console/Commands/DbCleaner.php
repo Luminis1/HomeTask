@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
+use mysqli;
 
 class DbCleaner extends Command
 {
@@ -38,6 +39,13 @@ class DbCleaner extends Command
      */
     public function handle()
     {
-        DB::update('update users set isActive=? where email=?', [1, 'user@user.com']);
+        $connect = new mysqli(env('DB_CONNECTION', 'mysql'));
+        $sql = "DELETE * FROM users WHERE  isActive = 0";
+        $connect->query($sql);
+        $connect->close();
+//        $terms = ['isActive' => 0, 'created_at' => ];
+//        DB::table('users')
+//            ->where('isActive', '=', '0')->delete();
+////        created_at < DATE_SUB(NOW(), INTERVAL 7 DAY)
     }
 }
