@@ -414,7 +414,7 @@
                         </button>
                     </div>
                     <div class="right">
-                        <button type="submit" class="Polaris-Button Polaris-Button--primary">
+                        <button id="register-form-submit" type="button" class="Polaris-Button Polaris-Button--primary">
                             <span class="Polaris-Button__Content">
                                 <span>Register</span>
                             </span>

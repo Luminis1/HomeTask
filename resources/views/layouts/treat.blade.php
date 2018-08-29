@@ -21,13 +21,13 @@
         <div class="profile__menu" style="display: none;">
             <ul>
                 <li>
-                    <a href="">Your profile</a>
+                    <a href="#">Your profile</a>
                 </li>
                 <li>
-                    <a href="">Organization profile</a>
+                    <a href="#">Organization profile</a>
                 </li>
                 <li>
-                    <a href="">Send a message</a>
+                    <a href="#">Send a message</a>
                 </li>
                 <li>
                     <a href="/logout">Log out</a>

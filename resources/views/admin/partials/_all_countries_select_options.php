@@ -1,5 +1,4 @@
 <option value="AF">Afghanistan</option>
-<option value="AX">Г…land Islands</option>
 <option value="AL">Albania</option>
 <option value="DZ">Algeria</option>
 <option value="AS">American Samoa</option>

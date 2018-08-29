@@ -387,12 +387,10 @@ function initRegisterForm(){
     });
     
     // Sumbmit form processing
-    $(register_form).on('submit', function(event){
-        event.preventDefault();
-        event.stopPropagation();
-
+    $('#register-form-submit').on('click', function(){
         var form_data = $(register_form).serializeArray();
         var form_data_formated = {};
+        
         form_data.forEach(function(item){
             form_data_formated[item.name] = item.value;
         });
@@ -416,6 +414,23 @@ function initRegisterForm(){
                     $('#register_form_titles .form-title').removeClass('show');
                     $('#register-form .form-part[data-title-id="verify_your_email_address_title"]').addClass('show');
                     $('#verify_your_email_address_title').addClass('show');
+                },
+                error: function(res){
+                    console.log('Error response:');
+                    console.log(res);
+                    if(res.responseJSON.email[0] !== undefined && res.responseJSON.email[0] !== null && res.responseJSON.email[0] === 'The email has already been taken.'){
+                        // Email already exist
+                        var error_form_part = $('#email').closest('.form-part');
+                        var title_id = $(error_form_part).data('title-id');
+                        $('#register-form .form-part').removeClass('show');
+                        $(error_form_part).addClass('show');
+                        $('#register_form_titles .form-title').removeClass('show');
+                        $('#' + title_id).addClass('show');
+                        var validator = $("#register-form").validate();
+                        validator.showErrors({
+                          "email": "The email has already been taken."
+                        });
+                    }
                 }
             });
         }
@@ -427,7 +442,6 @@ function initHeaderDropdown(){
         var attr = $(this).attr('data-id');
         $('.modal[data-id='+ attr +']').css('display', 'block');
     });
-
     $('.Polaris-Modal-Header__CloseButton').on('click', function(){
         $('.modal').css('display','none');
     });
@@ -435,11 +449,9 @@ function initHeaderDropdown(){
         var attr = $(this).attr('data-id');
         $('.modal[data-id='+ attr +']').css('display', 'block');
     });
-
     $('.Polaris-Modal-Header__CloseButton').on('click', function(){
         $('.modal').css('display','none');
     });
-
     $( ".profile__name" ).mouseenter(function() {
         $( ".profile__menu" ).css("display", "block");
     });
@@ -468,23 +480,21 @@ function initFormHelp(){
             
             if(input_card_block_width === help_card_block_width){   // Mobile variant
                 $('#form-help').css({
-                    'left': '0',
-                    'top': help_block_top - $('#form-help').height() - 100 + 'px',
+                    'opacity': 0,
+                    'top': help_block_top - $('#form-help').height() - 30 + 'px',
                     'visibility': 'visible'
                 });
                 $('#form-help').stop().animate({
-                    'opacity': 1,
-                    'top': help_block_top - $('#form-help').height() - 30 + 'px'
+                    'opacity': 1
                 },
-                400);
+                300);
             } else {
                 $('#form-help').css({
-                    'left': '300px',
                     'top': help_block_top + 'px',
+                    'opacity': 0,
                     'visibility': 'visible'
                 });
                 $('#form-help').stop().animate({
-                    'left': 0,
                     'opacity': 1
                 },
                 400);
