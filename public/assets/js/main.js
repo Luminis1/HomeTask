@@ -387,12 +387,10 @@ function initRegisterForm(){
     });
     
     // Sumbmit form processing
-    $(register_form).on('submit', function(event){
-        event.preventDefault();
-        event.stopPropagation();
-
+    $('#register-form-submit').on('click', function(){
         var form_data = $(register_form).serializeArray();
         var form_data_formated = {};
+        
         form_data.forEach(function(item){
             form_data_formated[item.name] = item.value;
         });
@@ -407,17 +405,28 @@ function initRegisterForm(){
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(response){
-                    console.log(11111111);
                     $('.reg-verify-email').html(response);
-                },
-                error: function(res){
-                    console.log(res);
-                },
-                complete: function(){
                     $('#register-form .form-part').removeClass('show');
                     $('#register_form_titles .form-title').removeClass('show');
                     $('#register-form .form-part[data-title-id="verify_your_email_address_title"]').addClass('show');
                     $('#verify_your_email_address_title').addClass('show');
+                },
+                error: function(res){
+                    console.log('Error response:');
+                    console.log(res);
+                    if(res.responseJSON.email[0] !== undefined && res.responseJSON.email[0] !== null && res.responseJSON.email[0] === 'The email has already been taken.'){
+                        // Email already exist
+                        var error_form_part = $('#email').closest('.form-part');
+                        var title_id = $(error_form_part).data('title-id');
+                        $('#register-form .form-part').removeClass('show');
+                        $(error_form_part).addClass('show');
+                        $('#register_form_titles .form-title').removeClass('show');
+                        $('#' + title_id).addClass('show');
+                        var validator = $("#register-form").validate();
+                        validator.showErrors({
+                          "email": "The email has already been taken."
+                        });
+                    }
                 }
             });
         }
