@@ -61,9 +61,12 @@ trait RegistersUsers
         }
 
         Auth::guard($this->getGuard())->login($this->create($request->all()));
+
         $email = session('email');
+
         return $email;
     }
+
 
     /**
      * Get the guard to be used during registration.

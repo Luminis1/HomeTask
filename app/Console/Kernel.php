@@ -14,7 +14,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         // Commands\Inspire::class,
-         Commands\NoActivRecordRemover::class,
+
+         Commands\DbCleaner::class,
+
     ];
 
     /**
@@ -27,5 +29,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+         $schedule->command('command:name')
+                  ->hourly();
     }
 }

@@ -56,7 +56,8 @@
                 </h2>
                 <p>Please verify your email to help us ensure that this email belongs to you, so we can notify you about updates and new customer messages.</p>
                 <br>
-                <p>Check your email <b class="reg-verify-email">{{isset($email)}}</b> and click the link to activate your account. Didnt get the email? <p class="Polaris-Link resend-email" data-polaris-unstyled="true">Click here</p> to resend it.</p>
+                <p>Check your email {{isset($email)}} and click the link to activate your account. Didnt get the email?
+                <p class="Polaris-Link resend-email" data-polaris-unstyled="true">Click here</p> to resend it.</p>
                 <br>
             </div>
         </div>

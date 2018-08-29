@@ -407,6 +407,7 @@ function initRegisterForm(){
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(response){
+                    console.log(11111111);
                     $('.reg-verify-email').html(response);
                 },
                 error: function(res){
