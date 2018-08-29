@@ -296,6 +296,11 @@
                             <span>Add focus point</span>
                         </span>
                     </button>
+                    <button type="button" class="remove-focus Polaris-Button Polaris-Button--sizeSlim" style="display: none">
+                        <span class="Polaris-Button__Content">
+                            <span>Remove focus point</span>
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ function createCustomValidationMethods(){
 function initPageWidgets(){
     $('.add-focus').click(function () {
         $('.focus-help').first().show();
+        $('.remove-focus').first().show();
         $('.focus-help').first().removeClass('focus-help');
     });
     $('.submit').click(function(){

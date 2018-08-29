@@ -79,7 +79,7 @@ class AuthController extends Controller
         $verifyToken = md5((string)$data['email'] . (string)$data['password'] . (string)$salt);
         session([
             $verifyToken => $data['email'],
-            'token' => $verifyToken,
+            'token' => base64_encode($data['email']),
             'name' => $data['first_name'],
             'email' => $data['email']
         ]);
