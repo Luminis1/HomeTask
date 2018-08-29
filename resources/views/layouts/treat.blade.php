@@ -41,10 +41,11 @@
 <div id="nav">
     <ul class="nav-list">
         @foreach($menu as $k => $v)
-            <li class="nav-item">
+            <li class="nav-item{{$k===0 ? ' active' : ''}}">
                 <a class="Polaris-Link" href="#" data-tab-target="{{$v->name}}">
                     <span>{{$v->name}}</span>
                 </a>
+                <img class="done-mark-image" src="/assets/img/circle-tick.svg">
             </li>
             @endforeach
     </ul>

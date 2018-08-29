@@ -248,25 +248,6 @@ function initPageWidgets(){
     });
 }
 
-function initNavMenu(){
-    var nav_elem = $('#nav').get()[0];
-    var links = $(nav_elem).find('.nav-item > a').get();
-    var content_elem = $('#content').get()[0];
-    var content_tabs = $(content_elem).find('.content-inner').get();
-    
-    $(links).on('click', function(event){
-        event.preventDefault();
-        var clicked_link = this;
-        if(!$(clicked_link).hasClass('active')){
-            var tab_name = $(clicked_link).data('tab-target');
-            $(links).removeClass('active');
-            $(content_tabs).removeClass('show');
-            $(clicked_link).addClass('active');
-            $(content_elem).find('[data-tab-content="' + tab_name + '"]').addClass('show');
-        }
-    });
-}
-
 function initInputsHelp(){
     var forms_with_help = $('.form-with-help').get();
     $(forms_with_help).each(function(){
@@ -307,11 +288,15 @@ function initInputsHelp(){
 function initTablesCore(){
     var form = $('#general_form').get()[0];
     var tables = $(form).find('> .content-inner').get();
+    var nav_elem = $('#nav').get()[0];
+    var links = $(nav_elem).find('.nav-item > a').get();
     
     if(tables.length <= 0){
         return;
     }
     $(tables[0]).addClass('show');
+    
+    // Tables logic
     $(tables).each(function(){
         var table = this;
         var previous_btn = $(table).find('.go-prev-btn').get()[0];
@@ -331,14 +316,52 @@ function initTablesCore(){
         }
     });
     
+    // Left nav menu links click
+    $(links).on('click', function(event){
+        event.preventDefault();
+        var clicked_link = this;
+        var current_link = $('#nav .nav-list .nav-item.active').get()[0];
+        var current_link_index = $('#nav .nav-list .nav-item').index(current_link);
+        var clicked_link_index = $(links).index(clicked_link);
+        
+        if(clicked_link_index < current_link_index){
+            var teble_name = $(clicked_link).data('tab-target');
+            var needle_table = $(form).find('> .content-inner[data-tab-content="' + teble_name + '"]').get()[0];
+            goTo(needle_table);
+        }
+    });
+    
+    // Enable table by table element
     function goTo(table){
         if($("#general_form").valid()){
             $(tables).hide().removeClass('show');
             $("html, body").stop().animate({scrollTop: 0}, 300);
+            updateNavMenuByTable(table);
             $(table).fadeIn(300, function(){
                 $(table).addClass('show');
             });
         }
+    }
+    
+    // Update left menu items condition by table element
+    function updateNavMenuByTable(table){
+        var table_key = $(table).data('tab-content');
+        var links = $('#nav .nav-item > a').get();
+        var needle_link = $('#nav .nav-item > a[data-tab-target="' + table_key + '"]').get()[0];
+        var needle_link_index = $(links).index(needle_link);
+        $(links).each(function(){
+            var link = this;
+            var link_index = $(links).index(link);
+            if(link_index < needle_link_index){
+                $(link).closest('.nav-item').removeClass('active done').addClass('done');
+            }
+            if(link_index === needle_link_index){
+                $(link).closest('.nav-item').removeClass('active done').addClass('active');
+            }
+            if(link_index > needle_link_index){
+                $(link).closest('.nav-item').removeClass('active done');
+            }
+        });
     }
 }
 
@@ -652,7 +675,6 @@ function initAccommodationLogic(){
 $(document).ready(function(){
     createCustomValidationMethods();
     initPageWidgets();
-    initNavMenu();
     initInputsHelp();
     initTablesCore();
     initGeneralFormValidation();
