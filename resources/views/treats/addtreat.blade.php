@@ -26,7 +26,7 @@
                                                            <div class="Polaris-FormLayout__Item">
                                                                {{--Рисуем блоки--}}
                                                                @foreach($refTypes as $a => $b)
-                                                                   <div class="form-block__container">
+                                                                   <div class="form-block__container{{ ($b->element_type == "select") ? ' half-size' : ''}}">
                                                                    @if($b->table_type == $v->id)
                                                                        <div class="Polaris-Labelled__LabelWrapper">
                                                                            <div class="Polaris-Label">
