@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/polaris.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/dropzone/min/dropzone.min.css') }}">
 
     <title>Yoga</title>
     {{--<link rel="stylesheet" href="{{ asset('css/treat.css') }}">--}}
@@ -61,6 +62,7 @@
 <script type="text/javascript" src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/dropzone/min/dropzone.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
