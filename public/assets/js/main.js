@@ -450,7 +450,6 @@ function initAccommodationLogic(){
 
 $(document).ready(function(){
     createCustomValidationMethods();
-    initPageWidgets();
     initInputsHelp();
     initTablesCore();
     initGeneralFormValidation();
