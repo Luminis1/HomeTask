@@ -10,9 +10,11 @@ use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
+    /*
+     * Синглтон для отправки писем с подтверждением мэйла
+     */
 
     private static $instance = null;
-
     public static function getInstance()
     {
         if (null === self::$instance)

@@ -11,22 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*
+ * Роуты авторизации ларавела
+ */
 Route::auth();
 
-//user routes
+
 Route::group(['middleware' => 'admin'], function () {
 
-    //admin routes
+/*
+ * Группа роутов для аккаунтов с ролью Admin
+ */
+
     Route::get('/tableAdd', 'AdminAddTablesController@index');
     Route::get('/basics', 'AdminAttributesController@basics');
-    Route::get('/admin', 'AdminNavController@index');
     Route::get('/modal', 'AdminAttributesController@modal');
 
+/*
+ * Управление контентом и формами из админпанели
+ */
 
-//route group to add/remove attributes
     Route::post('/admin/setAttribute', 'AdminAttributesController@setAttribute');
     Route::post('/admin/setModal', 'AdminAttributesController@setModal');
     Route::post('/admin/removeModal', 'AdminAttributesController@removeModal');
@@ -40,11 +44,23 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/mail', 'Mails\MailController@mailer');
 });
 
+/*
+ * Группа роутов для аккаунтов роли User
+ * Добавление ретрита, список созданых ретритов
+ */
+
 Route::group(['middleware' => 'user'], function () {
     Route::get('/addTreat', 'IndexController@addTreat');
     Route::post('/object', 'IndexController@object');
     Route::get('/treatList', 'IndexController@treatList');
 });
+
+/*
+ * Роуты для незареганых пользователей. Стартовая страница с редиректами на логин,
+ * проверка мэйла и отправка повторного письма для проверки мэйла
+ * Поскольку регистрация не является стартовой страницей сайта, а в условиях тестового стартовой страницы нет,
+ * по адресу mysite/ просто стоит редирект на логин
+ */
 
 Route::get('/', 'HomeController@index');
 Route::get('/emailVerify/{token}', 'IndexController@emailVerify');

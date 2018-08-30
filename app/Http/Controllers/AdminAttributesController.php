@@ -11,6 +11,9 @@ use DB;
 
 class AdminAttributesController extends Controller
 {
+    /*
+     * Группы контроллеров для управления значениями атрибутов
+     */
     use NavGeneratorTrait;
     public function basics()
     {
@@ -40,11 +43,17 @@ class AdminAttributesController extends Controller
 
     public function setAttribute()
     {
-        Reference::insert(['name' => $_POST['name'], 'type_id' => $_POST['type_id'], 'table_id' => $_POST['table_id']]);
+        Reference::insert([
+            'name' => $_POST['name'],
+            'type_id' => $_POST['type_id'],
+            'table_id' => $_POST['table_id']
+        ]);
     }
     public function removeAttribute()
     {
-        Reference::destroy($_POST['attr_id']);
+        Reference::destroy(
+            $_POST['attr_id']
+        );
     }
 
     public function setHelp()
@@ -69,8 +78,8 @@ class AdminAttributesController extends Controller
     }
     public function removeModal()
     {
-
-        Accomodation_modal::destroy($_POST['attr_id']);
-
+        Accomodation_modal::destroy(
+            $_POST['attr_id']
+        );
     }
 }

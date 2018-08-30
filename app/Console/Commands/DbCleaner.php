@@ -5,6 +5,10 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use mysqli;
+/*
+ * Контроллер для удаления аккаунтов не получивших подтверждение мэйла втечении суток.
+ * На сервере крутится демон который дергает этот класс каждую минуту. В будущем можем произвести более гибкую настройку крона
+ */
 
 class DbCleaner extends Command
 {

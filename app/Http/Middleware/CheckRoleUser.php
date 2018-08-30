@@ -6,6 +6,10 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
+/*
+ * Мидлвеир для аккаунтов с ролью User
+ * Доступы к созданию тритов
+ */
 
 class CheckRoleUser
 {

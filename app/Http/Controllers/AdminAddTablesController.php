@@ -11,8 +11,11 @@ use App\Http\Requests;
 
 class AdminAddTablesController extends Controller
 {
+    /*
+     * Группы методов для управления елементами блоков
+     * Наполнение или удаление атрибутов
+     */
     use NavGeneratorTrait;
-
     public function index()
     {
         $menu = NavGeneratorTrait::navGenerate();
@@ -23,7 +26,6 @@ class AdminAddTablesController extends Controller
             'menu' => $menu
         ]);
     }
-
     public function addTable()
     {
         TypeOfTable::insert(['name' => $_POST['name']]);

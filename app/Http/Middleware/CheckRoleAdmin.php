@@ -5,6 +5,11 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
+/*
+ * Мидлвеир для аккаунтов с ролью Admin
+ * Доступы в админ часть и к созданию тритов
+ */
+
 class CheckRoleAdmin
 {
     /**

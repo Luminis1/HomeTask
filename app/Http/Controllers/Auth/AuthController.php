@@ -87,7 +87,6 @@ class AuthController extends Controller
         $mailer = MailController::getInstance();
         $mailer->mailer();
 
-
         return User::create([
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -104,5 +103,4 @@ class AuthController extends Controller
             'role' => $data['role'],
         ]);
     }
-
 }
